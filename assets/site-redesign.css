@@ -1,0 +1,77 @@
+/* GS1905 — complete visual redesign | dark, clean, Galatasaray red & gold */
+:root{--red:#a90432!important;--red2:#760021!important;--gold:#f4b51c!important;--ink:#f6f4f2!important;--muted:#a8a5ad!important;--line:#292532!important;--paper:#090811!important;--soft:#12111c!important;--max:1240px}
+html{scroll-behavior:smooth;background:#090811}
+body{background:#090811!important;color:#f6f4f2!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important;line-height:1.55}
+a{color:inherit}::selection{background:#a90432;color:#fff}
+.topline,.top{height:4px;background:linear-gradient(90deg,#a90432 0 50%,#f4b51c 50%)!important}
+.wrap{width:min(1240px,calc(100% - 48px))!important}
+header{background:rgba(9,8,17,.92)!important;color:#fff!important;border-bottom:1px solid #292532!important;backdrop-filter:blur(18px);box-shadow:0 12px 35px #0002}
+.nav{min-height:76px}
+.brand{color:#fff!important}
+.brand small{color:#aaa!important}
+.crest,.gs-footer-crest{background:#a90432!important;color:#f4b51c!important;border:1px solid #f4b51c!important;box-shadow:0 0 0 4px #a904321a!important}
+.links a,.navlinks a{color:#e8e5ed!important;transition:color .2s}
+.links a:hover,.navlinks a:hover{color:#f4b51c!important}
+.nav-cta,.button,.btn{background:#a90432!important;color:#fff!important;border:1px solid #a90432!important;border-radius:7px!important}
+.nav-cta:hover,.button:hover,.btn:hover{background:#c10b3d!important}
+.hero,.news-masthead,.banner{background:radial-gradient(ellipse at 80% 0%,#351023 0%,#11101c 40%,#090811 80%)!important;color:#fff!important}
+.hero{padding-top:32px!important}
+.hero-grid{gap:22px}
+.hero-main{border:1px solid #38303e!important;border-radius:14px!important;box-shadow:0 24px 70px #0007!important;background:#14101d!important}
+.hero-slide:after{background:linear-gradient(0deg,#08070ff2 0%,#08070f6b 58%,#08070f12 100%)!important}
+.hero-content h1{color:#fff!important;text-wrap:balance}
+.eyebrow,.pill,.kicker,.match-badge,.live-label{color:#f4b51c!important}
+.next-match-panel{background:linear-gradient(145deg,#191521,#100e18)!important;border:1px solid #39303d!important;border-radius:14px!important;color:#fff!important;box-shadow:0 20px 50px #0005!important}
+.next-match-panel p,.next-match-panel small,.countdown-note{color:#b9b4c1!important}
+.club-mark,.match-team-logo{background:#f8f5ef!important;border-color:#4b3c43!important}
+.section{background:transparent!important;color:#f6f4f2!important;padding-top:44px!important;padding-bottom:30px!important}
+.section-head,.section-title,.heading{color:#fff!important;border-color:#302a37!important}
+.section-head h2,.section-title h1,.section-title h2,.heading h1,.heading h2{color:#fff!important;letter-spacing:-.035em}
+.kicker{letter-spacing:2px!important}
+.news-grid,.grid,.branches{gap:18px!important}
+.news-card,.card,.match-card,.match,.panel,.branch,.fixture,.profile,.news-art,.schedule-tab,.tab,.tools,.filters,.search,.list,.fact,.match-schedule,.standings-table,.table,.empty,.notice{background:#13121d!important;color:#f5f2f7!important;border:1px solid #302a38!important;border-radius:12px!important;box-shadow:0 12px 34px #0002!important}
+.news-card,.card,.branch,.match,.fixture{overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
+.news-card:hover,.card:hover,.branch:hover,.match:hover,.fixture:hover{transform:translateY(-3px);border-color:#8e183a!important;box-shadow:0 18px 38px #0005!important}
+.news-copy,.copy,.card-info,.profile-main,.match-foot,.meta,.sub,.note,.lead,.intro,.description{color:#bdb7c6!important}
+.news-copy h2,.news-copy h3,.copy h2,.copy h3,.card h2,.card h3,.card-info h2,.card-info h3{color:#fff!important}
+.meta,.source,.table-source,.fixture-meta{color:#9b95a4!important}
+button,.schedule-tab,.tab{cursor:pointer}
+.schedule-tab.active,.tab.active,.filters .active{background:#a90432!important;color:#fff!important;border-color:#a90432!important}
+input,select,textarea,.search input{background:#0b0a12!important;color:#fff!important;border:1px solid #393140!important;border-radius:7px!important}
+input::placeholder{color:#88818f!important}
+.table-scroll,.scroll{border:1px solid #302a38!important;border-radius:10px!important;overflow:auto}
+table{background:#11101a!important;color:#f5f2f7!important;border-collapse:collapse}
+th{background:#21101a!important;color:#f4b51c!important}
+td,th{border-color:#302a38!important}
+tr:nth-child(even){background:#171520!important}
+tr:hover{background:#25141e!important}
+.score,.fixture-score,.number,.num{color:#f4b51c!important}
+.match-status,.status,.tag{background:#29111c!important;color:#ffbacb!important;border-radius:5px!important}
+hr{border:0;border-top:1px solid #302a38}
+.gs-footer{position:relative!important;overflow:hidden!important;background:radial-gradient(ellipse at 80% 0%,#27101c 0%,#11101a 40%,#08070e 100%)!important;color:#f4f1f5!important;border-top:1px solid #3a2732!important;margin-top:55px!important}
+.gs-footer:before{content:""!important;position:absolute;left:0;right:0;top:0;height:3px!important;background:linear-gradient(90deg,#a90432 0 50%,#f4b51c 50%)!important;opacity:1!important}
+.gs-footer:after{display:none!important}
+.gs-footer-inner{width:min(1240px,calc(100% - 48px))!important;margin:auto!important;padding:52px 0 22px!important}
+.gs-footer-main{display:grid!important;grid-template-columns:1.5fr 1fr 1fr 1fr!important;gap:28px!important;align-items:start!important}
+.gs-footer-brand p,.gs-footer-disclaimer{color:#a9a3b0!important;font-size:13px!important;line-height:1.8!important}
+.gs-footer-logo{display:inline-flex!important;align-items:center!important;gap:12px!important}
+.gs-footer-wordmark strong{color:#fff!important;font-size:24px!important;letter-spacing:-1px!important}
+.gs-footer-wordmark strong span{color:#f4b51c!important}
+.gs-footer-wordmark em{color:#aaa!important}
+.gs-socials a{display:inline-grid!important;place-items:center!important;width:34px!important;height:34px!important;border:1px solid #39303d!important;border-radius:50%!important;color:#f4b51c!important;margin-right:6px!important}
+.gs-footer-column h3,.gs-footer-trophies h3{font-size:11px!important;letter-spacing:1.7px!important;color:#f4b51c!important;margin:0 0 16px!important}
+.gs-footer-column a{display:flex!important;gap:8px!important;align-items:center!important;color:#c9c4ce!important;padding:7px 0!important;font-size:12px!important}
+.gs-footer-column a:hover{color:#fff!important}
+.gs-footer-column a b{margin-left:auto!important;color:#f4b51c!important}
+.gs-footer-trophies{grid-column:1/-1!important;border-top:1px solid #302a38!important;padding-top:20px!important}
+.trophy-photo-row{display:flex!important;gap:12px!important;flex-wrap:wrap!important}
+.trophy-photo{height:48px!important;width:48px!important;object-fit:contain!important;filter:grayscale(.15)!important;opacity:.78!important}
+.honours-captions{display:flex!important;flex-wrap:wrap!important;gap:16px!important;margin-top:10px!important;color:#a9a3b0!important;font-size:9px!important;letter-spacing:.5px!important}
+.honours-captions b{color:#f4b51c!important}
+.gs-footer-bottom{display:flex!important;justify-content:space-between!important;gap:18px!important;flex-wrap:wrap!important;border-top:1px solid #302a38!important;padding-top:20px!important;margin-top:28px!important;color:#8e8896!important;font-size:11px!important}
+.gs-footer-bottom strong{color:#f4b51c!important}
+.gs-footer-disclaimer{margin-top:14px!important;font-size:10px!important}
+.ui-icon{color:#f4b51c!important}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr!important}.next-match-panel{min-height:auto!important;gap:18px}.gs-footer-main{grid-template-columns:repeat(2,minmax(0,1fr))!important}.gs-footer-brand{grid-column:1/-1!important}.gs-footer-trophies{grid-column:1/-1!important}}
+@media(max-width:600px){.wrap{width:calc(100% - 28px)!important}.nav{min-height:66px}.hero{padding:18px 0 26px!important}.hero-main{min-height:440px!important}.hero-content{padding:24px!important}.hero-content h1{font-size:clamp(32px,10vw,46px)!important}.section{padding-top:30px!important}.gs-footer-inner{width:calc(100% - 28px)!important;padding-top:38px!important}.gs-footer-main{grid-template-columns:1fr 1fr!important;gap:22px 14px!important}.gs-footer-brand{grid-column:1/-1!important}.gs-footer-trophies{grid-column:1/-1!important}.gs-footer-bottom{flex-direction:column!important}.honours-captions{gap:10px!important}.news-grid,.grid{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
