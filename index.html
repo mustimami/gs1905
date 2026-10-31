@@ -1,625 +1,68 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#8b1731">
-<meta name="description" content="Galatasaray ruhunu modern bir dijital deneyimle keşfet. Haberler, maç merkezi ve branşlar.">
-<title>Galatasaray | Aslanın Yuvası</title>
-<style>
-:root{--red:#8b1731;--red2:#651025;--gold:#c7a45b;--ink:#171717;--muted:#777;--line:#ece8e5;--paper:#fff;--soft:#f7f5f3;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.topline{height:4px;background:linear-gradient(90deg,var(--red) 0 50%,var(--gold) 50%)}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.7px}.crest{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--red);font-family:Georgia,serif;font-size:18px;font-weight:bold;background:#fffaf0;box-shadow:inset 0 0 0 3px white}.brand small{display:block;font-size:9px;letter-spacing:2px;color:var(--muted);font-weight:700;margin-top:2px}.links{display:flex;gap:26px;align-items:center;font-size:13px;font-weight:750}.links a{transition:.2s}.links a:hover{color:var(--red)}.nav-cta{background:var(--red);color:white;padding:12px 17px;border-radius:4px;font-size:12px;font-weight:800}.menu{display:none;background:none;border:0;font-size:25px;color:var(--red)}
-.hero{padding:26px 0 42px;background:linear-gradient(180deg,#faf7f5 0%,#fff 100%)}.hero-grid{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(300px,.78fr);gap:20px;align-items:stretch} .hero-main{min-height:560px;box-shadow:0 20px 50px #4a17201f;border-radius:8px;overflow:hidden;position:relative;background:#32101c;color:white;padding:0;display:flex;flex-direction:column;justify-content:flex-end}.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;background-size:cover;background-position:center}.hero-slide.active{opacity:1;transform:scale(1)}.hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#18060feF 0%,#18060f55 58%,#18060f18 100%)}.hero-content{position:relative;z-index:2;padding:clamp(28px,4vw,54px);max-width:760px}.hero-content h1{font-size:clamp(38px,5.2vw,68px);line-height:.98;letter-spacing:-.055em;max-width:650px}.hero-content p{font-size:15px;line-height:1.8;max-width:570px;color:#f3e9eb}.hero-dots{position:absolute;z-index:3;right:24px;bottom:26px;display:flex;gap:8px}.hero-dot{width:24px;height:4px;border-radius:2px;border:1px solid #fff;background:transparent;border-radius:50%;padding:0;cursor:pointer}.hero-dot.active{width:42px;background:var(--gold);border-color:var(--gold)}.hero-controls{display:flex;gap:8px;margin-top:18px}.hero-control{background:#ffffff20;border:1px solid #ffffff55;color:white;border-radius:50%;width:34px;height:34px;cursor:pointer}.next-match-panel{background:linear-gradient(145deg,#fff8e9,#fff);border-radius:8px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:510px;border:1px solid #eadfda;box-shadow:0 18px 50px #3515220c}.next-match-panel .match-badge{font-size:9px;font-weight:900;letter-spacing:1.6px;color:var(--red)}.next-match-panel h2{font-size:24px;line-height:1.1;margin:12px 0}.next-match-panel .versus{display:flex;align-items:center;justify-content:space-around;text-align:center;margin:24px 0}.next-match-panel .versus strong{display:block;font-size:12px;margin-top:8px}.next-match-panel .club-mark{width:70px;height:70px;border-radius:50%;background:white;border:1px solid #e6d7d1;display:grid;place-items:center;color:var(--red);font-weight:950;font-family:Georgia,serif;font-size:20px;margin:auto;padding:10px}.club-mark img{width:100%;height:100%;object-fit:contain}.match-team-logo{width:64px;height:64px;object-fit:contain;display:block;margin:0 auto 10px}.match-team-logo.galatasaray{width:54px}.table-source{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;font-size:10px;color:var(--muted)}.table-scroll{overflow-x:auto}.standings-table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:11px}.standings-table th{padding:0 7px 12px;text-align:center;color:var(--muted);font-size:9px}.standings-table th:nth-child(2),.standings-table td:nth-child(2){text-align:left}.standings-table td{padding:10px 7px;border-top:1px solid var(--line);text-align:center;font-weight:700}.standings-table tr.gs-row td{background:#fbf5f1;color:var(--red);font-weight:900}.standings-table td:last-child{font-weight:950;color:var(--red)}.branch-icon{width:30px;height:30px;display:grid;place-items:center;color:#a28a6b;margin-bottom:6px}.branch-icon svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}.next-match-panel .versus b{font-size:12px;color:var(--muted)}.countdown-note{background:white;border-radius:5px;padding:13px;font-size:11px;color:var(--muted);line-height:1.6}.next-match-panel .more{align-self:flex-start}.hero-main:before{content:"1905";position:absolute;right:-20px;top:-62px;font-family:Georgia,serif;font-size:260px;font-weight:900;color:#ffffff0b;letter-spacing:-20px;z-index:1;pointer-events:none}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:900}.hero h1{font-size:clamp(34px,5vw,60px);line-height:.98;letter-spacing:-2px;margin:16px 0}.hero p{color:#f0e8e9;line-height:1.7;max-width:510px;font-size:14px}.pill{display:inline-block;border:1px solid #ffffff55;padding:8px 12px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:1px}.hero-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}.side-card{border-radius:8px;padding:25px;background:var(--soft);display:flex;flex-direction:column;justify-content:space-between;min-height:210px;position:relative;overflow:hidden}.side-card.dark{background:#f2e9e5}.side-card:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #c7a45b55;border-radius:50%;right:-38px;bottom:-55px;box-shadow:0 0 0 18px #c7a45b0b,0 0 0 38px #c7a45b08}.side-card h3{font-size:23px;line-height:1.1;max-width:240px;margin:12px 0}.arrow{font-size:22px;color:var(--red);position:relative;z-index:1}
-.section{padding:48px 0}.section.soft{background:var(--soft)}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px;gap:20px}.kicker{font-size:10px;letter-spacing:2px;color:var(--red);font-weight:900;text-transform:uppercase}.section h2{font-size:clamp(27px,3vw,36px);letter-spacing:-1.3px;margin:8px 0 0}.more{font-size:12px;font-weight:850;color:var(--red);border-bottom:1px solid var(--gold);padding-bottom:5px}
-.news-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:20px}.news-card:first-child .news-art{height:250px}.news-art{height:205px}.news-card{border:1px solid var(--line);border-radius:7px;overflow:hidden;background:white;transition:transform .2s,box-shadow .2s}.news-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #1c11100c}.news-art{height:190px;background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.news-art.gold{background:linear-gradient(135deg,#30251b,#9b7741)}.news-art.light{background:linear-gradient(135deg,#eee9e2,#d9cfc2)}.news-art:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#18060f99,transparent 70%)}.news-art span{position:absolute;left:17px;top:16px;background:white;color:var(--red);padding:7px 9px;font-size:9px;font-weight:900;letter-spacing:1px}.news-copy{padding:19px}.meta{font-size:10px;color:var(--muted);font-weight:750;letter-spacing:.5px}.news-copy h3{font-size:18px;line-height:1.25;margin:10px 0 12px;letter-spacing:-.4px}.news-copy p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
-.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}.match-card{padding:28px}.match-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}.match-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.match-title strong{font-size:13px}.live-label{font-size:9px;color:var(--red);font-weight:900;letter-spacing:1px}.teams{display:flex;align-items:center;justify-content:space-around;text-align:center;gap:12px}.team{width:33%;font-size:12px;font-weight:850}.team-mark{width:54px;height:54px;margin:0 auto 10px;border-radius:50%;background:#f5eeee;border:1px solid #eadfe0;display:grid;place-items:center;color:var(--red);font-family:Georgia,serif;font-weight:900;font-size:17px}.score{text-align:center;font-size:30px;font-weight:900;letter-spacing:2px}.score small{display:block;font-size:9px;letter-spacing:1px;color:var(--muted);margin-top:5px}.match-foot{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;text-align:center;font-size:10px;color:var(--muted)}.table{width:100%;border-collapse:collapse;font-size:12px}.table th{text-align:left;color:var(--muted);font-size:9px;letter-spacing:1px;padding:0 8px 12px}.table td{padding:12px 8px;border-top:1px solid var(--line);font-weight:700}.table td:last-child,.table th:last-child{text-align:right}.table tr:first-of-type td{color:var(--red)}.table .club{display:flex;align-items:center;gap:9px}.mini-crest{width:23px;height:23px;border-radius:50%;background:#f5e9eb;color:var(--red);display:grid;place-items:center;font-size:9px;font-weight:900}
-.branches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.branch{padding:25px;border:1px solid var(--line);border-radius:16px;background:#fff;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}.branch .num{font-size:11px;color:var(--gold);font-weight:900;letter-spacing:1px}.branch h3{font-size:20px;margin:18px 0 5px}.branch p{font-size:11px;color:var(--muted);margin:0}
-.banner{background:var(--red);color:#fff;padding:40px;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;overflow:hidden}.banner:after{content:"1905";position:absolute;right:15%;top:-55px;font-family:Georgia,serif;font-size:180px;color:#ffffff0b}.banner h2{font-size:clamp(25px,4vw,38px);margin:8px 0;letter-spacing:-1px}.banner p{color:#f2dfe4;font-size:12px;margin:0}.banner a{position:relative;z-index:1;background:white;color:var(--red);padding:13px 18px;border-radius:4px;font-size:11px;font-weight:900;white-space:nowrap}
-footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center;padding-bottom:28px;border-bottom:1px solid #ffffff20}.footer-brand{font-weight:900;font-size:19px}.footer-brand small{display:block;color:#b7aeb1;font-size:9px;letter-spacing:2px;margin-top:5px}.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:#d4cdd0}.copyright{display:flex;justify-content:space-between;gap:20px;padding-top:18px;color:#968d91;font-size:10px}.disclaimer{color:#b9aeb2;font-size:9px;max-width:700px;line-height:1.6;margin-top:12px}
-@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-main,.next-match-panel{min-height:360px}.links{display:none;position:absolute;top:82px;left:0;right:0;background:white;padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero-grid{grid-template-columns:1fr}.hero-main{min-height:390px;padding:28px}.hero-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.side-card{min-height:175px;padding:18px}.news-grid{grid-template-columns:1fr 1fr}.news-card:first-child{grid-column:span 2}.match-wrap{grid-template-columns:1fr}.branches{grid-template-columns:1fr 1fr}.banner{align-items:flex-start;flex-direction:column}.footer-top,.copyright{flex-direction:column;align-items:flex-start}}
-@media(max-width:480px){.wrap{width:min(100% - 28px,var(--max))}.nav{height:70px}.links{top:70px}.hero{padding-top:24px}.hero-main{min-height:380px;padding:23px}.hero h1{font-size:39px}.hero-side{grid-template-columns:1fr}.side-card{min-height:145px}.section{padding:36px 0}.news-grid{grid-template-columns:1fr}.news-card:first-child{grid-column:auto}.news-art{height:170px}.branches{gap:9px}.branch{padding:17px;min-height:135px}.branch h3{font-size:17px}.match-card{padding:18px}.banner{padding:27px}.footer-links{gap:13px}}
-
-.match-schedule{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
-.schedule-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
-.schedule-tabs{display:flex;gap:7px;flex-wrap:wrap}
-.schedule-tab{border:1px solid var(--line);background:#fff;color:var(--muted);padding:9px 13px;border-radius:4px;font-size:10px;font-weight:850;cursor:pointer}
-.schedule-tab.active{background:var(--red);border-color:var(--red);color:#fff}
-.fixture-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.fixture{border:1px solid var(--line);border-radius:6px;padding:15px;background:#fff}
-.fixture-date{font-size:9px;letter-spacing:1px;color:var(--red);font-weight:900}
-.fixture-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:13px 0;font-size:11px;font-weight:850}
-.fixture-score{font-size:18px;font-weight:950;color:var(--red);white-space:nowrap}
-.fixture-meta{font-size:10px;color:var(--muted);line-height:1.5}
-.fixture-status{display:inline-block;margin-top:10px;padding:5px 7px;background:#f5efec;color:var(--red);font-size:9px;font-weight:900;border-radius:3px}
-.schedule-note{font-size:10px;color:var(--muted);margin:13px 0 0;line-height:1.6}
-@media(max-width:800px){.fixture-list{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.match-schedule{padding:16px}.schedule-head{align-items:flex-start;flex-direction:column}.fixture-list{grid-template-columns:1fr}}
-
-
-
-/* GS1905 shared visual system */
-:root{--red:#86172f;--red2:#5f1023;--gold:#c5a15a;--ink:#191719;--muted:#777176;--line:#e9e4e1;--soft:#f7f4f2;--paper:#fff;--max:1180px}
-html{scroll-behavior:smooth;scroll-padding-top:92px}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
-a{transition:color .18s ease,border-color .18s ease,background .18s ease}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #c5a15a88;outline-offset:3px}
-::selection{background:#86172f;color:#fff}
-.topline,.top{height:4px;background:linear-gradient(90deg,#86172f 0 50%,#c5a15a 50% 100%)}
-header{background:#ffffffed;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 5px 22px #21151a08}
-.brand{color:var(--red);letter-spacing:-.45px}
-.brand small{font-size:9px;letter-spacing:2.1px;color:#898187;font-weight:800}
-.back,.source,.more,.read,.view{color:var(--red)}
-.back:hover,.source:hover,.more:hover,.read:hover,.view:hover{color:var(--red2)}
-.hero{position:relative;isolation:isolate;overflow:hidden}
-.hero:after{content:"";position:absolute;right:-115px;top:-155px;width:310px;height:310px;border:1px solid #c5a15a30;border-radius:50%;box-shadow:0 0 0 24px #c5a15a0a,0 0 0 50px #c5a15a08;pointer-events:none;z-index:-1}
-.hero h1{font-weight:900;letter-spacing:-.045em}
-.eyebrow{font-weight:900;letter-spacing:2.1px}
-.card,.panel,.match,.fact,.feature-main,.news-card,.pending{border-color:var(--line);box-shadow:0 5px 18px #1b101008}
-.card,.panel,.match,.fact,.feature-main,.news-card{border-radius:9px}
-.card,.news-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
-.card:hover,.news-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #1b101012;border-color:#d7c6a9}
-button,.tab,.filters button,.search,input{font-family:inherit}
-button,.tab,.filters button{transition:background .18s ease,color .18s ease,border-color .18s ease}
-.tab.active,.filters button.active{background:var(--red);border-color:var(--red)}
-.section{scroll-margin-top:90px}
-footer{background:#181518;color:#c7bdc1;border-top:3px solid #c5a15a}
-footer a{color:#f4ecef}footer a:hover{color:#dfc17f}
-@media(max-width:620px){.wrap{width:calc(100% - 28px)}.hero:after{width:190px;height:190px;right:-95px;top:-95px}.back{font-size:10px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-
-
-/* GS1905 refinement pass · spacing, responsive rhythm and interaction states */
-:root{--gs-shadow:0 12px 34px rgba(34,18,24,.075)}
-img{max-width:100%}
-button,a{-webkit-tap-highlight-color:transparent}
-button:disabled{opacity:.55;cursor:not-allowed}
-main{min-width:0}
-section,article,aside{min-width:0}
-p{ text-wrap:pretty }
-h1,h2,h3{ text-wrap:balance }
-.card:focus-within,.news-card:focus-visible{outline:3px solid #c5a15a88;outline-offset:3px}
-@media(max-width:760px){
-  .navlinks{overscroll-behavior-x:contain}
-  .navlinks a{min-height:36px;display:inline-flex;align-items:center}
-}
-@media(max-width:480px){
-  .section-head{align-items:flex-start;flex-direction:column}
-  .section-head .more{margin-top:2px}
-  table{font-variant-numeric:tabular-nums}
-}
-
-/* 1 · Ana sayfa hiyerarşisi */
-.hero{padding-top:42px;padding-bottom:38px}
-.hero-grid{align-items:stretch;gap:20px}
-.hero-main{min-height:490px;border-radius:12px;box-shadow:0 18px 45px #210b171f}
-.hero-slide{background-position:center 42%}
-.hero-slide:after{background:linear-gradient(0deg,rgba(19,5,12,.94) 0%,rgba(19,5,12,.42) 52%,rgba(19,5,12,.08) 100%)}
-.hero-content{padding:clamp(24px,4vw,44px);max-width:720px}
-.hero h1{max-width:620px;font-size:clamp(38px,5.5vw,66px);line-height:.99}
-.hero p{font-size:14px;max-width:540px}
-.hero-side{gap:20px}
-.next-match-panel{border-radius:12px;box-shadow:0 12px 30px #5d18200c}
-.side-card,.match-card,.match-schedule,.branch{box-shadow:0 8px 24px #20111608}
-.section{padding-top:58px;padding-bottom:58px}
-.section-head{margin-bottom:26px}
-.section h2{font-weight:900}
-.banner{border-radius:12px;box-shadow:0 15px 34px #5b10251a}
-@media(max-width:800px){.hero{padding-top:28px}.hero-main{min-height:410px}.next-match-panel{min-height:350px}}
-@media(max-width:480px){.hero{padding-top:20px}.hero-main{min-height:390px}.hero-content{padding:22px}.hero h1{font-size:clamp(34px,10vw,43px)}.section{padding-top:40px;padding-bottom:40px}}
-/* 2 · Mobil menü */
-@media(max-width:800px){
- header .nav{position:relative}
- .links{top:100%;z-index:30;max-height:calc(100dvh - 80px);overflow:auto;box-shadow:0 16px 25px #20111612;border-radius:0 0 10px 10px}
- .links.open{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
- .links a{padding:13px 4px;border-bottom:1px solid var(--line);width:100%}
- .menu{width:42px;height:42px;border:1px solid var(--line);border-radius:7px;background:#fff;display:grid;place-items:center;font-size:22px}
- .menu[aria-expanded="true"]{background:var(--red);color:#fff;border-color:var(--red)}
-}
-@media(max-width:480px){.links.open{grid-template-columns:1fr 1fr}.links{padding:12px 20px}}
-/* 3 · Haber kartları */
-.news-grid{gap:20px;align-items:stretch}
-.news-card{display:flex;flex-direction:column;min-height:100%;border-radius:10px;box-shadow:0 8px 24px #20111608}
-.news-art{height:210px;background-color:#eee8e3;background-image:linear-gradient(135deg,#f1ece7,#ddd2c8);background-position:center;background-size:cover}
-.news-art:after{content:"GS1905";position:absolute;right:12px;bottom:9px;color:#ffffffaa;font:900 24px Georgia,serif;letter-spacing:-1px}
-.news-art span{z-index:1;border-radius:3px}
-.news-copy{display:flex;flex:1;flex-direction:column;padding:20px}
-.news-copy h3{font-size:clamp(17px,1.6vw,20px);line-height:1.3}
-.news-copy p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.news-card:focus-visible{outline-offset:4px}
-@media(max-width:800px){.news-art{height:180px}}
-@media(max-width:480px){.news-grid{gap:14px}.news-card:first-child{grid-column:auto}.news-art{height:190px}.news-copy{padding:17px}}
-/* 4 · Kontroller ve hareket tercihleri */
-.hero-control,.hero-dot,.schedule-tab{touch-action:manipulation}
-.hero-dot{width:11px;height:11px}
-.hero-control:hover{background:#ffffff38}
-.schedule-tab:focus-visible{outline-offset:2px}
-@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.news-card:hover{transform:none}}
-
-.editorial-ribbon{padding:0 0 18px}.ribbon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.ribbon-grid>div{display:flex;align-items:center;gap:12px;padding:17px 18px;border:1px solid var(--line);border-radius:13px;background:#fff}.ribbon-grid .ui-icon{color:var(--red);width:23px;height:23px}.ribbon-grid strong{display:block;font-size:11px;letter-spacing:1px}.ribbon-grid span{display:block;font-size:10px;color:var(--muted);margin-top:3px}.hero-main{box-shadow:0 20px 55px #24101824}.news-card:first-child{grid-row:span 1}.news-card:first-child h3{font-size:23px}.match-card{box-shadow:0 10px 35px #25131a08}@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.next-match-panel{min-height:380px}.ribbon-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.hero-main{min-height:460px}.hero-content{padding:25px}.ribbon-grid{gap:8px}.ribbon-grid>div{padding:13px 10px}.news-grid{grid-template-columns:1fr}.news-card:first-child .news-art{height:210px}.branches{grid-template-columns:repeat(2,1fr)}}
-
-/* GS1905 · Editorial homepage redesign — sports magazine + club hub + football newsroom */
-:root{--editorial:#f6f2ef;--editorial-ink:#21191d;--editorial-line:#e8dfda;--editorial-red:#86172f}
-body{background:#fff;color:var(--editorial-ink)}
-header .nav{height:76px}
-.brand{gap:14px}
-.brand .crest{width:50px;height:50px}
-.edition-bar{background:#21191d;color:#fff}
-.edition-inner{height:38px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:9px;letter-spacing:1.4px;font-weight:850}
-.edition-label{display:flex;align-items:center;gap:9px;color:#fff}
-.edition-label i{display:inline-block;width:7px;height:7px;background:#c5a15a;border-radius:50%;box-shadow:0 0 0 4px #c5a15a22}
-.edition-note{color:#c8bbc0}
-.edition-inner>a{color:#e6c982}
-.edition-inner>a b{font-size:13px;margin-left:5px}
-.hero{padding:26px 0 32px;background:linear-gradient(180deg,#f6f2ef 0%,#fff 100%)}
-.hero-grid{grid-template-columns:minmax(0,1.8fr) minmax(285px,.72fr);gap:16px}
-.hero-main{min-height:550px;border-radius:4px;box-shadow:none}
-.hero-slide{background-position:center 38%}
-.hero-slide:after{background:linear-gradient(0deg,rgba(18,5,11,.94) 0%,rgba(18,5,11,.50) 43%,rgba(18,5,11,.06) 100%)}
-.hero-content{padding:clamp(28px,4.5vw,58px);max-width:780px}
-.hero-content .eyebrow{display:inline-flex;background:#86172f;padding:9px 12px;color:#fff;font-size:9px;letter-spacing:1.6px}
-.hero h1{font-size:clamp(44px,6.3vw,78px);max-width:700px;line-height:.93;letter-spacing:-.065em;margin:18px 0}
-.hero-content p{font-size:14px;max-width:540px;line-height:1.8;color:#f2e8eb}
-.hero-content .pill{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#21191d;border:0;border-radius:0;padding:14px 17px;margin-top:10px}
-.hero-content .pill:after{content:"↗";font-size:15px;color:var(--red)}
-.hero-controls{margin-top:24px}
-.hero-control{border-radius:0;width:42px;height:38px}
-.hero-dots{right:28px;bottom:30px}
-.next-match-panel{min-height:550px;border:0;border-radius:4px;background:#eee6e1;padding:28px 25px;box-shadow:none;position:relative;overflow:hidden}
-.next-match-panel:after{content:"1905";position:absolute;right:-15px;bottom:70px;font:900 105px Georgia,serif;color:#86172f09;pointer-events:none}
-.next-match-panel>div,.next-match-panel>a{position:relative;z-index:1}
-.next-match-panel .match-badge{display:inline-flex;background:#fff;padding:8px 10px;font-size:9px}
-.next-match-panel h2{font-size:clamp(27px,2.6vw,36px);letter-spacing:-1.5px;line-height:1.02;margin:22px 0}
-.next-match-panel .versus{margin:32px 0}
-.next-match-panel .club-mark{width:76px;height:76px;border:0;border-radius:0;background:#fff;padding:13px}
-.next-match-panel .versus b{font-size:10px;letter-spacing:1px;color:#9a858c}
-.next-match-panel .more{border-bottom:0;background:#21191d;color:#fff;padding:12px 14px;align-self:stretch;text-align:center}
-.countdown-note{border-left:2px solid var(--gold);border-radius:0;background:#fff;padding:13px 15px;color:#64575d}
-.section{padding:68px 0}
-.section-head{align-items:end;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--editorial-line)}
-.section-head>div{display:flex;align-items:baseline;gap:15px;flex-wrap:wrap}
-.section-head .kicker{font-size:9px;letter-spacing:2px}
-.section h2{font-size:clamp(30px,4vw,44px);letter-spacing:-2px;margin:0;font-weight:950}
-.section-head .more{font-size:10px;letter-spacing:1px;border:0}
-.news-grid{grid-template-columns:minmax(0,1.28fr) minmax(300px,.72fr);grid-template-rows:repeat(2,minmax(190px,auto));gap:14px}
-.news-card{display:flex;flex-direction:row;min-height:190px;border:1px solid var(--editorial-line);border-radius:3px;box-shadow:none;overflow:hidden}
-.news-card:first-child{grid-row:1 / span 2;display:flex;flex-direction:column}
-.news-card:first-child .news-art{width:100%;height:340px;min-height:340px;flex:none}
-.news-card:first-child .news-copy{padding:25px 27px}
-.news-card:first-child .news-copy h3{font-size:clamp(24px,3vw,34px);line-height:1.08;letter-spacing:-1.2px;max-width:600px}
-.news-card .news-art{width:39%;height:auto;min-height:190px;flex:0 0 39%;position:relative}
-.news-card .news-copy{padding:19px 20px;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.news-card .news-copy h3{font-size:18px;line-height:1.17;letter-spacing:-.6px}
-.news-card .news-copy p{font-size:11px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.news-art span{left:13px;top:13px}
-.news-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #21191d10}
-.section.soft{background:#f6f2ef}
-.match-wrap{grid-template-columns:.88fr 1.12fr;gap:14px}
-.match-card{border-radius:3px;padding:27px;border:1px solid var(--editorial-line);box-shadow:none}
-.match-title{padding-bottom:15px;border-bottom:1px solid var(--editorial-line)}
-.match-title strong{font-size:11px;letter-spacing:1px}
-.score{font-size:38px;letter-spacing:-1px}
-.team-mark{border-radius:0;background:#f4eeea;border:0}
-.match-schedule{margin-top:14px;border-radius:3px;padding:24px;border:1px solid var(--editorial-line);box-shadow:none}
-.schedule-head{padding-bottom:15px;border-bottom:1px solid var(--editorial-line)}
-.schedule-head .kicker{font-size:9px}
-.fixture-list{gap:10px}
-.fixture{border-radius:3px;background:#faf8f6}
-.branches{gap:12px}
-.branch{border-radius:3px;padding:22px;min-height:165px;box-shadow:none}
-.branch .num{font-size:9px;letter-spacing:1.5px}
-.branch h3{font-size:23px;letter-spacing:-.8px}
-.banner{border-radius:3px;padding:48px;background:#86172f}
-footer{border-top:0}
-@media(max-width:800px){
- .edition-note{display:none}
- .hero-grid{grid-template-columns:1fr}
- .hero-main{min-height:470px}
- .next-match-panel{min-height:400px}
- .news-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
- .news-card:first-child{grid-column:1 / -1;grid-row:auto;display:grid;grid-template-columns:1.05fr .95fr}
- .news-card:first-child .news-art{height:auto;min-height:270px}
- .news-card:first-child .news-copy{padding:22px}
- .news-card:not(:first-child){flex-direction:column}
- .news-card:not(:first-child) .news-art{width:100%;height:160px;min-height:160px;flex:none}
- .match-wrap{grid-template-columns:1fr}
-}
-@media(max-width:520px){
- .edition-inner{height:34px;font-size:8px}
- .hero{padding-top:15px}
- .hero-main{min-height:430px}
- .hero-content{padding:23px}
- .hero h1{font-size:clamp(39px,12vw,53px)}
- .hero-content p{font-size:12px}
- .next-match-panel{min-height:370px;padding:23px}
- .section{padding:44px 0}
- .section-head{align-items:flex-start;flex-direction:column;gap:10px}
- .section-head>div{display:block}
- .section h2{margin-top:7px}
- .news-grid{grid-template-columns:1fr;gap:11px}
- .news-card:first-child{grid-column:auto;display:flex;flex-direction:column}
- .news-card:first-child .news-art{height:220px;min-height:220px}
- .news-card:first-child .news-copy{padding:19px}
- .news-card:first-child .news-copy h3{font-size:25px}
- .news-card:not(:first-child){flex-direction:row}
- .news-card:not(:first-child) .news-art{width:36%;min-height:145px;height:auto;flex:0 0 36%}
- .news-card:not(:first-child) .news-copy{padding:13px}
- .news-card:not(:first-child) .news-copy h3{font-size:15px}
- .news-card .news-copy p{display:none}
- .match-card{padding:18px}
- .branches{grid-template-columns:1fr 1fr}
- .branch{padding:16px;min-height:145px}
- .branch h3{font-size:18px}
- .banner{padding:28px}
-}
-
-/* GS1905 · Premium sports platform redesign */
-:root{--red:#8a1732;--red2:#641126;--gold:#b99a58;--ink:#211d20;--muted:#777178;--line:#e9e5e3;--soft:#f7f6f5;--max:1240px}
-body{background:#fff;color:var(--ink);font-family:Inter,"Segoe UI",system-ui,sans-serif;letter-spacing:0}
-.wrap{width:min(var(--max),calc(100% - 56px))}
-header{background:rgba(255,255,255,.96);box-shadow:0 2px 14px rgba(25,15,19,.045);border-bottom:1px solid #eee}
-header .nav{height:72px}
-.brand{gap:10px;font-size:15px;letter-spacing:-.4px}
-.brand .crest{width:42px;height:42px;border:1px solid #d9c69c;box-shadow:none;background:#fff}
-.links{gap:22px;font-size:12px}
-.links a{color:#4c4549}
-.links a:hover{color:var(--red)}
-.nav-cta{border-radius:3px;background:var(--red);padding:11px 15px}
-.edition-bar{background:#f8f6f4;color:#766c70;border-bottom:1px solid #eee8e4}
-.edition-inner{height:34px;font-size:9px;letter-spacing:1.1px}
-.edition-label{color:var(--red)}
-.edition-label i{width:6px;height:6px;box-shadow:none}
-.edition-note{color:#82797d}
-.edition-inner>a{color:var(--red)}
-.hero{padding:28px 0 38px;background:#fff}
-.hero:after{display:none}
-.hero-grid{grid-template-columns:minmax(0,1.7fr) minmax(290px,.78fr);gap:18px}
-.hero-main{min-height:470px;border-radius:3px;box-shadow:none;background:#25151b}
-.hero-slide{background-position:center 38%}
-.hero-slide:after{background:linear-gradient(0deg,rgba(15,7,10,.88),rgba(15,7,10,.16) 72%)}
-.hero-main:before{font-size:210px;right:-8px;top:-58px;color:#fff08}
-.hero-content{padding:clamp(26px,4vw,46px);max-width:690px}
-.hero-content .eyebrow{background:transparent;border-left:2px solid var(--gold);padding:4px 0 4px 10px;color:#e4c987;font-size:9px}
-.hero h1{font-size:clamp(39px,5vw,62px);line-height:1;letter-spacing:-.052em;margin:17px 0 12px}
-.hero-content p{font-size:13px;line-height:1.7;color:#eee5e8;max-width:500px}
-.hero-content .pill{background:#fff;color:var(--red);padding:12px 15px;font-size:9px;letter-spacing:.8px}
-.hero-control{width:36px;height:36px;border-radius:3px}
-.hero-dots{bottom:25px;right:25px}
-.next-match-panel{min-height:470px;border:1px solid var(--line);border-radius:3px;background:#faf9f8;padding:24px;box-shadow:none}
-.next-match-panel:after{display:none}
-.next-match-panel .match-badge{background:transparent;padding:0;color:var(--red);font-size:9px}
-.next-match-panel h2{font-size:26px;line-height:1.08;letter-spacing:-.8px;margin:18px 0}
-.next-match-panel .versus{margin:25px 0}
-.next-match-panel .club-mark{width:66px;height:66px;background:#fff;border:1px solid #eee8e5;padding:11px}
-.next-match-panel .versus strong{font-size:10px;letter-spacing:.4px}
-.next-match-panel .more{background:var(--red);border-radius:2px;padding:12px 14px}
-.countdown-note{background:#fff;border:1px solid #eee8e5;border-left:2px solid var(--gold);font-size:10px}
-.section{padding:56px 0}
-.section.soft{background:#f8f7f6}
-.section-head{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:22px}
-.section-head>div{display:block}
-.section h2{font-size:32px;letter-spacing:-1.2px;font-weight:850;margin:6px 0 0}
-.kicker{font-size:9px;letter-spacing:1.8px}
-.section-head .more{font-size:9px;letter-spacing:.8px}
-.news-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto;gap:16px}
-.news-card,.news-card:first-child{display:flex;flex-direction:column;grid-row:auto;min-height:100%;border:1px solid var(--line);border-radius:3px;box-shadow:none}
-.news-card .news-art,.news-card:first-child .news-art{width:100%;height:205px;min-height:205px;flex:none}
-.news-card .news-copy,.news-card:first-child .news-copy{padding:19px;justify-content:flex-start}
-.news-card .news-copy h3,.news-card:first-child .news-copy h3{font-size:18px;line-height:1.25;letter-spacing:-.45px;margin:10px 0}
-.news-card .news-copy p{font-size:11px;line-height:1.6}
-.news-art:after{font-size:18px;opacity:.7}
-.news-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(30,17,22,.07);border-color:#d8c9c2}
-.match-wrap{grid-template-columns:.9fr 1.1fr;gap:16px}
-.match-card,.match-schedule{border:1px solid var(--line);border-radius:3px;background:#fff;box-shadow:none}
-.match-card{padding:24px}
-.match-title{border-bottom:1px solid var(--line);padding-bottom:14px}
-.score{font-size:34px}
-.team-mark{border-radius:3px}
-.fixture{border-radius:3px;background:#faf9f8}
-.schedule-tab{border-radius:2px}
-.schedule-tab.active{background:var(--red)}
-.branches{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.branch{border:1px solid var(--line);border-radius:3px;min-height:145px;padding:20px;box-shadow:none;transition:border-color .2s,transform .2s}
-.branch:hover{border-color:#cbb58d;transform:translateY(-2px)}
-.branch h3{font-size:19px;margin:14px 0 5px}
-.branch .num{color:#a78a50}
-.banner{border-radius:3px;padding:38px;background:linear-gradient(105deg,#78132b,#941d3b)}
-.banner:after{opacity:.45}
-footer{background:#211d20;border-top:2px solid var(--gold)}
-.footer-brand{letter-spacing:.2px}
-@media(max-width:900px){
- .hero-grid{grid-template-columns:1fr}
- .hero-main{min-height:430px}
- .next-match-panel{min-height:370px}
- .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .news-card:first-child{grid-column:auto}
- .news-card:first-child .news-art{height:190px;min-height:190px}
- .match-wrap{grid-template-columns:1fr}
-}
-@media(max-width:560px){
- .wrap{width:calc(100% - 30px)}
- header .nav{height:66px}
- .edition-inner{height:32px;font-size:8px}
- .hero{padding:16px 0 28px}
- .hero-main{min-height:410px}
- .hero-content{padding:22px}
- .hero h1{font-size:clamp(36px,10vw,48px)}
- .next-match-panel{min-height:350px;padding:20px}
- .section{padding:40px 0}
- .section h2{font-size:27px}
- .news-grid{grid-template-columns:1fr;gap:12px}
- .news-card .news-art,.news-card:first-child .news-art{height:185px;min-height:185px}
- .branches{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .branch{padding:15px;min-height:130px}
- .branch h3{font-size:17px}
- .banner{padding:26px}
-}
-
-
-/* News thumbnails: real article photography with resilient fallback */
-.news-card .news-art{height:205px;min-height:205px;background:#eee8e5;isolation:isolate}
-.news-card .news-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block;z-index:0}
-.news-card .news-art:before{z-index:1;pointer-events:none}
-.news-card .news-art span{z-index:2}
-.news-card .news-art-fallback{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#32101c,#8a1732 58%,#c5a15a);color:#ffffffb8;font:900 42px Georgia,serif;letter-spacing:-2px}
-@media(max-width:900px){.news-card .news-art{height:190px;min-height:190px}}
-@media(max-width:560px){.news-card .news-art{height:185px;min-height:185px}}
-
-/* GS1905 unified club-colour redesign */:root{--red:#A32638;--red2:#781B2D;--gold:#FDBB30;--ink:#21191A;--muted:#756B6B;--line:#E9DFD8;--soft:#FFF8EC;--paper:#FFFEFC}html{scroll-padding-top:88px}body{background:var(--paper);color:var(--ink)}.topline,.top{height:5px;background:linear-gradient(90deg,var(--red) 0 50%,var(--gold) 50%)}header{position:sticky;top:0;z-index:30;background:#fffdf9ed!important;backdrop-filter:blur(18px);border-bottom:1px solid #eadfd7!important;box-shadow:0 8px 28px #4a17200a}.nav{min-height:76px}.brand{color:var(--red)!important;font-weight:950;letter-spacing:-.5px}.brand small{color:#8a7772!important;letter-spacing:2px}.links,.navlinks{gap:clamp(10px,1.6vw,23px)!important}.links a,.navlinks a{font-size:11px!important;font-weight:850!important;letter-spacing:.035em;transition:color .2s,transform .2s}.links a:hover,.navlinks a:hover{color:var(--red)!important;transform:translateY(-1px)}.nav-cta,.pill{background:var(--red)!important;border:1px solid var(--red)!important;border-radius:3px!important;box-shadow:0 5px 14px #a3263822}.nav-cta:hover,.pill:hover{background:var(--red2)!important}.menu{color:var(--red)!important}.eyebrow,.kicker,.tag{color:var(--red)!important}.hero:not(.hero-main){background:linear-gradient(135deg,#fff9ec,#fff 68%)}.hero:not(.hero-main) .eyebrow{color:var(--red)!important}.hero:not(.hero-main) h1{color:var(--ink)}.hero:not(.hero-main) p{color:#6e5f5f}.card,.panel,.news-card,.fact{border-color:var(--line)!important;box-shadow:0 8px 26px #3d19200a}.card,.news-card{transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .28s}.card:hover,.news-card:hover{transform:translateY(-5px);border-color:#e3b84e!important;box-shadow:0 18px 36px #3d192018}footer{background:#26171b!important}@media(max-width:900px){.links,.navlinks{gap:12px!important}.nav-cta{display:none}}@media(max-width:700px){header .nav{min-height:68px}.links,.navlinks{max-width:100%;overflow-x:auto;scrollbar-width:none}.links::-webkit-scrollbar,.navlinks::-webkit-scrollbar{display:none}}.honours{margin:30px 0 26px;padding:26px 0 22px;border-top:1px solid #ffffff24;border-bottom:1px solid #ffffff24}.honours-heading{text-align:center;margin-bottom:20px}.honours-heading span{font-size:9px;letter-spacing:.24em;font-weight:900;color:#f4c55b}.honours-heading h2{font-size:clamp(17px,2vw,23px);letter-spacing:.12em;color:#fff;margin:7px 0 0}.honours-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.honour{min-width:0;text-align:center;color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px}.honour-image{width:100%;height:145px;display:flex;align-items:center;justify-content:center;padding:8px;background:linear-gradient(145deg,#ffffff13,#ffffff06);border:1px solid #ffffff20;border-radius:7px;overflow:hidden;transition:transform .28s,border-color .28s,background .28s}.honour-image img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 7px 9px #0005);transition:transform .35s}.honour:hover .honour-image{transform:translateY(-4px);border-color:#f4c55b;background:#ffffff12}.honour:hover img{transform:scale(1.06)}.honour strong{font-size:10px;letter-spacing:.06em}.honour small{font-size:9px;color:#e8c77e;letter-spacing:.08em}.honours-credit{text-align:center;color:#ffffff80;font-size:9px;margin-top:17px}@media(max-width:650px){.honours{margin:24px 0 20px;padding:22px 0}.honours-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.honour-image{height:132px}}
-/* GS1905 · Gazete / haber portalı manşet düzeni */
-.news-masthead{background:#fff;border-bottom:1px solid #ded8d5}
-.masthead-date{height:34px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee8e5;color:#81777a;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.masthead-main{border-bottom:3px solid var(--red)}
-.masthead-brand{min-height:116px;display:flex;align-items:center;justify-content:center;gap:17px;position:relative}
-.masthead-mark{width:62px;height:62px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--red);font:900 24px Georgia,serif;box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5px #eadfc9}
-.masthead-name{font:900 clamp(38px,5vw,58px)/.9 Georgia,serif;letter-spacing:-2.5px;color:#211b1d}
-.masthead-tagline{font-size:9px;font-weight:900;letter-spacing:3px;color:var(--red);margin-top:9px}
-.masthead-side{position:absolute;right:0;text-align:right;font-size:9px;line-height:1.8;letter-spacing:1px;color:#81777a;font-weight:800}
-.masthead-side b{color:var(--gold);font-size:10px}
-.masthead-bottom{height:42px;display:flex;align-items:center;gap:15px;font-size:9px;letter-spacing:1px;font-weight:850;color:#686064}
-.masthead-breaking{height:23px;padding:0 10px;background:var(--red);color:#fff;display:inline-flex;align-items:center;gap:7px;letter-spacing:1.2px}
-.masthead-breaking i{width:6px;height:6px;background:var(--gold);border-radius:50%}
-.masthead-bottom>a{margin-left:auto;color:var(--red);white-space:nowrap}
-.hero{padding:24px 0 42px;background:#f5f2ef}
-.hero-grid{grid-template-columns:minmax(0,1.8fr) minmax(285px,.72fr);gap:16px}
-.hero-main{min-height:490px;border-radius:2px;box-shadow:none}
-.hero-slide:after{background:linear-gradient(0deg,rgba(13,5,9,.94),rgba(13,5,9,.28) 62%,rgba(13,5,9,.06))}
-.hero-content{padding:clamp(25px,4vw,42px)}
-.hero-content .eyebrow{display:inline-block;background:var(--red);color:white;padding:8px 10px;letter-spacing:1px}
-.hero h1{font-family:Georgia,serif;font-size:clamp(37px,4.8vw,60px);line-height:1.02;letter-spacing:-1.8px;max-width:600px}
-.hero-content p{max-width:560px}
-.hero .pill{border-radius:0;background:#fff;color:var(--red);border:0}
-.hero-control{border-radius:2px}
-.hero-dot{border-radius:0}
-.next-match-panel{border-radius:2px;box-shadow:none;border:1px solid #ded5ce;background:#fff}
-@media(max-width:800px){.masthead-brand{min-height:100px}.masthead-side{display:none}.masthead-bottom{font-size:8px;gap:8px}.hero{padding-top:16px}.hero-grid{grid-template-columns:1fr}.hero-main{min-height:400px}.next-match-panel{min-height:320px}}
-@media(max-width:480px){.masthead-date{font-size:8px;letter-spacing:.45px}.masthead-brand{min-height:88px;gap:11px}.masthead-mark{width:48px;height:48px;font-size:19px}.masthead-name{font-size:42px}.masthead-tagline{font-size:7px;letter-spacing:2px}.masthead-bottom{height:auto;min-height:42px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.masthead-bottom>span:nth-child(2){flex:1;line-height:1.4}.masthead-bottom>a{width:100%;margin-left:0}.hero-main{min-height:390px}.hero h1{font-size:37px}}
-
-/* Footer trophy engraving */
-.honours{margin:0;padding:8px 0 22px;border:0;display:flex;justify-content:flex-end;align-items:center}.honours-sketch{width:min(690px,66%);margin-left:auto}.honours-sketch svg{display:block;width:100%;height:auto;max-height:205px;filter:drop-shadow(0 2px 3px #0008)}.honours-captions{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:4px;text-align:center;color:#c9c0c2;font-size:8px;letter-spacing:.65px;font-weight:800}.honours-captions span{padding:0 5px;border-right:1px solid #ffffff25}.honours-captions span:last-child{border:0}.honours-captions b{display:block;color:#c5a15a;font-size:8px;margin-top:4px;letter-spacing:.4px}@media(max-width:800px){.honours{justify-content:center}.honours-sketch{width:100%}.honours-sketch svg{max-height:none}}@media(max-width:480px){.honours{padding:4px 0 18px}.honours-captions{font-size:6px;letter-spacing:0}.honours-captions b{font-size:6px}}
-
-
-/* GS1905 engraved-trophy design language: light paper, charcoal ink, restrained red and antique gold */
-:root{--red:#A32638;--red2:#781B2D;--gold:#C5A15A;--ink:#21191A;--muted:#756B6B;--line:#E9DFD8;--soft:#FFF8EC;--paper:#FFFEFC}
-body{color:var(--ink)}
-header{background:rgba(255,254,252,.96);border-bottom:1px solid var(--line)}
-h1,h2,h3,.section-title,.group-title{color:var(--ink)}
-.eyebrow,.kicker,.tag{letter-spacing:.09em}
-button,.btn,.primary,.active{transition:background-color .2s,border-color .2s,color .2s,transform .2s}
-.card,.panel,.news-card,.fact,.stat,.match-card,.fixture-card,.branch-card{border-color:var(--line)}
-.card:hover,.panel:hover,.news-card:hover,.branch-card:hover{border-color:#D7C39B}
-a{ text-decoration-color:rgba(163,38,56,.28); text-underline-offset:3px}
-.honours{border-top:1px solid #4b4036;background:#211f1d;color:#eee9df}
-.honours-captions{color:#d9d0c3}
-.honours-captions b{color:#c5a15a}
-
-
-/* GS1905 reference-inspired sitewide design + shared footer */
-:root{--gs-gold:#f5b323;--gs-red:#a9082c;--gs-charcoal:#151515;--gs-muted:#bdbdbd}
-.gs-footer{position:relative;margin-top:64px;background:radial-gradient(ellipse at 78% 10%,rgba(255,255,255,.055),transparent 42%),linear-gradient(135deg,#191919,#101010 70%);color:#dedede;border-top:1px solid #383838;box-shadow:0 -16px 50px rgba(0,0,0,.08);font-family:inherit}
-.gs-footer:after{content:"";display:block;height:7px;background:linear-gradient(90deg,var(--gs-gold),#e6a11a 38%,var(--gs-red) 68%,#85001e)}
-.gs-footer-inner{width:min(1540px,calc(100% - 64px));margin:auto;padding:46px 0 0}.gs-footer-main{display:grid;grid-template-columns:minmax(230px,1.35fr) repeat(3,minmax(120px,.8fr)) minmax(360px,1.8fr);gap:28px;align-items:center;padding:4px 0 34px;border-bottom:1px solid #414141}
-.gs-footer-brand{min-width:0}.gs-footer-logo{display:flex;align-items:center;gap:16px;color:#fff}.gs-footer-crest{width:74px;height:92px;display:grid;place-items:center;flex-shrink:0;border:3px solid #eee;border-radius:48% 48% 44% 44%;background:linear-gradient(135deg,#fff 0 47%,#f4b323 48% 60%,#a9082c 61%);color:#9c0828;font-weight:900;font-size:30px;text-shadow:0 1px #fff;box-shadow:0 0 0 2px #222}.gs-footer-wordmark strong{display:block;font-size:34px;line-height:1;letter-spacing:-1.5px;color:var(--gs-gold)}.gs-footer-wordmark strong span{color:#f4f4f4}.gs-footer-wordmark em{display:block;margin-top:8px;color:#c8c8c8;font-size:13px;font-weight:400}.gs-footer-brand p{margin:26px 0 20px;color:#bdbdbd;font-size:14px;line-height:1.8}.gs-socials{display:flex;gap:10px}.gs-socials a{width:40px;height:40px;display:grid;place-items:center;border:1px solid #777;border-radius:50%;font-size:20px;color:#eee;transition:.2s}.gs-socials a:hover{border-color:var(--gs-gold);color:var(--gs-gold);transform:translateY(-2px)}
-.gs-footer-column{align-self:center;min-width:0}.gs-footer-column h3,.gs-footer-trophies h3{font-size:14px;color:#f5f5f5;margin:0 0 20px;padding-bottom:10px;position:relative;white-space:nowrap}.gs-footer-column h3:after,.gs-footer-trophies h3:after{content:"";position:absolute;left:0;bottom:0;width:66px;height:3px;background:linear-gradient(90deg,var(--gs-gold) 0 48%,var(--gs-red) 48%)}.gs-footer-column a{display:flex;align-items:center;gap:11px;margin:0 0 13px;color:#c6c6c6;font-size:13px;white-space:nowrap}.gs-footer-column a>span{overflow:hidden;text-overflow:ellipsis}.gs-footer-column a>b{margin-left:auto;color:#bbb;font-size:20px;font-weight:400}.gs-footer-column a:hover{color:var(--gs-gold)}.gs-footer-trophies{min-width:0}.gs-footer-trophies h3{display:none}.gs-footer-trophies .honours-sketch{width:100%;margin:0}.gs-footer-trophies .honours-sketch svg{display:block;width:100%;height:auto;max-height:200px}.gs-footer-trophies .honours-captions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:8px}.gs-footer-trophies .honours-captions span{padding:0 7px;text-align:center;font-size:10px;line-height:1.35;color:#d1d1d1;border-right:1px solid #777}.gs-footer-trophies .honours-captions span:last-child{border:0}.gs-footer-trophies .honours-captions b{display:block;font-weight:500}.gs-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0;color:#c0c0c0;font-size:12px}.gs-footer-bottom i{display:inline-block;height:12px;border-left:1px solid #777;margin:0 14px;vertical-align:middle}.gs-footer-bottom strong{display:flex;align-items:center;gap:12px;font-family:cursive;font-size:18px;font-style:italic;font-weight:400;color:#e6e6e6;white-space:nowrap}.gs-footer-bottom strong b{display:block;width:34px;height:3px;background:var(--gs-gold)}.gs-footer-bottom strong b:last-child{background:var(--gs-red)}.gs-footer-disclaimer{margin:0;padding:0 0 18px;color:#777;font-size:10px;line-height:1.5}
-/* Consistent accent language across page surfaces */
-.topline,.top{background:linear-gradient(90deg,var(--gs-gold) 0 50%,var(--gs-red) 50%)}
-button,.nav-cta,.btn,.button{transition:filter .2s,transform .2s}button:hover,.nav-cta:hover,.btn:hover,.button:hover{filter:brightness(1.08)}
-@media(max-width:1200px){.gs-footer-main{grid-template-columns:1.2fr .8fr .8fr .8fr;gap:24px}.gs-footer-trophies{grid-column:1/-1;padding-top:8px}.gs-footer-trophies .honours-sketch{max-width:700px;margin:auto}.gs-footer-trophies .honours-captions{max-width:700px;margin:8px auto 0}}
-@media(max-width:760px){.gs-footer-inner{width:calc(100% - 36px);padding-top:32px}.gs-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}.gs-footer-brand{grid-column:1/-1}.gs-footer-crest{width:60px;height:74px;font-size:25px}.gs-footer-wordmark strong{font-size:30px}.gs-footer-trophies{grid-column:1/-1}.gs-footer-column a{font-size:12px;white-space:normal}.gs-footer-column h3{font-size:12px}.gs-footer-bottom{align-items:flex-start;flex-direction:column;gap:12px}.gs-footer-bottom strong{align-self:flex-end}.gs-footer-bottom i{margin:0 7px}.gs-footer-trophies .honours-captions span{font-size:8px;padding:0 3px}}
-@media(max-width:380px){.gs-footer-main{grid-template-columns:1fr}.gs-footer-brand,.gs-footer-trophies{grid-column:auto}.gs-footer-column{padding-left:4px}}
-
-/* Site-wide visual system: charcoal surfaces, restrained red/gold details */
-body{background:#f3f2f0;color:#202020}
-header{background:#171717!important;color:#f5f5f5;border-bottom:1px solid #343434!important}
-header .brand,header .brand small,header .navlinks a,header .links a{color:#f0f0f0}
-header .brand small{color:#b8b8b8}
-header .navlinks a:hover,header .links a:hover,header .navlinks a[aria-current="page"]{color:#f5b323}
-header .navlinks a[aria-current="page"]:after,header .links a:after{background:linear-gradient(90deg,#f5b323,#a9082c)}
-main{color:#222}
-main h1,main h2,main h3,section h1,section h2{letter-spacing:-.025em}
-main h1:after,main h2:after{content:"";display:block;width:58px;height:3px;margin-top:12px;background:linear-gradient(90deg,#f5b323 0 50%,#a9082c 50%)}
-.card,.panel,.stat-card,.player-card,.news-card,.match-card,.team-card,.sport-card,.fixture-card,.table-wrap,.standings,.widget,.content-card{border-color:#dedbd6!important;box-shadow:0 8px 24px rgba(20,20,20,.055)}
-button,.nav-cta,.btn,.button,.filter-btn{border-color:#d3a126}
-::selection{background:#f5b323;color:#171717}
-</style>
-<link rel="stylesheet" href="assets/site-redesign.css?v=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b20">
+<meta name="description" content="Galatasaray Spor Kulübü haberleri, maç merkezi, fikstür ve takım gündemi.">
+<title>GS1905 | Galatasaray'ın Dijital Tribünü</title>
+<link rel="preconnect" href="https://hlkiurt3.rocketcdn.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-redesign.css?v=2">
 </head>
 <body>
 <div class="topline"></div>
-<header><div class="wrap nav">
-<a class="brand" href="#"><span class="crest">GS</span><span>GALATASARAY<small>1905 · ASLANIN YUVASI</small></span></a>
-<nav class="links" id="navLinks"><a href="#haberler">HABERLER</a><a href="#mac-merkezi">MAÇ MERKEZİ</a><a href="kadro.html">A TAKIM</a><a href="fikstur.html">FİKSTÜR</a><a href="istatistikler.html">İSTATİSTİKLER</a><a href="#puan-durumu">PUAN DURUMU</a><a href="branslar.html">BRANŞLAR</a><a href="brans-fikstur.html">BRANŞ FİKSTÜRÜ</a><a href="#kulup">KULÜP</a></nav>
-<a class="nav-cta" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">RESMÎ SİTE ↗</a><button class="menu" id="menuBtn" aria-label="Menüyü aç" aria-controls="navLinks" aria-expanded="false">☰</button>
+<header class="site-header"><div class="nav wrap">
+<a class="brand" href="index.html" aria-label="GS1905 ana sayfa"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması"><span><b>GALATASARAY</b><small>1905 · GS1905</small></span></a>
+<button class="menu" id="menuToggle" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+<nav class="links" id="siteNav"><a class="active" href="index.html">ANA SAYFA</a><a href="haberler.html">HABERLER</a><a href="fikstur.html">FİKSTÜR</a><a href="kadro.html">KADRO</a><a href="istatistikler.html">İSTATİSTİKLER</a><a href="branslar.html">BRANŞLAR</a></nav>
+<a class="nav-cta" href="#mac-merkezi">MAÇ MERKEZİ <span>↗</span></a>
 </div></header>
 <main>
-<section class="news-masthead" aria-label="GS1905 haber merkezi">
- <div class="wrap masthead-date"><span>31 EKİM 2026 · CUMARTESİ</span><span>BAĞIMSIZ GALATASARAY TARAFTAR YAYINI</span></div>
- <div class="masthead-main"><div class="wrap masthead-brand"><div class="masthead-mark">GS</div><div><div class="masthead-name">GS1905</div><div class="masthead-tagline">GALATASARAY HABER MERKEZİ</div></div><div class="masthead-side">SARI KIRMIZI GÜNDEM<br><b>1905’TEN BUGÜNE</b></div></div></div>
- <div class="wrap masthead-bottom"><span class="masthead-breaking"><i></i> GÜNDEM</span><span>GALATASARAY’DAN SON HABERLER, MAÇLAR VE KULÜP GELİŞMELERİ</span><a href="haberler.html">TÜM HABERLER ↗</a></div>
+<section class="hero">
+<div class="wrap hero-grid">
+<article class="lead-story">
+<div class="lead-photo" id="leadPhoto" role="img" aria-label="Galatasaray haber fotoğrafı"></div>
+<div class="lead-shade"></div>
+<div class="lead-copy"><div class="lead-meta"><span class="live-dot"></span> <span id="leadCategory">KULÜPTEN HABERLER</span><i></i><span>GS1905 HABER MERKEZİ</span></div>
+<div class="lead-kicker">ASLANIN GÜNDEMİ</div><h1 id="leadTitle">Galatasaray'da gündem yoğun, hedef yine zirve</h1><p id="leadDesc">Sarı kırmızılı takımın en güncel haberleri, maç önü gelişmeleri ve kulüpten son dakika notları.</p>
+<a class="lead-link" id="leadLink" href="haberler.html">HABERİN TAMAMI <b>↗</b></a></div>
+<div class="lead-index"><span>01</span><i></i><span>03</span></div>
+</article>
+<aside class="live-rail">
+<div class="rail-head"><div><span class="overline">SAHADAN SON DURUM</span><h2>MAÇ GÜNDEMİ</h2></div><span class="rail-live"><i></i> TAKVİM</span></div>
+<div class="rail-feature"><div class="rail-label">SIRADAKİ MAÇ · ŞAMPİYONLAR LİGİ</div><div class="rail-teams"><div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt=""><b>GAL</b></div><strong>VS</strong><div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/VfB_Stuttgart_Logo.svg" alt=""><b>STU</b></div></div><div class="rail-date"><b>03 KASIM 2026</b><span>20:45 · RAMS PARK</span></div><div class="rail-count" id="countdown">MAÇ TAKVİMİ</div><a href="fikstur.html" class="rail-more">TÜM FİKSTÜR <b>→</b></a></div>
+<div class="rail-list-title">SONUÇLAR &amp; FİKSTÜR <a href="fikstur.html">TÜMÜ ↗</a></div>
+<div id="railFixtures" class="rail-fixtures"><div class="rail-fixture"><span>30 EKİ</span><b>Konyaspor 0–4 Galatasaray</b><em>MAÇ SONU</em></div><div class="rail-fixture"><span>24 KAS</span><b>Galatasaray – Aston Villa</b><em>20:45</em></div></div>
+</aside>
+</div>
+<div class="wrap quick-strip">
+<a class="quick-card result" href="fikstur.html"><span class="quick-label">SON MAÇ · SÜPER LİG</span><div class="quick-match"><b>KONYASPOR</b><strong>0 <i>:</i> 4</strong><b>GALATASARAY</b></div><span class="quick-foot">30 EKİM 2026 <em>MAÇ SONUCU ↗</em></span></a>
+<a class="quick-card upcoming" href="fikstur.html"><span class="quick-label">SIRADAKİ MAÇ · UEFA ŞAMPİYONLAR LİGİ</span><div class="quick-match"><b>GALATASARAY</b><strong>VS</strong><b>STUTTGART</b></div><span class="quick-foot">03 KASIM · 20:45 <em>MAÇ DETAYI ↗</em></span></a>
+<a class="quick-card shop" href="https://www.galatasaraystore.com/" target="_blank" rel="noopener"><span class="quick-label">ASLANIN RENKLERİ</span><div class="shop-art"><span>1905</span><b>FORMANI<br>GURURLA<br>TAŞI.</b></div><span class="quick-foot">GS STORE <em>ALIŞVERİŞE GİT ↗</em></span></a>
+</div>
 </section>
-<section class="hero"><div class="wrap hero-grid">
-<div class="hero-main" aria-label="Galatasaray haber manşetleri">
-<div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1500&q=85')"></div>
-<div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1500&q=85')"></div>
-<div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1500&q=85')"></div>
-<div class="hero-content"><span class="eyebrow" id="heroKicker">ŞAMPİYONLAR LİGİ · 31 EKİM 2026</span><h1 id="heroTitle">Stuttgart maçı<br>hazırlıkları başladı.</h1><p id="heroText">Galatasaray Futbol Takımı, 3 Kasım'da oynanacak UEFA Şampiyonlar Ligi karşılaşması için çalışmalarına Kemerburgaz Metin Oktay Tesisleri'nde başladı.</p><a class="pill" id="heroLink" href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/stuttgart-maci-hazirliklari-basladi/61272" target="_blank" rel="noreferrer">HABERİN TAMAMINI OKU ↗</a><div class="hero-controls"><button class="hero-control" id="heroPrev" aria-label="Önceki manşet">‹</button><button class="hero-control" id="heroNext" aria-label="Sonraki manşet">›</button></div></div>
-<div class="hero-dots"><button class="hero-dot active" aria-label="1. manşet" data-slide="0"></button><button class="hero-dot" aria-label="2. manşet" data-slide="1"></button><button class="hero-dot" aria-label="3. manşet" data-slide="2"></button></div>
-</div>
-<aside class="next-match-panel"><div><span class="match-badge">SIRADAKİ MAÇ · ŞAMPİYONLAR LİGİ</span><h2 id="nextMatchHeadline">Avrupa gecesi<br>RAMS Park'ta.</h2><div class="versus"><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması"></div><strong>GALATASARAY</strong></div><b>VS</b><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/VfB_Stuttgart_Logo.svg" alt="VfB Stuttgart arması"></div><strong id="nextMatchOpponent">STUTTGART</strong></div></div><div id="nextMatchDate" style="text-align:center;font-size:26px;font-weight:950;color:var(--red)">03 KASIM 2026</div><p id="nextMatchTime" style="text-align:center;font-size:13px;font-weight:800;margin:7px 0 18px">20.45 · RAMS PARK</p><div class="countdown-note" id="nextMatchCountdown" aria-live="polite">UEFA Şampiyonlar Ligi karşılaşması.</div></div><a class="more" href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836" target="_blank" rel="noreferrer">RESMÎ FİKSTÜR ↗</a></aside>
-</div></section>
-<section class="section" id="haberler"><div class="wrap"><div class="section-head"><div><div class="kicker">GÜNDEM</div><h2>Son gelişmeler</h2></div><a class="more" href="haberler.html">TÜM HABERLER ↗</a></div>
-<div class="news-grid" id="homeNews"><div class="news-card"><div class="news-copy"><div class="meta">RESMÎ HABER AKIŞI</div><h3>Haberler yükleniyor…</h3><p>Son gelişmeler kısa süre içinde burada görüntülenecek.</p></div></div></div></div></section>
-<section class="section soft" id="mac-merkezi"><div class="wrap"><div class="section-head"><div><div class="kicker">SAHADAN</div><h2>Maç merkezi</h2></div><a class="more" href="https://www.galatasaray.org/sl/futbol-takimi-ana-sayfa/4" target="_blank" rel="noreferrer">RESMÎ FUTBOL SAYFASI ↗</a></div>
-<div class="match-wrap">
-<div class="match-card"><div class="match-title"><strong>SON AVRUPA MAÇI · 21 EKİM</strong><span class="live-label">MAÇ SONU</span></div><div class="teams"><div class="team"><div class="team-mark">LOSC</div>LILLE</div><div class="score">2 : 4<small>UEFA ŞAMPİYONLAR LİGİ</small></div><div class="team"><img class="match-team-logo galatasaray" src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması">GALATASARAY</div></div><div class="match-foot">21 Ekim 2026 · Deplasman</div><div class="match-foot"><a class="more" href="https://www.uefa.com/uefachampionsleague/clubs/50067/matches/" target="_blank" rel="noopener noreferrer">UEFA MAÇLAR ↗</a></div></div>
-<div class="match-card" id="puan-durumu"><div class="match-title"><strong>TRENDYOL SÜPER LİG</strong><span class="meta">RESMÎ VERİ KAYNAĞI</span></div><div class="table-scroll"><table class="standings-table" aria-label="Trendyol Süper Lig puan durumu"><thead><tr><th>#</th><th>TAKIM</th><th>O</th><th>G</th><th>B</th><th>M</th><th>AV</th><th>P</th></tr></thead><tbody id="standingsBody"><tr><td colspan="8">Puan durumu yükleniyor…</td></tr></tbody></table></div><div class="table-source"><span id="standingsUpdated">beIN SPORTS · 31 Ekim 2026</span><a class="more" href="https://www.beinsports.com.tr/lig/super-lig/puan-durumu" target="_blank" rel="noopener noreferrer">KAYNAKTA GÖR ↗</a></div><div class="match-foot">O: Oynanan · G: Galibiyet · B: Beraberlik · M: Mağlubiyet · AV: Averaj · P: Puan</div></div></div>
-<div class="match-schedule">
- <div class="schedule-head">
-  <div><div class="kicker">FİKSTÜR TAKİBİ</div><strong style="font-size:16px;display:block;margin-top:5px">Galatasaray maçları</strong></div>
-  <div class="schedule-tabs" role="tablist" aria-label="Maç listesi">
-   <button class="schedule-tab active" type="button" data-fixture="upcoming" aria-selected="true">YAKLAŞAN MAÇLAR</button>
-   <button class="schedule-tab" type="button" data-fixture="recent" aria-selected="false">SONUÇLAR</button>
-   <button class="schedule-tab" type="button" data-fixture="superLig" aria-selected="false">SÜPER LİG</button>
-  </div>
- </div>
- <div class="fixture-list" id="fixtureList"><p class="schedule-note">Maç verileri yükleniyor…</p></div>
- <p class="schedule-note" id="scheduleNote">UEFA maçları kulübün açıkladığı 2026/27 lig aşaması fikstüründen derlenmiştir. Süper Lig maçları için TFF'nin resmî fikstürünü kullanın.</p>
-</div>
-</div></section>
-
-<section class="section" id="branslar"><div class="wrap"><div class="section-head"><div><div class="kicker">TEK ARMA, ÇOK HEYECAN</div><h2>Branşlarımız</h2></div><a class="more" href="branslar.html">TÜM BRANŞLAR ↗</a></div><div class="branches">
-<a class="branch" href="branslar.html"><span class="num">01 / SAHA</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2v4l-3 2-3-2V9zM12 7V3m3 6 4-2m-4 9 2 4m-8-4-2 4M9 9 5 7"/></svg></span><h3>Futbol</h3><p>Aslanın mücadelesi.</p></div></a>
-<a class="branch" href="branslar.html"><span class="num">02 / PARKELER</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM5 8h14M5 16h14M12 8v8"/></svg></span><h3>Basketbol</h3><p>Potada sarı kırmızı.</p></div></a>
-<a class="branch" href="branslar.html"><span class="num">03 / FİLE</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><path d="M3 5h18M3 19h18M6 5v14m12-14v14M3 10h18M3 14h18"/></svg></span><h3>Voleybol</h3><p>Her sayıda aynı tutku.</p></div></a>
-<a class="branch" href="branslar.html"><span class="num">04 / DAHA FAZLASI</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></span><h3>Diğer branşlar</h3><p>Galatasaray her yerde.</p></div></a>
-</div></div></section>
-<section class="section soft" id="kulup"><div class="wrap"><div class="banner"><div><div class="eyebrow">1905'TEN BERİ</div><h2>Bu arma, bu renkler, bu sevda.</h2><p>Galatasaray hakkında resmî duyurular ve kulüp bilgileri.</p></div><a href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">GALATASARAY.ORG ↗</a></div></div></section>
+<section class="section news-section" id="haberler"><div class="wrap"><div class="section-head"><div><span class="overline">KULÜPTEN VE SAHADAN</span><h2>SON HABERLER</h2></div><a class="section-link" href="haberler.html">TÜM HABERLER <b>↗</b></a></div><div class="news-grid" id="homeNews"><article class="news-card skeleton"></article><article class="news-card skeleton"></article><article class="news-card skeleton"></article></div></div></section>
+<section class="section match-section" id="mac-merkezi"><div class="wrap"><div class="section-head"><div><span class="overline">SEZON 2026 / 2027</span><h2>MAÇ MERKEZİ</h2></div><a class="section-link" href="fikstur.html">FİKSTÜRÜ GÖR <b>↗</b></a></div><div class="match-center"><div class="last-result"><span class="quick-label">SON KARŞILAŞMA</span><div class="result-score"><span>KONYASPOR</span><b>0 <i>:</i> 4</b><span>GALATASARAY</span></div><p>Trendyol Süper Lig · 10. hafta</p><a href="fikstur.html">MAÇ RAPORU ↗</a></div><div class="next-fixtures"><div class="fixture-head"><b>YAKLAŞAN MAÇLAR</b><span>İLK 3 KARŞILAŞMA</span></div><div id="upcomingList"><div class="upcoming-row"><time>03 KAS</time><b>Galatasaray – Stuttgart</b><span>20:45</span></div><div class="upcoming-row"><time>24 KAS</time><b>Galatasaray – Aston Villa</b><span>20:45</span></div><div class="upcoming-row"><time>08 ARA</time><b>AEK Atina – Galatasaray</b><span>23:00</span></div></div></div></div></div></section>
+<section class="section branches-section" id="branslar"><div class="wrap"><div class="section-head"><div><span class="overline">BİR KULÜPTEN FAZLASI</span><h2>GALATASARAY AİLESİ</h2></div><a class="section-link" href="branslar.html">TÜM BRANŞLAR <b>↗</b></a></div><div class="branch-grid"><a href="branslar.html"><span>01</span><b>FUTBOL</b><i>↗</i></a><a href="branslar.html"><span>02</span><b>BASKETBOL</b><i>↗</i></a><a href="branslar.html"><span>03</span><b>VOLEYBOL</b><i>↗</i></a><a href="branslar.html"><span>04</span><b>OLİMPİK BRANŞLAR</b><i>↗</i></a></div></div></section>
 </main>
-<footer class="gs-footer"><div class="gs-footer-inner">
-<div class="gs-footer-main">
-<section class="gs-footer-brand"><a class="gs-footer-logo" href="index.html" aria-label="GS1905 ana sayfa"><span class="gs-footer-crest">GS</span><span class="gs-footer-wordmark"><strong>GS<span>1905</span></strong><em>“Daima Galatasaray”</em></span></a>
-<p>Galatasaray’a dair en güncel haberler,<br>maç detayları ve daha fazlası için<br>GS1905 yanınızda.</p>
-<div class="gs-socials" aria-label="Sosyal medya"><a href="https://www.instagram.com/" aria-label="Instagram">◎</a><a href="https://x.com/" aria-label="X">𝕏</a><a href="https://www.youtube.com/" aria-label="YouTube">▶</a><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://discord.com/" aria-label="Discord">◉</a></div></section>
-<nav class="gs-footer-column" aria-label="Kategoriler"><h3>KATEGORİLER</h3><a href="haberler.html">▤ <span>Haberler</span> <b>›</b></a><a href="fikstur.html">▦ <span>Fikstür</span> <b>›</b></a><a href="istatistikler.html">🏆 <span>Puan Durumu</span> <b>›</b></a><a href="kadro.html">♟ <span>Kadro</span> <b>›</b></a><a href="istatistikler.html">▥ <span>İstatistikler</span> <b>›</b></a></nav>
-<nav class="gs-footer-column" aria-label="Branşlar"><h3>BRANŞLAR</h3><a href="branslar.html">⚽ <span>Futbol</span> <b>›</b></a><a href="branslar.html">◉ <span>Basketbol</span> <b>›</b></a><a href="branslar.html">◉ <span>Voleybol</span> <b>›</b></a><a href="branslar.html">◉ <span>Hentbol</span> <b>›</b></a><a href="branslar.html">••• <span>Diğer Branşlar</span> <b>›</b></a></nav>
-<nav class="gs-footer-column gs-corporate" aria-label="Kurumsal"><h3>KURUMSAL</h3><a href="https://www.galatasaray.org/" target="_blank" rel="noopener noreferrer">ⓘ <span>Hakkımızda</span></a><a href="gizlilik.html">✥ <span>Gizlilik Politikası</span></a><a href="kullanim-sartlari.html">▤ <span>Kullanım Şartları</span></a><a href="mailto:iletisim@gs1905.com">✉ <span>İletişim</span></a></nav>
-<section class="gs-footer-trophies" aria-label="Galatasaray kupaları"><h3>KUPALAR</h3><div class="honours-sketch">
-<div class="trophy-photo-row" aria-label="Galatasaray kupaları">
-<img class="trophy-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Coppauefa.png" alt="UEFA Kupası" loading="lazy" decoding="async">
-<img class="trophy-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Uefasupercup.PNG" alt="UEFA Süper Kupası" loading="lazy" decoding="async">
-<img class="trophy-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/2024-2025_Trendyol_Süper_Lig_Sezonunda_Kullanılan_Yeni_Kupa.webp" alt="Türkiye Ligi kupası" loading="lazy" decoding="async">
-<img class="trophy-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ziraatturkiyekupasi.JPG" alt="Ziraat Türkiye Kupası" loading="lazy" decoding="async">
-</div>
-<div class="honours-captions"><span>UEFA KUPASI <b>2000</b></span><span>UEFA SÜPER KUPASI <b>2000</b></span><span>TÜRKİYE LİGİ <b>ŞAMPİYONLUKLARI</b></span><span>ZİRAAT TÜRKİYE KUPASI <b>2019</b></span></div>
-</div></section>
-</div>
-<div class="gs-footer-bottom"><span>© 2026 GS1905. Tüm hakları saklıdır. <i></i> Galatasaray bağımsız bir taraftar platformudur.</span><strong><b></b> Aslan Gibi, Daima. <b></b></strong></div>
-<p class="gs-footer-disclaimer">GS1905 bağımsız bir taraftar platformudur; Galatasaray Spor Kulübü’nün resmî internet sitesi değildir.</p>
-</div></footer>
+<footer class="site-footer"><div class="wrap footer-main"><a class="footer-brand" href="index.html"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt=""><span><b>GS1905</b><small>ASLANIN DİJİTAL TRİBÜNÜ</small></span></a><div class="footer-nav"><a href="haberler.html">Haberler</a><a href="fikstur.html">Fikstür</a><a href="kadro.html">Kadro</a><a href="istatistikler.html">İstatistikler</a><a href="branslar.html">Branşlar</a><a href="https://www.galatasaray.org/" target="_blank" rel="noopener">Resmî site ↗</a></div><div class="footer-bottom"><span>© 2026 GS1905 · Bağımsız taraftar platformu.</span><span>RENKLERİMİZİN PEŞİNDE, HER YERDE.</span></div></div></footer>
 <script>
-
-const menu=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
-function setMenu(open){links.classList.toggle('open',open);menu.setAttribute('aria-expanded',open?'true':'false');menu.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');menu.textContent=open?'×':'☰'}
-menu.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
-document.addEventListener('click',event=>{if(!event.target.closest('header'))setMenu(false)});
-const heroSlides=[
- {image:'https://hlkiurt3.rocketcdn.com/news/56f3aac87f7449ac9ceebe490ee9ff58.jpeg',kicker:'ŞAMPİYONLAR LİGİ · 31 EKİM 2026',title:'Stuttgart maçı<br>hazırlıkları başladı.',text:'Galatasaray Futbol Takımı, 3 Kasım\'da oynanacak UEFA Şampiyonlar Ligi karşılaşması için çalışmalarına Kemerburgaz Metin Oktay Tesisleri\'nde başladı.',url:'https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/stuttgart-maci-hazirliklari-basladi/61272'},
- {image:'https://hlkiurt3.rocketcdn.com/news/a025fb7fe6624e5a9fa7d984b12de387.jpeg',kicker:'TRENDYOL SÜPER LİG · 30 EKİM 2026',title:'Deplasmanda<br>dört gollü zafer.',text:'Galatasaray, Tümosan Konyaspor karşısında sahadan 4-0 galip ayrıldı. Resmî maç haberi kulübün ana sayfasında.',url:'https://www.galatasaray.org/anasayfa'},
- {image:'https://hlkiurt3.rocketcdn.com/news/78bce345445941a58fca108bdf0e7d21.jpeg',kicker:'SÜPER LİG · 30 EKİM 2026',title:'Derbide üç puan<br>bizim!',text:'Galatasaray, RAMS Park’ta Fenerbahçe’yi 2-1 mağlup ederek liderliğini sürdürdü.',url:'https://www.galatasaray.org/haber/futbol/derbide-uc-puan-bizim/61231'}
-];
-let heroIndex=0;document.querySelectorAll('.hero-slide').forEach((el,n)=>{if(heroSlides[n])el.style.backgroundImage='url('+JSON.stringify(heroSlides[n].image)+')'});
-function showHero(i){heroIndex=(i+heroSlides.length)%heroSlides.length;const d=heroSlides[heroIndex];document.getElementById('heroKicker').textContent=d.kicker;document.getElementById('heroTitle').innerHTML=d.title;document.getElementById('heroText').textContent=d.text;document.getElementById('heroLink').href=d.url;document.querySelectorAll('.hero-slide').forEach((el,n)=>{el.classList.toggle('active',n===heroIndex);if(heroSlides[n])el.style.backgroundImage='url('+JSON.stringify(heroSlides[n].image)+')'});document.querySelectorAll('.hero-dot').forEach((el,n)=>el.classList.toggle('active',n===heroIndex))}
-document.getElementById('heroPrev').addEventListener('click',()=>showHero(heroIndex-1));
-document.getElementById('heroNext').addEventListener('click',()=>showHero(heroIndex+1));
-document.querySelectorAll('.hero-dot').forEach(el=>el.addEventListener('click',()=>showHero(Number(el.dataset.slide))));
-let heroTimer=null;
-const heroReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function startHero(){if(heroReduced||heroTimer!==null||document.hidden)return;heroTimer=setInterval(()=>showHero(heroIndex+1),7000)}
-function stopHero(){if(heroTimer!==null){clearInterval(heroTimer);heroTimer=null}}
-const heroRegion=document.querySelector('.hero-main');
-heroRegion.addEventListener('mouseenter',stopHero);
-heroRegion.addEventListener('mouseleave',startHero);
-heroRegion.addEventListener('focusin',stopHero);
-heroRegion.addEventListener('focusout',startHero);
-document.addEventListener('visibilitychange',()=>document.hidden?stopHero():startHero());
-startHero();
-
-
-function updateNextMatch(data){
- const next=(Array.isArray(data.upcoming)?data.upcoming:[]).find(match=>match.kickoff&&Date.parse(match.kickoff)>Date.now());
- if(!next)return;
- const opponent=next.home.toLocaleLowerCase('tr')==='galatasaray'?next.away:next.home;
- const isHome=next.home.toLocaleLowerCase('tr')==='galatasaray';
- document.getElementById('nextMatchOpponent').textContent=opponent.toLocaleUpperCase('tr');
- document.getElementById('nextMatchDate').textContent=next.date.split(' · ')[0];
- document.getElementById('nextMatchTime').textContent=(next.date.split(' · ')[1]||'')+' · '+(isHome?'RAMS PARK':'DEPLASMAN');
- document.getElementById('nextMatchHeadline').innerHTML=isHome?'Avrupa gecesi<br>RAMS Park’ta.':'Avrupa’da<br>deplasman gecesi.';
- const counter=document.getElementById('nextMatchCountdown');
- const kickoff=Date.parse(next.kickoff);
- function tick(){
-  const remaining=kickoff-Date.now();
-  if(remaining<=0){counter.textContent='Karşılaşma başladı veya maç saati geçti. Son durum için resmî UEFA sayfasını kontrol edin.';return;}
-  const days=Math.floor(remaining/86400000);
-  const hours=Math.floor(remaining%86400000/3600000);
-  const minutes=Math.floor(remaining%3600000/60000);
-  const seconds=Math.floor(remaining%60000/1000);
-  counter.textContent='Başlama vuruşuna kalan süre: '+days+' gün '+hours+' saat '+minutes+' dakika '+seconds+' saniye. Saatler Türkiye saatine göredir.';
- }
- tick();
- setInterval(tick,1000);
-}
-
-
-function renderStandings(data){
- const body=document.getElementById('standingsBody');
- if(!body)return;
- const rows=Array.isArray(data.standings)?data.standings:[];
- if(!rows.length){body.innerHTML='<tr><td colspan="8">Puan durumu şu anda yüklenemiyor.</td></tr>';return;}
- body.innerHTML=rows.map(t=>'<tr'+(t.team==='Galatasaray'?' class="gs-row"':'')+'><td>'+homeEscape(t.rank)+'</td><td>'+homeEscape(t.team)+'</td><td>'+homeEscape(t.played)+'</td><td>'+homeEscape(t.won)+'</td><td>'+homeEscape(t.drawn)+'</td><td>'+homeEscape(t.lost)+'</td><td>'+homeEscape(t.goalDiff>0?'+'+t.goalDiff:t.goalDiff)+'</td><td>'+homeEscape(t.points)+'</td></tr>').join('');
- const stamp=data.standingsUpdatedAt?new Date(data.standingsUpdatedAt):null;
- document.getElementById('standingsUpdated').textContent='beIN SPORTS · '+(stamp&&!Number.isNaN(stamp.getTime())?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(stamp):'Güncelleme tarihi belirtilmedi');
-}
-function renderFixtures(type,data){
- const list=document.getElementById('fixtureList');
- if(type==='superLig'){
-  const rows=Array.isArray(data.superLig)?data.superLig:[];
-  list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">TRENDYOL SÜPER LİG · '+homeEscape(m.week)+'. HAFTA</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+(m.score?homeEscape(m.score):'VS')+'</span><span>'+homeEscape(m.away)+'</span></div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
- }else{
-  const rows=Array.isArray(data[type])?data[type]:[];
-  list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">'+homeEscape(m.date)+'</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+homeEscape(m.score)+'</span><span>'+homeEscape(m.away)+'</span></div><div class="fixture-meta">'+homeEscape(m.meta)+'</div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
- }
- document.querySelectorAll('.schedule-tab').forEach(b=>{const active=b.dataset.fixture===type;b.classList.toggle('active',active);b.setAttribute('aria-selected',active?'true':'false')});
- const note=document.getElementById('scheduleNote');
- if(type==='recent') note.textContent='Oynanan maçların skorları UEFA’nın resmî sonuç listesinden alınmıştır.';
- else if(type==='superLig') note.innerHTML='Rakipler Galatasaray’ın resmî 2026/27 fikstüründen alınmıştır. Haftalık tarih ve saatler açıklandıkça TFF’den kontrol edin. <a class="more" href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer">TFF FİKSTÜRÜ ↗</a>';
- else note.textContent='Fikstür tarih ve saatleri Galatasaray’ın resmî duyurusuna dayanmaktadır. Saatler Türkiye saatiyledir.';
-}
-let matchData=null;
-function selectFixture(type){if(matchData)renderFixtures(type,matchData);}
-document.querySelectorAll('.schedule-tab').forEach(b=>b.addEventListener('click',()=>selectFixture(b.dataset.fixture)));
-fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('match data unavailable');return response.json();}).then(data=>{matchData=data;renderFixtures('upcoming',data);updateNextMatch(data);renderStandings(data);}).catch(()=>{document.getElementById('fixtureList').innerHTML='<p class="schedule-note">Maç verileri şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.</p>';});
-
-
-
-const homeNews=document.getElementById('homeNews');
-function homeEscape(value){
- return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-}
-function renderHomeNews(data){
- const records=(Array.isArray(data.items)?data.items:[]).map(item=>{
-  let url='';
-  try{const parsed=new URL(item.url);if(parsed.protocol==='https:'&&parsed.hostname==='www.galatasaray.org')url=parsed.href;}catch{}
-  const stamp=item.published?Date.parse(item.published):NaN;
-  return {url,title:String(item.title||'Galatasaray haberi'),desc:String(item.description||'Resmî kulüp haberini kaynağından okuyun.'),category:String(item.category||'Diğer'),image:(typeof item.image==='string'&&/^https:\/\/([a-z0-9-]+\.)*rocketcdn\.com\//i.test(item.image))?item.image:'',stamp,date:Number.isFinite(stamp)?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(stamp)):'Güncel'};
- }).filter(item=>item.url).sort((a,b)=>b.stamp-a.stamp).slice(0,3);
- if(!records.length){homeNews.innerHTML='<a class="news-card" href="haberler.html"><div class="news-copy"><div class="meta">HABER MERKEZİ</div><h3>Son Galatasaray haberleri</h3><p>Resmî haber akışını görüntülemek için haber merkezine geç.</p></div></a>';return;}
- homeNews.innerHTML=records.map(item=>'<a class="news-card" href="'+homeEscape(item.url)+'" target="_blank" rel="noopener noreferrer"><div class="news-art">'+(item.image?'<img src="'+homeEscape(item.image)+'" alt="'+homeEscape(item.title)+'" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">':'<div class="news-art-fallback" aria-hidden="true">GS1905</div>')+'<span>'+homeEscape(item.category.toLocaleUpperCase('tr'))+'</span></div><div class="news-copy"><div class="meta">'+homeEscape(item.date)+' · '+homeEscape(item.category.toLocaleUpperCase('tr'))+'</div><h3>'+homeEscape(item.title)+'</h3><p>'+homeEscape(item.desc)+'</p></div></a>').join('');
-}
-fetch('data/news.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('feed unavailable');return response.json();}).then(renderHomeNews).catch(()=>renderHomeNews({items:[]}));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const menu=document.getElementById('menuToggle'),nav=document.getElementById('siteNav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});
+fetch('data/news.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(data=>{
+ const items=(data.items||[]).filter(x=>x.url&&x.url.startsWith('https://www.galatasaray.org/')).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published));
+ if(!items.length)return;
+ const lead=items[0];document.getElementById('leadTitle').textContent=lead.title;document.getElementById('leadDesc').textContent=lead.description;document.getElementById('leadCategory').textContent=(lead.category||'HABER').toLocaleUpperCase('tr');document.getElementById('leadLink').href=lead.url;
+ if(lead.image)document.getElementById('leadPhoto').style.backgroundImage='url("'+lead.image.replace(/["\\]/g,'')+'")';
+ document.getElementById('homeNews').innerHTML=items.slice(1,4).map((x,i)=>'<a class="news-card" href="'+esc(x.url)+'" target="_blank" rel="noopener"><div class="news-art">'+(x.image?'<img src="'+esc(x.image)+'" alt="" loading="lazy">':'<span class="news-fallback">GS1905</span>')+'<label>'+esc(x.category||'GALATASARAY')+'</label></div><div class="news-copy"><small>'+esc(new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long'}).format(new Date(x.published)))+'</small><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p><b>DEVAMINI OKU ↗</b></div></a>').join('');
+ }).catch(()=>{});
+fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(data=>{
+ const up=(data.upcoming||[]).slice(0,3);
+ document.getElementById('upcomingList').innerHTML=up.map(x=>'<div class="upcoming-row"><time>'+esc((x.date||'').split('·')[0].trim())+'</time><b>'+esc(x.home)+' – '+esc(x.away)+'</b><span>'+esc((x.date||'').split('·')[1]||'')+'</span></div>').join('');
+ const recent=(data.recent||[])[0],next=(data.upcoming||[])[1];
+ document.getElementById('railFixtures').innerHTML=(recent?'<div class="rail-fixture"><span>'+esc(recent.date)+'</span><b>'+esc(recent.home)+' '+esc(recent.score)+' '+esc(recent.away)+'</b><em>MAÇ SONU</em></div>':'')+(next?'<div class="rail-fixture"><span>'+esc(next.date)+'</span><b>'+esc(next.home)+' – '+esc(next.away)+'</b><em>'+esc((next.date||'').split('·')[1]||'FİKSTÜR')+'</em></div>':'');
+ }).catch(()=>{});
+const target=new Date('2026-11-03T20:45:00+03:00');function tick(){const d=target-Date.now(),el=document.getElementById('countdown');if(d<=0){el.textContent='MAÇ BAŞLADI';return;}const days=Math.floor(d/86400000),hours=Math.floor(d%86400000/3600000);el.textContent=days+' GÜN  '+hours+' SAAT KALDI';}tick();setInterval(tick,60000);
 </script>
-
-<script>
-(()=>{const paths={trophy:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',users:'<path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',chart:'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-5 5"/>',newspaper:'<path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/>',volleyball:'<circle cx="12" cy="12" r="9"/><path d="M12 3c1 5-1 8-6 10m15-1c-5-2-8-1-11 3m5 7c-1-5-3-7-8-8"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',map:'<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15m6-12v15"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',arrow:'<path d="M5 12h14m-6-6 6 6-6 6"/>'};const svg=(n)=>'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(paths[n]||paths.trophy)+'</svg>';document.querySelectorAll('[data-icon]').forEach(el=>{if(!el.querySelector('.ui-icon'))el.insertAdjacentHTML('afterbegin',svg(el.dataset.icon))});document.querySelectorAll('.facts .fact').forEach((el)=>{const t=(el.querySelector('small')?.textContent||'').toLocaleLowerCase('tr');let n=/yaş|doğum/.test(t)?'calendar':/boy|kilo|mevki|pozisyon/.test(t)?'user':/maç|gol|asist/.test(t)?'chart':/numara/.test(t)?'trophy':'user';el.insertAdjacentHTML('afterbegin',svg(n))});})();
-</script></body></html>
+</body></html>
