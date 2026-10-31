@@ -1,0 +1,73 @@
+{
+  "source": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/",
+  "updatedAt": "2026-10-30T00:00:00Z",
+  "note": "UEFA'nın 30 Ekim 2026 tarihli Galatasaray fikstür ve sonuç listesi.",
+  "upcoming": [
+    {
+      "date": "03 KASIM 2026 · 20.45",
+      "home": "Galatasaray",
+      "score": "VS",
+      "away": "VfB Stuttgart",
+      "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
+      "status": "YAKLAŞAN MAÇ"
+    },
+    {
+      "date": "24 KASIM 2026 · 20.45",
+      "home": "Galatasaray",
+      "score": "VS",
+      "away": "Aston Villa",
+      "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
+      "status": "YAKLAŞAN MAÇ"
+    },
+    {
+      "date": "08 ARALIK 2026",
+      "home": "AEK Atina",
+      "score": "VS",
+      "away": "Galatasaray",
+      "meta": "UEFA Şampiyonlar Ligi · Deplasman",
+      "status": "YAKLAŞAN MAÇ"
+    },
+    {
+      "date": "19 OCAK 2027 · 20.45",
+      "home": "Galatasaray",
+      "score": "VS",
+      "away": "Feyenoord",
+      "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
+      "status": "YAKLAŞAN MAÇ"
+    },
+    {
+      "date": "27 OCAK 2027",
+      "home": "Paris Saint-Germain",
+      "score": "VS",
+      "away": "Galatasaray",
+      "meta": "UEFA Şampiyonlar Ligi · Deplasman",
+      "status": "YAKLAŞAN MAÇ"
+    }
+  ],
+  "recent": [
+    {
+      "date": "21 EKİM 2026",
+      "home": "Lille",
+      "score": "2 : 4",
+      "away": "Galatasaray",
+      "meta": "UEFA Şampiyonlar Ligi · Deplasman",
+      "status": "MAÇ SONU"
+    },
+    {
+      "date": "13 EKİM 2026",
+      "home": "Galatasaray",
+      "score": "1 : 4",
+      "away": "Barcelona",
+      "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
+      "status": "MAÇ SONU"
+    },
+    {
+      "date": "09 EYLÜL 2026",
+      "home": "Sporting CP",
+      "score": "3 : 1",
+      "away": "Galatasaray",
+      "meta": "UEFA Şampiyonlar Ligi · Deplasman",
+      "status": "MAÇ SONU"
+    }
+  ]
+}
