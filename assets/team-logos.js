@@ -15,9 +15,10 @@
   document.querySelectorAll('.standings tbody tr td:nth-child(2),#standings tr td:nth-child(2)').forEach(el=>{if(el.querySelector('img'))return;const n=clean(el.textContent);if(n)el.insertAdjacentHTML('afterbegin',img(n));});
   document.querySelectorAll('.upcoming-row b,.rail-fixture b').forEach(el=>{
    if(el.querySelector('img'))return;
-   const parts=clean(el.textContent).split(/\s[–—-]\s/);
-   if(parts.length!==2)return;
-   el.innerHTML=img(parts[0])+'<span class="team-name">'+parts[0]+'</span><span class="fixture-separator">–</span>'+img(parts[1])+'<span class="team-name">'+parts[1]+'</span>';
+   const raw=clean(el.textContent),parts=raw.split(/\s[–—-]\s/);
+   if(parts.length===2){el.innerHTML=img(parts[0])+'<span class="team-name">'+parts[0]+'</span><span class="fixture-separator">–</span>'+img(parts[1])+'<span class="team-name">'+parts[1]+'</span>';return;}
+   const score=raw.match(/^(.+?)\s+(\d+\s*[:–-]\s*\d+)\s+(.+)$/);
+   if(score)el.innerHTML=img(score[1])+'<span class="team-name">'+score[1]+'</span><strong class="fixture-score">'+score[2]+'</strong>'+img(score[3])+'<span class="team-name">'+score[3]+'</span>';
   });
  };
  window.GS1905TeamLogos={url,img,decorate};
