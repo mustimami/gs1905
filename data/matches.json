@@ -75,5 +75,248 @@
       "status": "MAÇ SONU"
     }
   ],
-  "resultsSource": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
+  "resultsSource": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/",
+  "superLigSource": "https://www.galatasaray.org/haber/futbol/galatasarayin-super-lig-2026-2027-sezonu-fiksturu-belli-oldu/60565",
+  "tffSource": "https://www.tff.org/Default.aspx?pageID=198",
+  "superLigNote": "Rakip sıralaması Galatasaray'ın resmî 2026/27 fikstür duyurusundan alınmıştır. Haftalık maç günleri ve başlama saatleri TFF tarafından ilan edildikçe güncellenecektir; doğrulanmamış tarih/saat gösterilmez.",
+  "superLig": [
+    {
+      "week": "1",
+      "home": "Galatasaray",
+      "away": "Arca Çorum FK",
+      "score": "2-2",
+      "status": "Oynandı"
+    },
+    {
+      "week": "2",
+      "home": "Erzurumspor FK",
+      "away": "Galatasaray",
+      "score": "0-4",
+      "status": "Oynandı"
+    },
+    {
+      "week": "3",
+      "home": "Galatasaray",
+      "away": "Göztepe",
+      "score": "3-2",
+      "status": "Oynandı"
+    },
+    {
+      "week": "4",
+      "home": "İstanbul Başakşehir",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "5",
+      "home": "Galatasaray",
+      "away": "Kocaelispor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "6",
+      "home": "Trabzonspor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "7",
+      "home": "Galatasaray",
+      "away": "Kasımpaşa",
+      "score": "3-1",
+      "status": "Oynandı"
+    },
+    {
+      "week": "8",
+      "home": "Gençlerbirliği",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "9",
+      "home": "Galatasaray",
+      "away": "Fenerbahçe",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "10",
+      "home": "Konyaspor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "11",
+      "home": "Galatasaray",
+      "away": "Amed Sportif Faaliyetler",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "12",
+      "home": "Galatasaray",
+      "away": "Samsunspor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "13",
+      "home": "Beşiktaş",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "14",
+      "home": "Galatasaray",
+      "away": "Çaykur Rizespor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "15",
+      "home": "Eyüpspor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "16",
+      "home": "Galatasaray",
+      "away": "Corendon Alanyaspor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "17",
+      "home": "Gaziantep FK",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "18",
+      "home": "Arca Çorum FK",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "19",
+      "home": "Galatasaray",
+      "away": "Erzurumspor FK",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "20",
+      "home": "Göztepe",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "21",
+      "home": "Galatasaray",
+      "away": "İstanbul Başakşehir",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "22",
+      "home": "Kocaelispor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "23",
+      "home": "Galatasaray",
+      "away": "Trabzonspor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "24",
+      "home": "Kasımpaşa",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "25",
+      "home": "Galatasaray",
+      "away": "Gençlerbirliği",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "26",
+      "home": "Fenerbahçe",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "27",
+      "home": "Galatasaray",
+      "away": "Tümosan Konyaspor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "28",
+      "home": "Amed Sportif Faaliyetler",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "29",
+      "home": "Samsunspor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "30",
+      "home": "Galatasaray",
+      "away": "Beşiktaş",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "31",
+      "home": "Çaykur Rizespor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "32",
+      "home": "Galatasaray",
+      "away": "Eyüpspor",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "33",
+      "home": "Corendon Alanyaspor",
+      "away": "Galatasaray",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    },
+    {
+      "week": "34",
+      "home": "Galatasaray",
+      "away": "Gaziantep FK",
+      "score": "",
+      "status": "Tarih/saat TFF'de takip edilmeli"
+    }
+  ]
 }
