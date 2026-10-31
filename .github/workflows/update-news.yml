@@ -1,5 +1,11 @@
 name: Update official Galatasaray news
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_news.py"
+      - ".github/workflows/update-news.yml"
+      - "data/news.json"
   schedule:
     - cron: "17 */2 * * *"
   workflow_dispatch:
