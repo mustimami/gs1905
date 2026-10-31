@@ -80,3 +80,43 @@ hr{border:0;border-top:1px solid #302a38}
 .crest,.gs-footer-crest{font-size:0!important;color:transparent!important;background-color:#fff!important;background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray-sports-club-logo.svg")!important;background-position:center!important;background-repeat:no-repeat!important;background-size:contain!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 .crest{width:42px!important;height:52px!important}
 .gs-footer-crest{display:inline-block!important;width:38px!important;height:48px!important;flex:0 0 38px!important}
+
+/* Reference layout: compact club navigation, cinematic lead story, match rail */
+body{background:#03051b!important;color:#f7f7fb!important}
+header{position:relative!important;background:#05071d!important;border:0!important;box-shadow:none!important}
+header .nav{height:82px!important;max-width:1320px!important;margin:auto!important}
+.news-masthead{display:none!important}
+.hero{padding:18px 0 24px!important;background:#03051b!important}
+.hero-grid{width:min(1320px,calc(100% - 56px))!important;grid-template-columns:minmax(0,1fr) 300px!important;gap:20px!important;align-items:stretch!important}
+.hero-main{height:560px!important;min-height:560px!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#060923!important}
+.hero-slide{background-position:center 35%!important}
+.hero-slide:after{background:linear-gradient(90deg,rgba(3,5,27,.96) 0%,rgba(3,5,27,.8) 36%,rgba(3,5,27,.18) 75%,rgba(3,5,27,.08) 100%),linear-gradient(0deg,rgba(3,5,27,.72),transparent 55%)!important}
+.hero-content{padding:46px!important;max-width:660px!important}
+.hero-content h1{font-size:clamp(38px,4.4vw,62px)!important;line-height:1.02!important;max-width:570px!important}
+.hero-content p{font-size:14px!important;max-width:460px!important;color:#c8cce1!important}
+.eyebrow,.hero-content .eyebrow{display:inline-block!important;background:#e51c45!important;color:#fff!important;padding:7px 11px!important;font-size:10px!important;letter-spacing:1px!important}
+.hero-content .pill{display:inline-block!important;background:#e51c45!important;color:#fff!important;border-radius:0!important;padding:11px 14px!important;font-size:10px!important}
+.hero-controls{margin-top:20px!important}
+.hero-control{background:#e51c45!important;border:0!important}
+.hero-dots{bottom:22px!important}
+.hero-dot{border-radius:0!important}
+.hero-dot.active{background:#e51c45!important;border-color:#e51c45!important}
+.next-match-panel{min-height:560px!important;border-radius:0!important;border:0!important;border-left:1px solid #171c43!important;background:#070a24!important;padding:22px 18px!important;justify-content:flex-start!important}
+.next-match-panel .match-badge{font-size:9px!important;letter-spacing:1px!important;color:#ff3158!important}
+.next-match-panel h2{font-size:21px!important;color:#fff!important}
+.next-match-panel .versus{margin:18px 0!important}
+.next-match-panel .club-mark{width:54px!important;height:54px!important;background:#0c1234!important;border:1px solid #202a58!important}
+.next-match-panel .club-mark img{object-fit:contain!important}
+.next-match-panel .versus strong{font-size:9px!important;color:#d6d8e8!important}
+#nextMatchDate{color:#ff3158!important;font-size:22px!important}
+#nextMatchTime{color:#dfe2f4!important}
+.countdown-note{border-top:1px solid #252a4b!important;padding-top:14px!important;font-size:11px!important}
+.next-match-panel .more{margin-top:22px!important;display:inline-block!important;color:#ff3158!important;font-size:10px!important}
+.section{background:#03051b!important;color:#fff!important;padding-top:30px!important}
+.section.soft{background:#05071d!important}
+.section-head h2{font-size:27px!important}
+.news-card,.match-card{background:#080b25!important;border-color:#171d43!important;border-radius:0!important}
+.news-card:hover,.match-card:hover{border-color:#e51c45!important}
+.banner{background:linear-gradient(110deg,#11143b,#07091e)!important;border:1px solid #1d2450!important;border-radius:0!important}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr!important;width:calc(100% - 32px)!important}.hero-main{height:500px!important;min-height:500px!important}.next-match-panel{min-height:0!important}.hero-content{padding:30px!important}}
+@media(max-width:600px){.hero-grid{width:calc(100% - 20px)!important}.hero-main{height:460px!important;min-height:460px!important}.hero-content{padding:20px!important}.hero-content h1{font-size:36px!important}.hero-content p{font-size:12px!important}.next-match-panel{padding:20px!important}.section-head h2{font-size:23px!important}}
