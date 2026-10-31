@@ -95,5 +95,5 @@ fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).t
  }).catch(()=>{});
 const target=new Date('2026-11-03T20:45:00+03:00');function tick(){const d=target-Date.now(),el=document.getElementById('countdown');if(d<=0){el.textContent='MAÇ BAŞLADI';return;}const days=Math.floor(d/86400000),hours=Math.floor(d%86400000/3600000);el.textContent=days+' GÜN  '+hours+' SAAT KALDI';}tick();setInterval(tick,60000);
 </script>
-<script src="assets/team-logos.js?v=2" defer></script>
+<script src="assets/team-logos.js?v=3" defer></script>
 </body></html>
