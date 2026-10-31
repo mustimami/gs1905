@@ -54,7 +54,92 @@ h1,h2,h3{ text-wrap:balance }
   table{font-variant-numeric:tabular-nums}
 }
 
+
+/* Futbolcu profili · modern profil yerleşimi */
+#content{max-width:1120px}
+.profile{
+  grid-template-columns:minmax(240px,340px) minmax(0,1fr);
+  align-items:start;
+  gap:clamp(28px,5vw,64px);
+  padding:42px 0 56px;
+}
+.portrait{
+  width:100%;
+  height:clamp(340px,42vw,440px);
+  min-height:0;
+  max-height:440px;
+  aspect-ratio:4/5;
+  border:1px solid #e8ded9;
+  border-radius:14px;
+  background:radial-gradient(circle at 50% 25%,#fff 0,#f3ece8 48%,#e8dcd6 100%);
+  box-shadow:0 18px 42px rgba(43,20,27,.10);
+}
+.portrait:after{
+  content:"GS1905";
+  position:absolute;right:14px;bottom:10px;
+  color:#86172f18;font:900 34px Georgia,serif;letter-spacing:-2px;
+  pointer-events:none;
+}
+.portrait img{
+  display:block;width:100%;height:100%;
+  min-height:0;max-height:100%;
+  object-fit:contain;object-position:center bottom;
+  padding:12px 12px 0;
+}
+.portrait .fallback{font-size:76px}
+.number{
+  top:14px;left:14px;z-index:2;
+  min-width:48px;text-align:center;
+  border:1px solid #eadfda;border-radius:8px;
+  box-shadow:0 5px 15px #24101712;
+  font-size:17px;padding:9px 12px;
+}
+.profile-main{min-width:0;padding-top:8px}
+.profile-main>.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;background:#f8f1ee;border:1px solid #eee2dc;border-radius:4px;font-size:9px;letter-spacing:1.5px}
+.name{font-size:clamp(34px,4.5vw,54px);line-height:1.02;letter-spacing:-1.8px;margin:17px 0 9px;color:#21191c}
+.role{display:inline-flex;align-items:center;padding:7px 11px;background:#86172f;color:#fff;border-radius:4px;font-size:11px;letter-spacing:.3px}
+.intro{font-size:13px;line-height:1.75;color:#686166;margin:20px 0 22px;max-width:680px}
+.facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.fact{
+  min-width:0;padding:15px 16px;
+  border-radius:9px;background:linear-gradient(145deg,#fff,#fcfaf9);
+  box-shadow:0 5px 16px rgba(34,18,24,.035);
+}
+.fact small{font-size:8px;letter-spacing:1.15px}
+.fact strong{font-size:14px;line-height:1.35;overflow-wrap:anywhere}
+.profile-main section[style*="margin"]{
+  background:#faf7f5;border:1px solid var(--line);
+  border-radius:10px;padding:18px;margin-top:22px!important;
+}
+.profile-main section[style*="margin"] .facts{margin-top:14px!important}
+.profile-main .disclaimer{margin-top:24px;padding:17px 0 18px;border-top:1px solid var(--line)}
+.profile-main .back{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 14px;border:1px solid #ead8d9;border-radius:6px;
+  font-size:10px;letter-spacing:.5px;
+}
+.profile-main .back:hover{background:#f8f1ee}
+@media(max-width:760px){
+  .profile{grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:24px;padding:30px 0 42px}
+  .portrait{height:360px}
+}
+@media(max-width:620px){
+  #content{max-width:100%}
+  .profile{grid-template-columns:minmax(0,1fr);gap:23px;padding:24px 0 38px}
+  .portrait{width:min(100%,310px);height:360px;min-height:0;max-height:360px;margin:0 auto}
+  .profile-main{padding-top:0}
+  .name{font-size:clamp(32px,9vw,44px)}
+  .intro{margin:16px 0 18px}
+  .facts{gap:9px}
+  .fact{padding:13px}
+}
+@media(max-width:380px){
+  .facts{grid-template-columns:1fr 1fr}
+  .fact strong{font-size:12px}
+  .portrait{height:320px;max-height:320px}
+}
+
 </style></head><body><div class="top"></div><header><div class="wrap nav"><a class="brand" href="index.html">GS1905<small>ASLANIN YUVASI</small></a><nav class="navlinks" aria-label="Ana menü"><a href="index.html">ANA SAYFA</a><a href="haberler.html">HABERLER</a><a href="kadro.html">A TAKIM</a><a href="fikstur.html">FİKSTÜR</a><a href="istatistikler.html">İSTATİSTİK</a><a href="branslar.html">BRANŞLAR</a></nav></div></header><main class="wrap" id="content"></main><footer><div class="wrap">GS1905 · Bağımsız taraftar konsepti · Resmî kulüp sitesi değildir.</div></footer><script>
 const name=new URLSearchParams(location.search).get('id');const root=document.getElementById('content');
-fetch('data/players.json').then(r=>{if(!r.ok)throw Error('Kadro verisi yüklenemedi');return r.json()}).then(d=>{const p=d.players.find(x=>x.name===name);if(!p){root.innerHTML='<div class="notfound"><h1>Futbolcu bulunamadı</h1><a href="kadro.html">Kadroya dön</a></div>';return}document.title=p.name+' | GS1905';root.innerHTML='<section class="profile"><div class="portrait">'+(p.photo?'<img src="'+p.photo+'" alt="'+p.name+' fotoğrafı" onerror="this.style.display=\'none\'">':'<span class="fallback">GS</span>')+'<span class="number">#'+p.number+'</span></div><div><div class="eyebrow">GALATASARAY · FUTBOL A TAKIMI</div><h1 class="name">'+p.name+'</h1><div class="role">'+p.position+'</div><p class="intro">Galatasaray Futbol A Takımı oyuncu profili. Aşağıdaki kişisel bilgiler ve kariyer özeti, oyuncu için kayıtlı kaynak bağlantılarından doğrulanabilen verilerle sınırlıdır.</p><div class="facts"><div class="fact"><small>FORMA NUMARASI</small><strong>#'+p.number+'</strong></div><div class="fact"><small>MEVKİ</small><strong>'+p.position+'</strong></div><div class="fact"><small>TAKIM</small><strong>Galatasaray A Takım</strong></div>'+((p.details&&p.details.birthDate)?'<div class="fact"><small>DOĞUM TARİHİ</small><strong>'+new Date(p.details.birthDate+'T12:00:00').toLocaleDateString('tr-TR')+'</strong></div>':'')+((p.details&&p.details.birthPlace)?'<div class="fact"><small>DOĞUM YERİ</small><strong>'+p.details.birthPlace+'</strong></div>':'')+((p.details&&p.details.nationality)?'<div class="fact"><small>UYRUK</small><strong>'+p.details.nationality+'</strong></div>':'')+((p.details&&p.details.heightCm)?'<div class="fact"><small>BOY</small><strong>'+p.details.heightCm+' cm</strong></div>':'')+'</div>'+(p.details&&p.details.career?'<section style="margin-top:28px"><div class="eyebrow">KARİYER</div><p class="intro" style="margin:12px 0">'+p.details.career.join(' → ')+'</p></section>':'')+'<p class="disclaimer">Kadro kaynağı: <a href="'+d.source+'" target="_blank" rel="noopener">Galatasaray resmî A Takım kadrosu ↗</a>. Portre fotoğrafı kaynağı: beIN SPORTS. '+(p.details&&p.details.sources?'Oyuncu bilgileri: '+p.details.sources.map((s,i)=>'<a href="'+s+'" target="_blank" rel="noopener">Kaynak '+(i+1)+' ↗</a>').join(' · '):'Bu oyuncu için biyografik bilgiler henüz doğrulanmadı.')+' Sezon verileri: <a href="istatistikler.html">2026/27 oyuncu istatistikleri ↗</a>.</p>'+(p.seasonStats?'<section style="margin:26px 0"><div class="eyebrow">2026/27 SÜPER LİG İSTATİSTİKLERİ</div><div class="facts" style="margin-top:12px"><div class="fact"><small>MAÇ</small><strong>'+p.seasonStats.matches+'</strong></div><div class="fact"><small>GOL</small><strong>'+p.seasonStats.goals+'</strong></div><div class="fact"><small>ASİST</small><strong>'+p.seasonStats.assists+'</strong></div><div class="fact"><small>SARI KART</small><strong>'+p.seasonStats.yellowCards+'</strong></div><div class="fact"><small>KIRMIZI KART</small><strong>'+p.seasonStats.redCards+'</strong></div></div><p class="meta" style="margin-top:10px">Kaynak: <a href="'+p.seasonStats.source+'" target="_blank" rel="noopener">beIN SPORTS ↗</a> · Güncelleme: '+p.seasonStats.asOf+'</p></section>':'')+'<p class="disclaimer">GS1905 bağımsız taraftar konseptidir; resmî kulüp sitesi değildir.</p><a class="back" href="kadro.html">← TÜM FUTBOLCULAR</a></div></section>'}).catch(()=>{root.innerHTML='<div class="notfound"><h1>Oyuncu bilgileri yüklenemedi</h1><a href="kadro.html">Kadroya dön</a></div>'});
+fetch('data/players.json').then(r=>{if(!r.ok)throw Error('Kadro verisi yüklenemedi');return r.json()}).then(d=>{const p=d.players.find(x=>x.name===name);if(!p){root.innerHTML='<div class="notfound"><h1>Futbolcu bulunamadı</h1><a href="kadro.html">Kadroya dön</a></div>';return}document.title=p.name+' | GS1905';root.innerHTML='<section class="profile"><div class="portrait">'+(p.photo?'<img src="'+p.photo+'" alt="'+p.name+' fotoğrafı" onerror="this.style.display=\'none\'">':'<span class="fallback">GS</span>')+'<span class="number">#'+p.number+'</span></div><div class="profile-main"><div class="eyebrow">GALATASARAY · FUTBOL A TAKIMI</div><h1 class="name">'+p.name+'</h1><div class="role">'+p.position+'</div><p class="intro">Galatasaray Futbol A Takımı oyuncu profili. Aşağıdaki kişisel bilgiler ve kariyer özeti, oyuncu için kayıtlı kaynak bağlantılarından doğrulanabilen verilerle sınırlıdır.</p><div class="facts"><div class="fact"><small>FORMA NUMARASI</small><strong>#'+p.number+'</strong></div><div class="fact"><small>MEVKİ</small><strong>'+p.position+'</strong></div><div class="fact"><small>TAKIM</small><strong>Galatasaray A Takım</strong></div>'+((p.details&&p.details.birthDate)?'<div class="fact"><small>DOĞUM TARİHİ</small><strong>'+new Date(p.details.birthDate+'T12:00:00').toLocaleDateString('tr-TR')+'</strong></div>':'')+((p.details&&p.details.birthPlace)?'<div class="fact"><small>DOĞUM YERİ</small><strong>'+p.details.birthPlace+'</strong></div>':'')+((p.details&&p.details.nationality)?'<div class="fact"><small>UYRUK</small><strong>'+p.details.nationality+'</strong></div>':'')+((p.details&&p.details.heightCm)?'<div class="fact"><small>BOY</small><strong>'+p.details.heightCm+' cm</strong></div>':'')+'</div>'+(p.details&&p.details.career?'<section style="margin-top:28px"><div class="eyebrow">KARİYER</div><p class="intro" style="margin:12px 0">'+p.details.career.join(' → ')+'</p></section>':'')+'<p class="disclaimer">Kadro kaynağı: <a href="'+d.source+'" target="_blank" rel="noopener">Galatasaray resmî A Takım kadrosu ↗</a>. Portre fotoğrafı kaynağı: beIN SPORTS. '+(p.details&&p.details.sources?'Oyuncu bilgileri: '+p.details.sources.map((s,i)=>'<a href="'+s+'" target="_blank" rel="noopener">Kaynak '+(i+1)+' ↗</a>').join(' · '):'Bu oyuncu için biyografik bilgiler henüz doğrulanmadı.')+' Sezon verileri: <a href="istatistikler.html">2026/27 oyuncu istatistikleri ↗</a>.</p>'+(p.seasonStats?'<section style="margin:26px 0"><div class="eyebrow">2026/27 SÜPER LİG İSTATİSTİKLERİ</div><div class="facts" style="margin-top:12px"><div class="fact"><small>MAÇ</small><strong>'+p.seasonStats.matches+'</strong></div><div class="fact"><small>GOL</small><strong>'+p.seasonStats.goals+'</strong></div><div class="fact"><small>ASİST</small><strong>'+p.seasonStats.assists+'</strong></div><div class="fact"><small>SARI KART</small><strong>'+p.seasonStats.yellowCards+'</strong></div><div class="fact"><small>KIRMIZI KART</small><strong>'+p.seasonStats.redCards+'</strong></div></div><p class="meta" style="margin-top:10px">Kaynak: <a href="'+p.seasonStats.source+'" target="_blank" rel="noopener">beIN SPORTS ↗</a> · Güncelleme: '+p.seasonStats.asOf+'</p></section>':'')+'<p class="disclaimer">GS1905 bağımsız taraftar konseptidir; resmî kulüp sitesi değildir.</p><a class="back" href="kadro.html">← TÜM FUTBOLCULAR</a></div></section>'}).catch(()=>{root.innerHTML='<div class="notfound"><h1>Oyuncu bilgileri yüklenemedi</h1><a href="kadro.html">Kadroya dön</a></div>'});
 </script></body></html>
