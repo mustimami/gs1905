@@ -355,6 +355,16 @@ footer{background:#211d20;border-top:2px solid var(--gold)}
  .banner{padding:26px}
 }
 
+
+/* News thumbnails: real article photography with resilient fallback */
+.news-card .news-art{height:205px;min-height:205px;background:#eee8e5;isolation:isolate}
+.news-card .news-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block;z-index:0}
+.news-card .news-art:before{z-index:1;pointer-events:none}
+.news-card .news-art span{z-index:2}
+.news-card .news-art-fallback{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#32101c,#8a1732 58%,#c5a15a);color:#ffffffb8;font:900 42px Georgia,serif;letter-spacing:-2px}
+@media(max-width:900px){.news-card .news-art{height:190px;min-height:190px}}
+@media(max-width:560px){.news-card .news-art{height:185px;min-height:185px}}
+
 </style>
 </head>
 <body>
@@ -501,10 +511,10 @@ function renderHomeNews(data){
   let url='';
   try{const parsed=new URL(item.url);if(parsed.protocol==='https:'&&parsed.hostname==='www.galatasaray.org')url=parsed.href;}catch{}
   const stamp=item.published?Date.parse(item.published):NaN;
-  return {url,title:String(item.title||'Galatasaray haberi'),desc:String(item.description||'Resmî kulüp haberini kaynağından okuyun.'),category:String(item.category||'Diğer'),stamp,date:Number.isFinite(stamp)?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(stamp)):'Güncel'};
+  return {url,title:String(item.title||'Galatasaray haberi'),desc:String(item.description||'Resmî kulüp haberini kaynağından okuyun.'),category:String(item.category||'Diğer'),image:(typeof item.image==='string'&&/^https:\/\/([a-z0-9-]+\.)*rocketcdn\.com\//i.test(item.image))?item.image:'',stamp,date:Number.isFinite(stamp)?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(stamp)):'Güncel'};
  }).filter(item=>item.url).sort((a,b)=>b.stamp-a.stamp).slice(0,3);
  if(!records.length){homeNews.innerHTML='<a class="news-card" href="haberler.html"><div class="news-copy"><div class="meta">HABER MERKEZİ</div><h3>Son Galatasaray haberleri</h3><p>Resmî haber akışını görüntülemek için haber merkezine geç.</p></div></a>';return;}
- homeNews.innerHTML=records.map(item=>'<a class="news-card" href="'+homeEscape(item.url)+'" target="_blank" rel="noopener noreferrer"><div class="news-art"><span>'+homeEscape(item.category.toLocaleUpperCase('tr'))+'</span></div><div class="news-copy"><div class="meta">'+homeEscape(item.date)+' · '+homeEscape(item.category.toLocaleUpperCase('tr'))+'</div><h3>'+homeEscape(item.title)+'</h3><p>'+homeEscape(item.desc)+'</p></div></a>').join('');
+ homeNews.innerHTML=records.map(item=>'<a class="news-card" href="'+homeEscape(item.url)+'" target="_blank" rel="noopener noreferrer"><div class="news-art">'+(item.image?'<img src="'+homeEscape(item.image)+'" alt="'+homeEscape(item.title)+'" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">':'<div class="news-art-fallback" aria-hidden="true">GS1905</div>')+'<span>'+homeEscape(item.category.toLocaleUpperCase('tr'))+'</span></div><div class="news-copy"><div class="meta">'+homeEscape(item.date)+' · '+homeEscape(item.category.toLocaleUpperCase('tr'))+'</div><h3>'+homeEscape(item.title)+'</h3><p>'+homeEscape(item.desc)+'</p></div></a>').join('');
 }
 fetch('data/news.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('feed unavailable');return response.json();}).then(renderHomeNews).catch(()=>renderHomeNews({items:[]}));
 </script>
