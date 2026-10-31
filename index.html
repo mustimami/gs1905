@@ -106,25 +106,18 @@ document.getElementById('heroNext').addEventListener('click',()=>showHero(heroIn
 document.querySelectorAll('.hero-dot').forEach(el=>el.addEventListener('click',()=>showHero(Number(el.dataset.slide))));
 setInterval(()=>showHero(heroIndex+1),6500);
 
-const fixtureData={
- upcoming:[
-  ['03 KASIM 2026 · 20.45','Galatasaray','VS','VfB Stuttgart','UEFA Şampiyonlar Ligi · RAMS Park','YAKLAŞAN MAÇ'],
-  ['24 KASIM 2026 · 20.45','Galatasaray','VS','Aston Villa','UEFA Şampiyonlar Ligi · RAMS Park','YAKLAŞAN MAÇ'],
-  ['08 ARALIK 2026 · 23.00','AEK Atina','VS','Galatasaray','UEFA Şampiyonlar Ligi · Deplasman','YAKLAŞAN MAÇ']
- ],
- recent:[
-  ['21 EKİM 2026','Lille','2 : 4','Galatasaray','UEFA Şampiyonlar Ligi · Deplasman','MAÇ SONU'],
-  ['13 EKİM 2026','Galatasaray','1 : 4','Barcelona','UEFA Şampiyonlar Ligi · RAMS Park','MAÇ SONU'],
-  ['09 EYLÜL 2026','Sporting CP','3 : 1','Galatasaray','UEFA Şampiyonlar Ligi · Deplasman','MAÇ SONU']
- ]
-};
-function renderFixtures(type){
+function renderFixtures(type,data){
  const list=document.getElementById('fixtureList');
- list.innerHTML=fixtureData[type].map(m=>'<article class="fixture"><div class="fixture-date">'+m[0]+'</div><div class="fixture-teams"><span>'+m[1]+'</span><span class="fixture-score">'+m[2]+'</span><span>'+m[3]+'</span></div><div class="fixture-meta">'+m[4]+'</div><span class="fixture-status">'+m[5]+'</span></article>').join('');
+ const rows=Array.isArray(data[type])?data[type]:[];
+ list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">'+homeEscape(m.date)+'</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+homeEscape(m.score)+'</span><span>'+homeEscape(m.away)+'</span></div><div class="fixture-meta">'+homeEscape(m.meta)+'</div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
  document.querySelectorAll('.schedule-tab').forEach(b=>{const active=b.dataset.fixture===type;b.classList.toggle('active',active);b.setAttribute('aria-selected',active?'true':'false')});
- document.getElementById('scheduleNote').textContent=type==='recent'?'Skorlar UEFA'nın 2026/27 maç programındaki sonuçlarla eşleştirilmiştir. Golcü ve detaylı istatistikler bu görünümde yer almaz.':'Fikstür bilgileri yayınlanan maç programına göre listelenmiştir. Saat ve stadyum bilgileri resmî duyurularla değişebilir.';
+ document.getElementById('scheduleNote').textContent=type==='recent'?'Sonuçlar UEFA’nın yayımladığı resmî 2026/27 maç listesine göre gösterilir.':'Fikstür UEFA’nın yayımladığı 2026/27 maç listesine göre gösterilir. Saat bilgileri Türkiye saatine göre sunulmuştur.';
 }
-document.querySelectorAll('.schedule-tab').forEach(b=>b.addEventListener('click',()=>renderFixtures(b.dataset.fixture)));
+let matchData=null;
+function selectFixture(type){if(matchData)renderFixtures(type,matchData);}
+document.querySelectorAll('.schedule-tab').forEach(b=>b.addEventListener('click',()=>selectFixture(b.dataset.fixture)));
+fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('match data unavailable');return response.json();}).then(data=>{matchData=data;renderFixtures('upcoming',data);}).catch(()=>{document.getElementById('fixtureList').innerHTML='<p class="schedule-note">Maç verileri şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.</p>';});
+
 
 
 const homeNews=document.getElementById('homeNews');
