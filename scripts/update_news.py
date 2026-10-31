@@ -102,7 +102,7 @@ def main():
         raise RuntimeError("RSS feed returned no usable articles; keeping the previous news index.")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload = {"source": FEED_URL, "updatedAt": datetime.now(timezone.utc).isoformat(), "items": records}
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Published {len(records)} official articles.")
 
 if __name__ == "__main__":
