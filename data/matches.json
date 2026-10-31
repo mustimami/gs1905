@@ -1,7 +1,7 @@
 {
   "source": "https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836",
   "updatedAt": "2026-10-31T13:30:00+03:00",
-  "note": "Fikstür tarih ve saatleri Galatasaray'ın resmî duyurusundan; oynanan maçların skorları UEFA'nın 30 Ekim 2026 tarihli sonuç listesinden alınmıştır. Saatler Türkiye saatiyledir.",
+  "note": "Avrupa maç sonuçları UEFA, Süper Lig sonuçları Galatasaray ve TFF duyurularından doğrulanarak güncellenir.",
   "upcoming": [
     {
       "date": "03 KASIM 2026 · 20.45",
@@ -51,12 +51,39 @@
   ],
   "recent": [
     {
+      "date": "30 EKİM 2026",
+      "home": "Tümosan Konyaspor",
+      "score": "0 : 4",
+      "away": "Galatasaray",
+      "meta": "Trendyol Süper Lig · 10. hafta · Deplasman",
+      "status": "MAÇ SONU",
+      "url": "https://www.galatasaray.org/haber/futbol/tumosan-konyaspor-0-4-galatasaray/61266"
+    },
+    {
+      "date": "26 EKİM 2026",
+      "home": "Galatasaray",
+      "score": "2 : 1",
+      "away": "Fenerbahçe",
+      "meta": "Trendyol Süper Lig · 9. hafta · RAMS Park",
+      "status": "MAÇ SONU",
+      "url": "https://www.galatasaray.org/haberler/futbol/43?page=2"
+    },
+    {
       "date": "21 EKİM 2026",
       "home": "Lille",
       "score": "2 : 4",
       "away": "Galatasaray",
       "meta": "UEFA Şampiyonlar Ligi · Deplasman",
       "status": "MAÇ SONU"
+    },
+    {
+      "date": "17 EKİM 2026",
+      "home": "Gençlerbirliği",
+      "score": "0 : 1",
+      "away": "Galatasaray",
+      "meta": "Trendyol Süper Lig · 8. hafta · Deplasman",
+      "status": "MAÇ SONU",
+      "url": "https://www.galatasaray.org/haber/futbol/genclerbirligi-0-1-galatasaray/61158"
     },
     {
       "date": "13 EKİM 2026",
@@ -105,22 +132,22 @@
       "week": "4",
       "home": "İstanbul Başakşehir",
       "away": "Galatasaray",
-      "score": "",
-      "status": "Tarih/saat TFF'de takip edilmeli"
+      "score": "2-3",
+      "status": "Oynandı"
     },
     {
       "week": "5",
       "home": "Galatasaray",
       "away": "Kocaelispor",
-      "score": "",
-      "status": "Tarih/saat TFF'de takip edilmeli"
+      "score": "1-0",
+      "status": "Oynandı"
     },
     {
       "week": "6",
       "home": "Trabzonspor",
       "away": "Galatasaray",
-      "score": "",
-      "status": "Tarih/saat TFF'de takip edilmeli"
+      "score": "4-0",
+      "status": "Oynandı"
     },
     {
       "week": "7",
@@ -133,22 +160,22 @@
       "week": "8",
       "home": "Gençlerbirliği",
       "away": "Galatasaray",
-      "score": "",
-      "status": "Tarih/saat TFF'de takip edilmeli"
+      "score": "0-1",
+      "status": "Oynandı"
     },
     {
       "week": "9",
       "home": "Galatasaray",
       "away": "Fenerbahçe",
-      "score": "",
-      "status": "Tarih/saat TFF'de takip edilmeli"
+      "score": "2-1",
+      "status": "Oynandı"
     },
     {
       "week": "10",
       "home": "Konyaspor",
       "away": "Galatasaray",
-      "score": "",
-      "status": "Tarih/saat TFF'de takip edilmeli"
+      "score": "0-4",
+      "status": "Oynandı"
     },
     {
       "week": "11",
