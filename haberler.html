@@ -196,4 +196,5 @@ fetch('data/news.json?ts='+Date.now(),{cache:'no-store'})
 <script>
 (()=>{const b=document.getElementById('menuToggle'),n=document.getElementById('siteNav');if(!b||!n)return;b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));n.classList.toggle('open',open);});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{b.setAttribute('aria-expanded','false');n.classList.remove('open');}));})();
 </script>
+<script src="assets/team-logos.js?v=1" defer></script>
 </body></html>
