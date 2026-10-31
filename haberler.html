@@ -109,6 +109,20 @@ button,.nav-cta,.btn,.button{transition:filter .2s,transform .2s}button:hover,.n
 @media(max-width:1200px){.gs-footer-main{grid-template-columns:1.2fr .8fr .8fr .8fr;gap:24px}.gs-footer-trophies{grid-column:1/-1;padding-top:8px}.gs-footer-trophies .honours-sketch{max-width:700px;margin:auto}.gs-footer-trophies .honours-captions{max-width:700px;margin:8px auto 0}}
 @media(max-width:760px){.gs-footer-inner{width:calc(100% - 36px);padding-top:32px}.gs-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}.gs-footer-brand{grid-column:1/-1}.gs-footer-crest{width:60px;height:74px;font-size:25px}.gs-footer-wordmark strong{font-size:30px}.gs-footer-trophies{grid-column:1/-1}.gs-footer-column a{font-size:12px;white-space:normal}.gs-footer-column h3{font-size:12px}.gs-footer-bottom{align-items:flex-start;flex-direction:column;gap:12px}.gs-footer-bottom strong{align-self:flex-end}.gs-footer-bottom i{margin:0 7px}.gs-footer-trophies .honours-captions span{font-size:8px;padding:0 3px}}
 @media(max-width:380px){.gs-footer-main{grid-template-columns:1fr}.gs-footer-brand,.gs-footer-trophies{grid-column:auto}.gs-footer-column{padding-left:4px}}
+
+/* Site-wide visual system: charcoal surfaces, restrained red/gold details */
+body{background:#f3f2f0;color:#202020}
+header{background:#171717!important;color:#f5f5f5;border-bottom:1px solid #343434!important}
+header .brand,header .brand small,header .navlinks a,header .links a{color:#f0f0f0}
+header .brand small{color:#b8b8b8}
+header .navlinks a:hover,header .links a:hover,header .navlinks a[aria-current="page"]{color:#f5b323}
+header .navlinks a[aria-current="page"]:after,header .links a:after{background:linear-gradient(90deg,#f5b323,#a9082c)}
+main{color:#222}
+main h1,main h2,main h3,section h1,section h2{letter-spacing:-.025em}
+main h1:after,main h2:after{content:"";display:block;width:58px;height:3px;margin-top:12px;background:linear-gradient(90deg,#f5b323 0 50%,#a9082c 50%)}
+.card,.panel,.stat-card,.player-card,.news-card,.match-card,.team-card,.sport-card,.fixture-card,.table-wrap,.standings,.widget,.content-card{border-color:#dedbd6!important;box-shadow:0 8px 24px rgba(20,20,20,.055)}
+button,.nav-cta,.btn,.button,.filter-btn{border-color:#d3a126}
+::selection{background:#f5b323;color:#171717}
 </style></head><body><div class="topline"></div><header><div class="wrap nav"><a class="brand" href="index.html">GS1905<small>ASLANIN YUVASI</small></a><nav class="navlinks" aria-label="Ana menü"><a href="index.html">ANA SAYFA</a><a href="haberler.html" aria-current="page">HABERLER</a><a href="kadro.html">A TAKIM</a><a href="fikstur.html">FİKSTÜR</a><a href="istatistikler.html">İSTATİSTİK</a><a href="branslar.html">BRANŞLAR</a></nav></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">GS1905 · HABER MERKEZİ</div><h1>Gündemden<br>haberdar ol.</h1><p>Galatasaray'ın futbol, basketbol, voleybol ve kulüp gündeminden seçilmiş duyurular. Haberler kulübün resmî RSS akışından alınır ve yaklaşık iki saatte bir yenilenir.</p></div></section>
 <main class="wrap"><div class="tools"><input id="search" class="search" type="search" placeholder="Haber başlığı ara..." aria-label="Haber ara"><div class="filters" role="group" aria-label="Haber kategorileri"><button class="active" data-filter="Tümü">TÜMÜ</button><button data-filter="Futbol">FUTBOL</button><button data-filter="Basketbol">BASKETBOL</button><button data-filter="Voleybol">VOLEYBOL</button><button data-filter="Kulüp">KULÜP</button><button data-filter="Diğer">DİĞER</button></div></div>
