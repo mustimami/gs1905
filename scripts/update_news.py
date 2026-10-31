@@ -56,7 +56,7 @@ def main():
             published = ""
         records.append({
             "title": title[:180],
-            "description": re.sub(r"\s+, " ", description)[:280],
+            "description": re.sub(r"\s+", " ", description)[:280],
             "url": link,
             "published": published,
             "category": category(title),
