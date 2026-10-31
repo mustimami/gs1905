@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://hlkiurt3.rocketcdn.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site-redesign.css?v=4">
+<link rel="stylesheet" href="assets/site-redesign.css?v=5">
 </head>
 <body>
 <div class="topline"></div>
@@ -95,5 +95,5 @@ fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).t
  }).catch(()=>{});
 const target=new Date('2026-11-03T20:45:00+03:00');function tick(){const d=target-Date.now(),el=document.getElementById('countdown');if(d<=0){el.textContent='MAÇ BAŞLADI';return;}const days=Math.floor(d/86400000),hours=Math.floor(d%86400000/3600000);el.textContent=days+' GÜN  '+hours+' SAAT KALDI';}tick();setInterval(tick,60000);
 </script>
-<script src="assets/team-logos.js?v=1" defer></script>
+<script src="assets/team-logos.js?v=2" defer></script>
 </body></html>
