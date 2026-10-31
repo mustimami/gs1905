@@ -29,7 +29,7 @@ def safe_image(url):
     try:
         parsed = urlsplit(url.strip())
         host = (parsed.hostname or "").lower()
-        if parsed.scheme == "https" and (host == "galatasaray.org" or host.endswith(".galatasaray.org")):
+        if parsed.scheme == "https" and (host == "galatasaray.org" or host.endswith(".galatasaray.org") or host == "hlkiurt3.rocketcdn.com"):
             return url.strip()
     except ValueError:
         pass
