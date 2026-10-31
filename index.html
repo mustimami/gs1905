@@ -55,7 +55,7 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 <div class="hero-content"><span class="eyebrow" id="heroKicker">ŞAMPİYONLAR LİGİ · 31 EKİM 2026</span><h1 id="heroTitle">Stuttgart maçı<br>hazırlıkları başladı.</h1><p id="heroText">Galatasaray Futbol Takımı, 3 Kasım'da oynanacak UEFA Şampiyonlar Ligi karşılaşması için çalışmalarına Kemerburgaz Metin Oktay Tesisleri'nde başladı.</p><a class="pill" id="heroLink" href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/stuttgart-maci-hazirliklari-basladi/61272" target="_blank" rel="noreferrer">HABERİN TAMAMINI OKU ↗</a><div class="hero-controls"><button class="hero-control" id="heroPrev" aria-label="Önceki manşet">‹</button><button class="hero-control" id="heroNext" aria-label="Sonraki manşet">›</button></div></div>
 <div class="hero-dots"><button class="hero-dot active" aria-label="1. manşet" data-slide="0"></button><button class="hero-dot" aria-label="2. manşet" data-slide="1"></button><button class="hero-dot" aria-label="3. manşet" data-slide="2"></button></div>
 </div>
-<aside class="next-match-panel"><div><span class="match-badge">SIRADAKİ MAÇ · ŞAMPİYONLAR LİGİ</span><h2>Avrupa gecesi<br>RAMS Park'ta.</h2><div class="versus"><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması"></div><strong>GALATASARAY</strong></div><b>VS</b><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/VfB_Stuttgart_Logo.svg" alt="VfB Stuttgart arması"></div><strong>STUTTGART</strong></div></div><div style="text-align:center;font-size:26px;font-weight:950;color:var(--red)">03 KASIM 2026</div><p style="text-align:center;font-size:13px;font-weight:800;margin:7px 0 18px">20.45 · RAMS PARK</p><div class="countdown-note">UEFA Şampiyonlar Ligi lig aşaması 4. hafta karşılaşması. Saat ve fikstür bilgisi resmî kulüp duyurusuna dayanmaktadır.</div></div><a class="more" href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836" target="_blank" rel="noreferrer">RESMÎ FİKSTÜR ↗</a></aside>
+<aside class="next-match-panel"><div><span class="match-badge">SIRADAKİ MAÇ · ŞAMPİYONLAR LİGİ</span><h2 id="nextMatchHeadline">Avrupa gecesi<br>RAMS Park'ta.</h2><div class="versus"><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması"></div><strong>GALATASARAY</strong></div><b>VS</b><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/VfB_Stuttgart_Logo.svg" alt="VfB Stuttgart arması"></div><strong id="nextMatchOpponent">STUTTGART</strong></div></div><div id="nextMatchDate" style="text-align:center;font-size:26px;font-weight:950;color:var(--red)">03 KASIM 2026</div><p id="nextMatchTime" style="text-align:center;font-size:13px;font-weight:800;margin:7px 0 18px">20.45 · RAMS PARK</p><div class="countdown-note" id="nextMatchCountdown" aria-live="polite">UEFA Şampiyonlar Ligi karşılaşması.</div></div><a class="more" href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836" target="_blank" rel="noreferrer">RESMÎ FİKSTÜR ↗</a></aside>
 </div></section>
 <section class="section" id="haberler"><div class="wrap"><div class="section-head"><div><div class="kicker">GÜNDEM</div><h2>Son gelişmeler</h2></div><a class="more" href="haberler.html">TÜM HABERLER ↗</a></div>
 <div class="news-grid" id="homeNews"><div class="news-card"><div class="news-copy"><div class="meta">RESMÎ HABER AKIŞI</div><h3>Haberler yükleniyor…</h3><p>Son gelişmeler kısa süre içinde burada görüntülenecek.</p></div></div></div></div></section>
@@ -102,6 +102,31 @@ document.getElementById('heroNext').addEventListener('click',()=>showHero(heroIn
 document.querySelectorAll('.hero-dot').forEach(el=>el.addEventListener('click',()=>showHero(Number(el.dataset.slide))));
 setInterval(()=>showHero(heroIndex+1),6500);
 
+
+function updateNextMatch(data){
+ const next=(Array.isArray(data.upcoming)?data.upcoming:[]).find(match=>match.kickoff&&Date.parse(match.kickoff)>Date.now());
+ if(!next)return;
+ const opponent=next.home.toLocaleLowerCase('tr')==='galatasaray'?next.away:next.home;
+ const isHome=next.home.toLocaleLowerCase('tr')==='galatasaray';
+ document.getElementById('nextMatchOpponent').textContent=opponent.toLocaleUpperCase('tr');
+ document.getElementById('nextMatchDate').textContent=next.date.split(' · ')[0];
+ document.getElementById('nextMatchTime').textContent=(next.date.split(' · ')[1]||'')+' · '+(isHome?'RAMS PARK':'DEPLASMAN');
+ document.getElementById('nextMatchHeadline').innerHTML=isHome?'Avrupa gecesi<br>RAMS Park’ta.':'Avrupa’da<br>deplasman gecesi.';
+ const counter=document.getElementById('nextMatchCountdown');
+ const kickoff=Date.parse(next.kickoff);
+ function tick(){
+  const remaining=kickoff-Date.now();
+  if(remaining<=0){counter.textContent='Karşılaşma başladı veya maç saati geçti. Son durum için resmî UEFA sayfasını kontrol edin.';return;}
+  const days=Math.floor(remaining/86400000);
+  const hours=Math.floor(remaining%86400000/3600000);
+  const minutes=Math.floor(remaining%3600000/60000);
+  const seconds=Math.floor(remaining%60000/1000);
+  counter.textContent='Başlama vuruşuna kalan süre: '+days+' gün '+hours+' saat '+minutes+' dakika '+seconds+' saniye. Saatler Türkiye saatine göredir.';
+ }
+ tick();
+ setInterval(tick,1000);
+}
+
 function renderFixtures(type,data){
  const list=document.getElementById('fixtureList');
  const rows=Array.isArray(data[type])?data[type]:[];
@@ -112,7 +137,7 @@ function renderFixtures(type,data){
 let matchData=null;
 function selectFixture(type){if(matchData)renderFixtures(type,matchData);}
 document.querySelectorAll('.schedule-tab').forEach(b=>b.addEventListener('click',()=>selectFixture(b.dataset.fixture)));
-fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('match data unavailable');return response.json();}).then(data=>{matchData=data;renderFixtures('upcoming',data);}).catch(()=>{document.getElementById('fixtureList').innerHTML='<p class="schedule-note">Maç verileri şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.</p>';});
+fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('match data unavailable');return response.json();}).then(data=>{matchData=data;renderFixtures('upcoming',data);updateNextMatch(data);}).catch(()=>{document.getElementById('fixtureList').innerHTML='<p class="schedule-note">Maç verileri şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.</p>';});
 
 
 
