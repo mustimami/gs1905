@@ -7,21 +7,72 @@
       "name": "Uğurcan Çakır",
       "position": "Kaleci",
       "photo": "https://media02.tr.beinsports.com/img/players/P5654.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "1996-04-05",
+        "birthPlace": "Antalya",
+        "nationality": "Türkiye",
+        "heightCm": 188,
+        "career": [
+          "Trabzonspor",
+          "Galatasaray"
+        ],
+        "profileUrl": "https://www.tff.org/Default.aspx?kisiId=1136213&pageId=30",
+        "sources": [
+          "https://www.tff.org/Default.aspx?kisiId=1136213&pageId=30",
+          "https://www.uefa.com/uefachampionsleague/clubs/players/250078452--ugurcan-cakir/"
+        ]
+      }
     },
     {
       "number": 19,
       "name": "Günay Güvenç",
       "position": "Kaleci",
       "photo": "https://media02.tr.beinsports.com/img/players/P28351.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "1991-06-25",
+        "birthPlace": "Neu-Ulm, Almanya",
+        "nationality": "Türkiye",
+        "career": [
+          "SSV Ulm",
+          "Stuttgart Kickers",
+          "Beşiktaş",
+          "Adanaspor",
+          "Mersin İY",
+          "Göztepe",
+          "Gaziantep FK",
+          "Kasımpaşa",
+          "Galatasaray"
+        ],
+        "profileUrl": "https://www.galatasaray.org/p/19-gunay-guvenc/3133",
+        "sources": [
+          "https://www.galatasaray.org/p/19-gunay-guvenc/3133"
+        ]
+      }
     },
     {
       "number": 24,
       "name": "Jankat Yılmaz",
       "position": "Kaleci",
       "photo": "https://media02.tr.beinsports.com/img/players/P83491.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "2004-08-16",
+        "birthPlace": "İstanbul",
+        "nationality": "Türkiye",
+        "career": [
+          "Galatasaray Akademisi",
+          "Adanaspor",
+          "Eyüpspor",
+          "Galatasaray"
+        ],
+        "profileUrl": "https://www.galatasaray.org/p/24-jankat-yilmaz/1024",
+        "sources": [
+          "https://www.galatasaray.org/p/24-jankat-yilmaz/1024",
+          "https://www.tff.org/Default.aspx?kisiId=1790244&pageId=30"
+        ]
+      }
     },
     {
       "number": 60,
@@ -56,7 +107,25 @@
       "name": "Davinson Sánchez",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P1911.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "1996-06-12",
+        "birthPlace": "Guasimo, Kolombiya",
+        "nationality": "Kolombiya",
+        "heightCm": 187,
+        "career": [
+          "América de Cali",
+          "Atlético Nacional",
+          "Ajax",
+          "Tottenham Hotspur",
+          "Galatasaray"
+        ],
+        "profileUrl": "https://www.galatasaray.org/p/davinson-sanchez/3151",
+        "sources": [
+          "https://www.galatasaray.org/p/davinson-sanchez/3151",
+          "https://www.tff.org/Default.aspx?kisiId=2556114&pageId=30"
+        ]
+      }
     },
     {
       "number": 17,
@@ -91,7 +160,23 @@
       "name": "Wilfried Stephane Singo",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P39431.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "2000-12-25",
+        "birthPlace": "Ouraghio, Fildişi Sahili",
+        "nationality": "Fildişi Sahili",
+        "heightCm": 190,
+        "career": [
+          "Denguélé",
+          "Torino",
+          "AS Monaco",
+          "Galatasaray"
+        ],
+        "profileUrl": "https://www.galatasaray.org/p/90-wilfried-stephane-singo/3546",
+        "sources": [
+          "https://www.galatasaray.org/p/90-wilfried-stephane-singo/3546"
+        ]
+      }
     },
     {
       "number": 91,
@@ -182,7 +267,20 @@
       "name": "Yunus Akgün",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P2738.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "2000-07-07",
+        "birthPlace": "Küçükçekmece, İstanbul",
+        "nationality": "Türkiye",
+        "career": [
+          "Galatasaray",
+          "Adana Demirspor (kiralık)"
+        ],
+        "profileUrl": "https://www.tff.org/Default.aspx?kisiId=1442892&pageId=30",
+        "sources": [
+          "https://www.tff.org/Default.aspx?kisiId=1442892&pageId=30"
+        ]
+      }
     },
     {
       "number": 21,
@@ -217,7 +315,21 @@
       "name": "Barış Alper Yılmaz",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P69815.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "details": {
+        "birthDate": "2000-05-23",
+        "birthPlace": "Rize",
+        "nationality": "Türkiye",
+        "career": [
+          "Ankara Demirspor",
+          "Keçiörengücü",
+          "Galatasaray"
+        ],
+        "profileUrl": "https://www.tff.org/Default.aspx?kisiId=1462850&pageId=30",
+        "sources": [
+          "https://www.tff.org/Default.aspx?kisiId=1462850&pageId=30"
+        ]
+      }
     },
     {
       "number": 62,
@@ -227,5 +339,6 @@
       "photoSource": "beIN SPORTS"
     }
   ],
-  "photoNote": "Oyuncu portreleri beIN SPORTS kadro sayfasındaki görsel kayıtlarından alınmıştır."
+  "photoNote": "Oyuncu portreleri beIN SPORTS kadro sayfasındaki görsel kayıtlarından alınmıştır.",
+  "profileDataNote": "Yalnızca resmî Galatasaray, TFF ve UEFA kayıtlarında doğrulanabilen bilgiler eklenmiştir. Kaynak bağlantıları oyuncu bazında tutulur; eksik bilgiler tahmin edilmez."
 }
