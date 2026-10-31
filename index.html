@@ -69,6 +69,7 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
   <div class="schedule-tabs" role="tablist" aria-label="Maç listesi">
    <button class="schedule-tab active" type="button" data-fixture="upcoming" aria-selected="true">YAKLAŞAN MAÇLAR</button>
    <button class="schedule-tab" type="button" data-fixture="recent" aria-selected="false">SONUÇLAR</button>
+   <button class="schedule-tab" type="button" data-fixture="superLig" aria-selected="false">SÜPER LİG</button>
   </div>
  </div>
  <div class="fixture-list" id="fixtureList"><p class="schedule-note">Maç verileri yükleniyor…</p></div>
@@ -127,12 +128,21 @@ function updateNextMatch(data){
  setInterval(tick,1000);
 }
 
+
 function renderFixtures(type,data){
  const list=document.getElementById('fixtureList');
- const rows=Array.isArray(data[type])?data[type]:[];
- list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">'+homeEscape(m.date)+'</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+homeEscape(m.score)+'</span><span>'+homeEscape(m.away)+'</span></div><div class="fixture-meta">'+homeEscape(m.meta)+'</div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
+ if(type==='superLig'){
+  const rows=Array.isArray(data.superLig)?data.superLig:[];
+  list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">TRENDYOL SÜPER LİG · '+homeEscape(m.week)+'. HAFTA</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+(m.score?homeEscape(m.score):'VS')+'</span><span>'+homeEscape(m.away)+'</span></div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
+ }else{
+  const rows=Array.isArray(data[type])?data[type]:[];
+  list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">'+homeEscape(m.date)+'</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+homeEscape(m.score)+'</span><span>'+homeEscape(m.away)+'</span></div><div class="fixture-meta">'+homeEscape(m.meta)+'</div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
+ }
  document.querySelectorAll('.schedule-tab').forEach(b=>{const active=b.dataset.fixture===type;b.classList.toggle('active',active);b.setAttribute('aria-selected',active?'true':'false')});
- document.getElementById('scheduleNote').textContent=type==='recent'?'Oynanan maçların skorları UEFA’nın 30 Ekim 2026 tarihli resmî sonuç listesinden alınmıştır.':'Fikstür tarih ve saatleri Galatasaray’ın resmî duyurusuna dayanmaktadır. Saatler Türkiye saatiyledir.';
+ const note=document.getElementById('scheduleNote');
+ if(type==='recent') note.textContent='Oynanan maçların skorları UEFA’nın resmî sonuç listesinden alınmıştır.';
+ else if(type==='superLig') note.innerHTML='Rakipler Galatasaray’ın resmî 2026/27 fikstüründen alınmıştır. Haftalık tarih ve saatler açıklandıkça TFF’den kontrol edin. <a class="more" href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer">TFF FİKSTÜRÜ ↗</a>';
+ else note.textContent='Fikstür tarih ve saatleri Galatasaray’ın resmî duyurusuna dayanmaktadır. Saatler Türkiye saatiyledir.';
 }
 let matchData=null;
 function selectFixture(type){if(matchData)renderFixtures(type,matchData);}
