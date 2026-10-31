@@ -19,6 +19,23 @@ header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blu
 footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center;padding-bottom:28px;border-bottom:1px solid #ffffff20}.footer-brand{font-weight:900;font-size:19px}.footer-brand small{display:block;color:#b7aeb1;font-size:9px;letter-spacing:2px;margin-top:5px}.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:#d4cdd0}.copyright{display:flex;justify-content:space-between;gap:20px;padding-top:18px;color:#968d91;font-size:10px}.disclaimer{color:#b9aeb2;font-size:9px;max-width:700px;line-height:1.6;margin-top:12px}
 @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-main,.next-match-panel{min-height:360px}.links{display:none;position:absolute;top:82px;left:0;right:0;background:white;padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero-grid{grid-template-columns:1fr}.hero-main{min-height:390px;padding:28px}.hero-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.side-card{min-height:175px;padding:18px}.news-grid{grid-template-columns:1fr 1fr}.news-card:first-child{grid-column:span 2}.match-wrap{grid-template-columns:1fr}.branches{grid-template-columns:1fr 1fr}.banner{align-items:flex-start;flex-direction:column}.footer-top,.copyright{flex-direction:column;align-items:flex-start}}
 @media(max-width:480px){.wrap{width:min(100% - 28px,var(--max))}.nav{height:70px}.links{top:70px}.hero{padding-top:24px}.hero-main{min-height:380px;padding:23px}.hero h1{font-size:39px}.hero-side{grid-template-columns:1fr}.side-card{min-height:145px}.section{padding:36px 0}.news-grid{grid-template-columns:1fr}.news-card:first-child{grid-column:auto}.news-art{height:170px}.branches{gap:9px}.branch{padding:17px;min-height:135px}.branch h3{font-size:17px}.match-card{padding:18px}.banner{padding:27px}.footer-links{gap:13px}}
+
+.match-schedule{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
+.schedule-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.schedule-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.schedule-tab{border:1px solid var(--line);background:#fff;color:var(--muted);padding:9px 13px;border-radius:4px;font-size:10px;font-weight:850;cursor:pointer}
+.schedule-tab.active{background:var(--red);border-color:var(--red);color:#fff}
+.fixture-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fixture{border:1px solid var(--line);border-radius:6px;padding:15px;background:#fff}
+.fixture-date{font-size:9px;letter-spacing:1px;color:var(--red);font-weight:900}
+.fixture-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:13px 0;font-size:11px;font-weight:850}
+.fixture-score{font-size:18px;font-weight:950;color:var(--red);white-space:nowrap}
+.fixture-meta{font-size:10px;color:var(--muted);line-height:1.5}
+.fixture-status{display:inline-block;margin-top:10px;padding:5px 7px;background:#f5efec;color:var(--red);font-size:9px;font-weight:900;border-radius:3px}
+.schedule-note{font-size:10px;color:var(--muted);margin:13px 0 0;line-height:1.6}
+@media(max-width:800px){.fixture-list{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.match-schedule{padding:16px}.schedule-head{align-items:flex-start;flex-direction:column}.fixture-list{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -48,6 +65,21 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 <section class="section soft" id="mac-merkezi"><div class="wrap"><div class="section-head"><div><div class="kicker">SAHADAN</div><h2>Maç merkezi</h2></div><a class="more" href="https://www.galatasaray.org/sl/futbol-takimi-ana-sayfa/4" target="_blank" rel="noreferrer">RESMÎ FUTBOL SAYFASI ↗</a></div>
 <div class="match-wrap"><div class="match-card"><div class="match-title"><strong>SON MAÇ · 30 EKİM</strong><span class="live-label">TAMAMLANDI</span></div><div class="teams"><div class="team"><img class="match-team-logo" src="https://football-logos.cc/assets/turkey/konyaspor.png" alt="Konyaspor arması" onerror="this.style.display='none'">TÜMOSAN<br>KONYASPOR</div><div class="score">0 : 4<small>TRENDYOL SÜPER LİG</small></div><div class="team"><img class="match-team-logo galatasaray" src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması">GALATASARAY</div></div><div class="match-foot">30 Ekim 2026 · 20.00 · 10. hafta</div><div class="match-foot"><a class="more" href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noreferrer">TFF MAÇ DETAYI ↗</a></div></div>
 <div class="match-card" id="puan-durumu"><div class="match-title"><strong>SÜPER LİG PUAN DURUMU</strong><span class="meta">31 EKİM 2026</span></div><div class="table-scroll"><table class="standings-table"><thead><tr><th>#</th><th>TAKIM</th><th>O</th><th>G</th><th>B</th><th>M</th><th>AV</th><th>P</th></tr></thead><tbody><tr><td>1</td><td>Galatasaray</td><td>10</td><td>8</td><td>1</td><td>1</td><td>+11</td><td>25</td></tr><tr><td>2</td><td>Amed SK</td><td>9</td><td>6</td><td>2</td><td>1</td><td>+10</td><td>20</td></tr><tr><td>3</td><td>Trabzonspor</td><td>9</td><td>6</td><td>1</td><td>2</td><td>+14</td><td>19</td></tr><tr><td>4</td><td>Beşiktaş</td><td>9</td><td>6</td><td>0</td><td>3</td><td>+8</td><td>18</td></tr><tr><td>5</td><td>Fenerbahçe</td><td>9</td><td>5</td><td>1</td><td>3</td><td>+15</td><td>16</td></tr><tr><td>6</td><td>Kasımpaşa</td><td>9</td><td>4</td><td>4</td><td>1</td><td>+4</td><td>16</td></tr><tr><td>7</td><td>Kocaelispor</td><td>9</td><td>5</td><td>0</td><td>4</td><td>+2</td><td>15</td></tr><tr><td>8</td><td>Erzurumspor FK</td><td>9</td><td>4</td><td>2</td><td>3</td><td>-4</td><td>14</td></tr></tbody></table></div><div class="table-source"><span>Veri: 31.10.2026 · 10. hafta</span><a class="more" href="https://www.mackolik.com/puan-durumu/t%C3%BCrkiye-trendyol-s%C3%BCper-lig/2026-2027/482ofyysbdbeoxauk19yg7tdt" target="_blank" rel="noreferrer">MACKOLİK ↗</a></div><div class="match-foot">Puan tablosu demo amaçlıdır; Mackolik'te anlık değişen tabloyla farklılık gösterebilir.</div></div></div>
+<div class="match-schedule">
+ <div class="schedule-head">
+  <div><div class="kicker">FİKSTÜR TAKİBİ</div><strong style="font-size:16px;display:block;margin-top:5px">Galatasaray maçları</strong></div>
+  <div class="schedule-tabs" role="tablist" aria-label="Maç listesi">
+   <button class="schedule-tab active" type="button" data-fixture="upcoming" aria-selected="true">YAKLAŞAN MAÇLAR</button>
+   <button class="schedule-tab" type="button" data-fixture="recent" aria-selected="false">SONUÇLAR</button>
+  </div>
+ </div>
+ <div class="fixture-list" id="fixtureList">
+  <article class="fixture"><div class="fixture-date">03 KASIM 2026 · 20.45</div><div class="fixture-teams"><span>Galatasaray</span><span class="fixture-score">VS</span><span>VfB Stuttgart</span></div><div class="fixture-meta">UEFA Şampiyonlar Ligi · RAMS Park</div><span class="fixture-status">YAKLAŞAN MAÇ</span></article>
+  <article class="fixture"><div class="fixture-date">07 KASIM 2026 · 19.00</div><div class="fixture-teams"><span>Galatasaray</span><span class="fixture-score">VS</span><span>Amed SK</span></div><div class="fixture-meta">Trendyol Süper Lig · 11. hafta</div><span class="fixture-status">YAKLAŞAN MAÇ</span></article>
+  <article class="fixture"><div class="fixture-date">21 KASIM 2026</div><div class="fixture-teams"><span>Galatasaray</span><span class="fixture-score">VS</span><span>Samsunspor</span></div><div class="fixture-meta">Trendyol Süper Lig</div><span class="fixture-status">YAKLAŞAN MAÇ</span></article>
+ </div>
+ <p class="schedule-note" id="scheduleNote">Fikstür bilgileri yayınlanan maç programına göre listelenmiştir. Saat ve stadyum bilgileri resmî duyurularla değişebilir.</p>
+</div>
 </div></section>
 <section class="section" id="branslar"><div class="wrap"><div class="section-head"><div><div class="kicker">TEK ARMA, ÇOK HEYECAN</div><h2>Branşlarımız</h2></div></div><div class="branches">
 <a class="branch" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer"><span class="num">01 / SAHA</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2v4l-3 2-3-2V9zM12 7V3m3 6 4-2m-4 9 2 4m-8-4-2 4M9 9 5 7"/></svg></span><h3>Futbol</h3><p>Aslanın mücadelesi.</p></div></a>
@@ -73,5 +105,26 @@ document.getElementById('heroPrev').addEventListener('click',()=>showHero(heroIn
 document.getElementById('heroNext').addEventListener('click',()=>showHero(heroIndex+1));
 document.querySelectorAll('.hero-dot').forEach(el=>el.addEventListener('click',()=>showHero(Number(el.dataset.slide))));
 setInterval(()=>showHero(heroIndex+1),6500);
+
+const fixtureData={
+ upcoming:[
+  ['03 KASIM 2026 · 20.45','Galatasaray','VS','VfB Stuttgart','UEFA Şampiyonlar Ligi · RAMS Park','YAKLAŞAN MAÇ'],
+  ['07 KASIM 2026 · 19.00','Galatasaray','VS','Amed SK','Trendyol Süper Lig · 11. hafta','YAKLAŞAN MAÇ'],
+  ['21 KASIM 2026','Galatasaray','VS','Samsunspor','Trendyol Süper Lig','YAKLAŞAN MAÇ']
+ ],
+ recent:[
+  ['30 EKİM 2026','Tümosan Konyaspor','0 : 4','Galatasaray','Trendyol Süper Lig · 10. hafta','MAÇ SONU'],
+  ['26 EKİM 2026','Galatasaray','2 : 1','Fenerbahçe','Trendyol Süper Lig · 9. hafta','MAÇ SONU'],
+  ['21 EKİM 2026','Lille','2 : 4','Galatasaray','UEFA Şampiyonlar Ligi','MAÇ SONU']
+ ]
+};
+function renderFixtures(type){
+ const list=document.getElementById('fixtureList');
+ list.innerHTML=fixtureData[type].map(m=>'<article class="fixture"><div class="fixture-date">'+m[0]+'</div><div class="fixture-teams"><span>'+m[1]+'</span><span class="fixture-score">'+m[2]+'</span><span>'+m[3]+'</span></div><div class="fixture-meta">'+m[4]+'</div><span class="fixture-status">'+m[5]+'</span></article>').join('');
+ document.querySelectorAll('.schedule-tab').forEach(b=>{const active=b.dataset.fixture===type;b.classList.toggle('active',active);b.setAttribute('aria-selected',active?'true':'false')});
+ document.getElementById('scheduleNote').textContent=type==='recent'?'Tamamlanmış maçların skorları yayınlanan fikstür sonuçlarına göre listelenmiştir. Golcü ve detaylı istatistikler doğrulanmadığı için eklenmemiştir.':'Fikstür bilgileri yayınlanan maç programına göre listelenmiştir. Saat ve stadyum bilgileri resmî duyurularla değişebilir.';
+}
+document.querySelectorAll('.schedule-tab').forEach(b=>b.addEventListener('click',()=>renderFixtures(b.dataset.fixture)));
+
 </script>
 </body></html>
