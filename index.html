@@ -37,23 +37,6 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 @media(max-width:480px){.match-schedule{padding:16px}.schedule-head{align-items:flex-start;flex-direction:column}.fixture-list{grid-template-columns:1fr}}
 
 
-.squad-tools{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 20px}
-.squad-search{flex:1;min-width:210px;max-width:340px;border:1px solid var(--line);border-radius:5px;padding:12px 14px;font:inherit;font-size:12px;outline:none}
-.squad-search:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c7a45b20}
-.squad-filters{display:flex;gap:7px;flex-wrap:wrap}
-.squad-filter{border:1px solid var(--line);background:#fff;color:var(--muted);padding:10px 12px;border-radius:4px;font-size:10px;font-weight:850;cursor:pointer}
-.squad-filter.active{background:var(--red);color:#fff;border-color:var(--red)}
-.squad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.player-card{border:1px solid var(--line);border-radius:7px;background:#fff;padding:16px;display:flex;align-items:center;gap:13px;min-width:0;transition:transform .18s,border-color .18s}
-.player-card:hover{transform:translateY(-3px);border-color:#d6c4a1}
-.player-number{width:43px;height:43px;flex:0 0 43px;border-radius:50%;display:grid;place-items:center;background:#f6eeee;color:var(--red);font-family:Georgia,serif;font-size:18px;font-weight:900}
-.player-info{min-width:0}.player-name{font-size:12px;font-weight:900;line-height:1.3}.player-position{font-size:10px;color:var(--muted);margin-top:5px}
-.squad-count{font-size:10px;color:var(--muted);margin-top:16px}
-.squad-empty{grid-column:1/-1;padding:28px;text-align:center;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:12px}
-@media(max-width:900px){.squad-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.squad-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:380px){.squad-grid{grid-template-columns:1fr}.squad-search{max-width:none;width:100%}}
-
 </style>
 </head>
 <body>
@@ -75,11 +58,7 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 <aside class="next-match-panel"><div><span class="match-badge">SIRADAKİ MAÇ · ŞAMPİYONLAR LİGİ</span><h2>Avrupa gecesi<br>RAMS Park'ta.</h2><div class="versus"><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması"></div><strong>GALATASARAY</strong></div><b>VS</b><div><div class="club-mark"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/VfB_Stuttgart_Logo.svg" alt="VfB Stuttgart arması"></div><strong>STUTTGART</strong></div></div><div style="text-align:center;font-size:26px;font-weight:950;color:var(--red)">03 KASIM 2026</div><p style="text-align:center;font-size:13px;font-weight:800;margin:7px 0 18px">20.45 · RAMS PARK</p><div class="countdown-note">Takımımız, Stuttgart karşılaşmasının hazırlıklarına başladı. Maç bilgileri kulübün resmî fikstürüne dayanmaktadır.</div></div><a class="more" href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836" target="_blank" rel="noreferrer">RESMÎ FİKSTÜR ↗</a></aside>
 </div></section>
 <section class="section" id="haberler"><div class="wrap"><div class="section-head"><div><div class="kicker">GÜNDEM</div><h2>Son gelişmeler</h2></div><a class="more" href="haberler.html">TÜM HABERLER ↗</a></div>
-<div class="news-grid">
-<a class="news-card" href="haberler.html"><div class="news-art"><span>KULÜP</span></div><div class="news-copy"><div class="meta">1 EKİM 2026 · KULÜP</div><h3>Galatasaray 121 yaşında!</h3><p>Kulübümüzün 121. kuruluş yıl dönümüne ilişkin özel haber.</p></div></a>
-<a class="news-card" href="haberler.html"><div class="news-art gold"><span>FUTBOL</span></div><div class="news-copy"><div class="meta">13 EYLÜL 2026 · FUTBOL</div><h3>Galatasaray 1-0 Kocaelispor</h3><p>Trendyol Süper Lig karşılaşmasının kulüp haberi.</p></div></a>
-<a class="news-card" href="haberler.html"><div class="news-art light"><span>BASKETBOL</span></div><div class="news-copy"><div class="meta">10 EYLÜL 2026 · BASKETBOL</div><h3>Galatasaray MCT Technic 75-65 CSKA Moskova</h3><p>Erkek basketbol takımımız hazırlık maçını galibiyetle tamamladı.</p></div></a>
-</div></div></section>
+<div class="news-grid" id="homeNews"><div class="news-card"><div class="news-copy"><div class="meta">RESMÎ HABER AKIŞI</div><h3>Haberler yükleniyor…</h3><p>Son gelişmeler kısa süre içinde burada görüntülenecek.</p></div></div></div></div></section>
 <section class="section soft" id="mac-merkezi"><div class="wrap"><div class="section-head"><div><div class="kicker">SAHADAN</div><h2>Maç merkezi</h2></div><a class="more" href="https://www.galatasaray.org/sl/futbol-takimi-ana-sayfa/4" target="_blank" rel="noreferrer">RESMÎ FUTBOL SAYFASI ↗</a></div>
 <div class="match-wrap"><div class="match-card"><div class="match-title"><strong>SON MAÇ · 30 EKİM</strong><span class="live-label">TAMAMLANDI</span></div><div class="teams"><div class="team"><img class="match-team-logo" src="https://football-logos.cc/assets/turkey/konyaspor.png" alt="Konyaspor arması" onerror="this.style.display='none'">TÜMOSAN<br>KONYASPOR</div><div class="score">0 : 4<small>TRENDYOL SÜPER LİG</small></div><div class="team"><img class="match-team-logo galatasaray" src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt="Galatasaray arması">GALATASARAY</div></div><div class="match-foot">30 Ekim 2026 · 20.00 · 10. hafta</div><div class="match-foot"><a class="more" href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noreferrer">TFF MAÇ DETAYI ↗</a></div></div>
 <div class="match-card" id="puan-durumu"><div class="match-title"><strong>SÜPER LİG PUAN DURUMU</strong><span class="meta">31 EKİM 2026</span></div><div class="table-scroll"><table class="standings-table"><thead><tr><th>#</th><th>TAKIM</th><th>O</th><th>G</th><th>B</th><th>M</th><th>AV</th><th>P</th></tr></thead><tbody><tr><td>1</td><td>Galatasaray</td><td>10</td><td>8</td><td>1</td><td>1</td><td>+11</td><td>25</td></tr><tr><td>2</td><td>Amed SK</td><td>9</td><td>6</td><td>2</td><td>1</td><td>+10</td><td>20</td></tr><tr><td>3</td><td>Trabzonspor</td><td>9</td><td>6</td><td>1</td><td>2</td><td>+14</td><td>19</td></tr><tr><td>4</td><td>Beşiktaş</td><td>9</td><td>6</td><td>0</td><td>3</td><td>+8</td><td>18</td></tr><tr><td>5</td><td>Fenerbahçe</td><td>9</td><td>5</td><td>1</td><td>3</td><td>+15</td><td>16</td></tr><tr><td>6</td><td>Kasımpaşa</td><td>9</td><td>4</td><td>4</td><td>1</td><td>+4</td><td>16</td></tr><tr><td>7</td><td>Kocaelispor</td><td>9</td><td>5</td><td>0</td><td>4</td><td>+2</td><td>15</td></tr><tr><td>8</td><td>Erzurumspor FK</td><td>9</td><td>4</td><td>2</td><td>3</td><td>-4</td><td>14</td></tr></tbody></table></div><div class="table-source"><span>Veri: 31.10.2026 · 10. hafta</span><a class="more" href="https://www.mackolik.com/puan-durumu/t%C3%BCrkiye-trendyol-s%C3%BCper-lig/2026-2027/482ofyysbdbeoxauk19yg7tdt" target="_blank" rel="noreferrer">MACKOLİK ↗</a></div><div class="match-foot">Puan tablosu demo amaçlıdır; Mackolik'te anlık değişen tabloyla farklılık gösterebilir.</div></div></div>
@@ -110,24 +89,6 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 </main>
 <footer><div class="wrap"><div class="footer-top"><div class="footer-brand">GALATASARAY<small>1905 · ASLANIN YUVASI</small></div><div class="footer-links"><a href="#haberler">Haberler</a><a href="#mac-merkezi">Maç merkezi</a><a href="#branslar">Branşlar</a><a href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">Resmî web sitesi ↗</a></div></div><div class="copyright"><span>© 2026 · GS1905 FAN CONCEPT</span><span>Saygı, tutku ve 1905 ruhuyla.</span></div><p class="disclaimer">Bu site bağımsız bir taraftar konsept tasarımıdır; Galatasaray Spor Kulübü'nün resmî sitesi değildir. Haberler Galatasaray.org kaynaklıdır. Puan durumu 31 Ekim 2026 tarihli demo verisidir; tablo görünümü Mackolik bağlantısıyla desteklenmiştir. Görsel alanlarda kullanılan fotoğraflar temsili stok görsellerdir, kulübün resmî fotoğrafları değildir. Güncel bilgi ve resmî fotoğraflar için haber bağlantılarını kullanın.</p></div></footer>
 <script>
-
-const squadPlayers=[
- {n:1,name:'Uğurcan Çakır',role:'Kaleci'},{n:19,name:'Günay Güvenç',role:'Kaleci'},{n:24,name:'Jankat Yılmaz',role:'Kaleci'},{n:60,name:'Arda Yılmaz',role:'Kaleci'},{n:70,name:'Enes Emre Büyük',role:'Kaleci'},
- {n:3,name:'El-Chadaille Bitshiabu',role:'Defans'},{n:4,name:'Ismail Jakobs',role:'Defans'},{n:6,name:'Davinson Sánchez',role:'Defans'},{n:17,name:'Eren Elmalı',role:'Defans'},{n:23,name:'Kaan Ayhan',role:'Defans'},{n:42,name:'Abdülkerim Bardakcı',role:'Defans'},{n:88,name:'Kazımcan Karataş',role:'Defans'},{n:90,name:'Wilfried Singo',role:'Defans'},{n:91,name:'Arda Ünyay',role:'Defans'},
- {n:5,name:'Eyüp Aydın',role:'Orta saha'},{n:8,name:'Gabriel Sara',role:'Orta saha'},{n:18,name:'Lesley Ugochukwu',role:'Orta saha'},{n:20,name:'İlkay Gündoğan',role:'Orta saha'},{n:34,name:'Lucas Torreira',role:'Orta saha'},{n:74,name:'Renato Nhaga',role:'Orta saha'},{n:83,name:'Aleksey Batrakov',role:'Orta saha'},{n:99,name:'Mario Lemina',role:'Orta saha'},
- {n:7,name:'Roland Sallai',role:'Forvet'},{n:10,name:'Leroy Sané',role:'Forvet'},{n:11,name:'Yunus Akgün',role:'Forvet'},{n:27,name:'Rafael Leão',role:'Forvet'},{n:29,name:'Can Armando Güner',role:'Forvet'},{n:45,name:'Victor Osimhen',role:'Forvet'},{n:53,name:'Barış Alper Yılmaz',role:'Forvet'},{n:62,name:'Ada Yüzgeç',role:'Forvet'},{n:73,name:'Berat Luş',role:'Forvet'}
-];
-let selectedRole='all';
-function renderSquad(){
- const q=document.getElementById('playerSearch').value.trim().toLocaleLowerCase('tr');
- const filtered=squadPlayers.filter(p=>(selectedRole==='all'||p.role===selectedRole)&&p.name.toLocaleLowerCase('tr').includes(q));
- const grid=document.getElementById('squadGrid');
- grid.innerHTML=filtered.length?filtered.map(p=>'<article class="player-card"><div class="player-number">'+p.n+'</div><div class="player-info"><div class="player-name">'+p.name+'</div><div class="player-position">'+p.role+'</div></div></article>').join(''):'<div class="squad-empty">Aradığın futbolcu bulunamadı.</div>';
- document.getElementById('squadCount').textContent=filtered.length+' futbolcu gösteriliyor · Kadro bilgileri kulübün resmî sayfasına göre listelenmiştir.';
-}
-document.getElementById('playerSearch').addEventListener('input',renderSquad);
-document.querySelectorAll('.squad-filter').forEach(b=>b.addEventListener('click',()=>{selectedRole=b.dataset.role;document.querySelectorAll('.squad-filter').forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active?'true':'false')});renderSquad()}));
-renderSquad();
 
 const menu=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
 menu.addEventListener('click',()=>{links.classList.toggle('open');menu.setAttribute('aria-expanded',links.classList.contains('open')?'true':'false')});
@@ -164,5 +125,21 @@ function renderFixtures(type){
 }
 document.querySelectorAll('.schedule-tab').forEach(b=>b.addEventListener('click',()=>renderFixtures(b.dataset.fixture)));
 
+
+const homeNews=document.getElementById('homeNews');
+function homeEscape(value){
+ return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function renderHomeNews(data){
+ const records=(Array.isArray(data.items)?data.items:[]).map(item=>{
+  let url='';
+  try{const parsed=new URL(item.url);if(parsed.protocol==='https:'&&parsed.hostname==='www.galatasaray.org')url=parsed.href;}catch{}
+  const stamp=item.published?Date.parse(item.published):NaN;
+  return {url,title:String(item.title||'Galatasaray haberi'),desc:String(item.description||'Resmî kulüp haberini kaynağından okuyun.'),category:String(item.category||'Diğer'),stamp,date:Number.isFinite(stamp)?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(stamp)):'Güncel'};
+ }).filter(item=>item.url).sort((a,b)=>b.stamp-a.stamp).slice(0,3);
+ if(!records.length){homeNews.innerHTML='<a class="news-card" href="haberler.html"><div class="news-copy"><div class="meta">HABER MERKEZİ</div><h3>Son Galatasaray haberleri</h3><p>Resmî haber akışını görüntülemek için haber merkezine geç.</p></div></a>';return;}
+ homeNews.innerHTML=records.map(item=>'<a class="news-card" href="'+homeEscape(item.url)+'" target="_blank" rel="noopener noreferrer"><div class="news-art"><span>'+homeEscape(item.category.toLocaleUpperCase('tr'))+'</span></div><div class="news-copy"><div class="meta">'+homeEscape(item.date)+' · '+homeEscape(item.category.toLocaleUpperCase('tr'))+'</div><h3>'+homeEscape(item.title)+'</h3><p>'+homeEscape(item.desc)+'</p></div></a>').join('');
+}
+fetch('data/news.json?ts='+Date.now(),{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('feed unavailable');return response.json();}).then(renderHomeNews).catch(()=>renderHomeNews({items:[]}));
 </script>
 </body></html>
