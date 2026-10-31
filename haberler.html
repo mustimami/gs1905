@@ -12,17 +12,50 @@
 <script>
 let items=[];
 let feedStatus='Resmî haber akışı yükleniyor…';
-let active='Tümü';const root=document.getElementById('news');function render(){const q=document.getElementById('search').value.trim().toLocaleLowerCase('tr');const list=items.filter(x=>(active==='Tümü'||x.cat===active)&&(x.title+' '+x.desc).toLocaleLowerCase('tr').includes(q));document.getElementById('count').textContent='· '+list.length+' haber';root.innerHTML=list.length?list.map(x=>'<a class="card" href="'+x.url+'" target="_blank" rel="noreferrer"><div class="art">GS1905</div><div class="copy"><div class="meta">'+x.date.toLocaleUpperCase('tr')+' · '+x.cat.toLocaleUpperCase('tr')+'</div><h3>'+x.title+'</h3><p>'+x.desc+'</p><span class="read">RESMÎ KAYNAĞI AÇ ↗</span></div></a>').join(''):'<div class="empty">'+(items.length?'Bu aramayla eşleşen haber bulunamadı.':feedStatus)+'</div>'}document.getElementById('search').addEventListener('input',render);document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));render()}));render();
+let active='Tümü';
+const root=document.getElementById('news');
+const allowedCategories=new Set(['Futbol','Basketbol','Voleybol','Kulüp','Diğer']);
+function escapeHtml(value){
+  return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function safeNewsUrl(value){
+  try{
+    const url=new URL(value);
+    return url.protocol==='https:'&&url.hostname==='www.galatasaray.org'?url.href:'';
+  }catch{return '';}
+}
+function render(){
+  const q=document.getElementById('search').value.trim().toLocaleLowerCase('tr');
+  const list=items.filter(x=>(active==='Tümü'||x.cat===active)&&(x.title+' '+x.desc).toLocaleLowerCase('tr').includes(q));
+  document.getElementById('count').textContent='· '+list.length+' haber';
+  root.innerHTML=list.length?list.map(x=>'<a class="card" href="'+escapeHtml(x.url)+'" target="_blank" rel="noopener noreferrer"><div class="art" aria-hidden="true">GS1905</div><div class="copy"><div class="meta">'+escapeHtml(x.date.toLocaleUpperCase('tr'))+' · '+escapeHtml(x.cat.toLocaleUpperCase('tr'))+'</div><h3>'+escapeHtml(x.title)+'</h3><p>'+escapeHtml(x.desc)+'</p><span class="read">RESMÎ KAYNAĞI AÇ ↗</span></div></a>').join(''):'<div class="empty">'+escapeHtml(items.length?'Bu aramayla eşleşen haber bulunamadı.':feedStatus)+'</div>';
+}
+document.getElementById('search').addEventListener('input',render);
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+  active=button.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach(item=>item.classList.toggle('active',item===button));
+  render();
+}));
+render();
 fetch('data/news.json?ts='+Date.now(),{cache:'no-store'})
-  .then(response=>{if(!response.ok)throw new Error('news feed unavailable');return response.json()})
+  .then(response=>{if(!response.ok)throw new Error('news feed unavailable');return response.json();})
   .then(data=>{
-    items=(data.items||[]).map(x=>({
-      date:x.published?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(x.published)):'Tarih belirtilmedi',
-      cat:x.category||'Diğer',title:x.title||'Galatasaray haberi',
-      desc:x.description||'Resmî kulüp haberini kaynağından okuyun.',url:x.url
-    })).filter(x=>x.url&&x.url.startsWith('https://www.galatasaray.org/'));
-    feedStatus='Otomatik haber akışı henüz haber verisi sağlayamadı. Bir sonraki güncellemede yeniden denenecek.';
+    items=(Array.isArray(data.items)?data.items:[]).map(item=>{
+      const timestamp=item.published?Date.parse(item.published):NaN;
+      return {
+        timestamp:Number.isFinite(timestamp)?timestamp:0,
+        date:Number.isFinite(timestamp)?new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(timestamp)):'Tarih belirtilmedi',
+        cat:allowedCategories.has(item.category)?item.category:'Diğer',
+        title:String(item.title||'Galatasaray haberi'),
+        desc:String(item.description||'Resmî kulüp haberini kaynağından okuyun.'),
+        url:safeNewsUrl(item.url)
+      };
+    }).filter(item=>item.url).sort((a,b)=>b.timestamp-a.timestamp);
+    feedStatus=items.length?'':'Henüz gösterilebilecek resmî haber bulunamadı. Bir sonraki güncellemede yeniden denenecek.';
     render();
   })
-  .catch(()=>{feedStatus='Resmî RSS akışı henüz yüklenemedi. Otomatik güncelleme yeniden denenecek.';render()});
+  .catch(()=>{
+    feedStatus='Resmî RSS akışı şu anda yüklenemedi. Otomatik güncelleme yeniden denenecek.';
+    render();
+  });
 </script></body></html>
