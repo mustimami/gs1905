@@ -24,7 +24,10 @@ function safeNewsUrl(value){
     return url.protocol==='https:'&&url.hostname==='www.galatasaray.org'?url.href:'';
   }catch{return '';}
 }
-function safeNewsImage(value){\n  try{const url=new URL(value);return url.protocol==='https:'&&(url.hostname==='galatasaray.org'||url.hostname.endsWith('.galatasaray.org'))?url.href:'';}catch{return '';}\n}\nfunction render(){
+function safeNewsImage(value){
+  try{const url=new URL(value);return url.protocol==='https:'&&(url.hostname==='galatasaray.org'||url.hostname.endsWith('.galatasaray.org'))?url.href:'';}catch{return '';}
+}
+function render(){
   const q=document.getElementById('search').value.trim().toLocaleLowerCase('tr');
   const list=items.filter(x=>(active==='Tümü'||x.cat===active)&&(x.title+' '+x.desc).toLocaleLowerCase('tr').includes(q));
   document.getElementById('count').textContent='· '+list.length+' haber';
