@@ -28,7 +28,7 @@ function safeNewsImage(value){\n  try{const url=new URL(value);return url.protoc
   const q=document.getElementById('search').value.trim().toLocaleLowerCase('tr');
   const list=items.filter(x=>(active==='Tümü'||x.cat===active)&&(x.title+' '+x.desc).toLocaleLowerCase('tr').includes(q));
   document.getElementById('count').textContent='· '+list.length+' haber';
-  root.innerHTML=list.length?list.map(x=>'<a class="card" href="'+escapeHtml(x.url)+'" target="_blank" rel="noopener noreferrer"><div class="art" aria-hidden="true">GS1905</div><div class="copy"><div class="meta">'+escapeHtml(x.date.toLocaleUpperCase('tr'))+' · '+escapeHtml(x.cat.toLocaleUpperCase('tr'))+'</div><h3>'+escapeHtml(x.title)+'</h3><p>'+escapeHtml(x.desc)+'</p><span class="read">RESMÎ KAYNAĞI AÇ ↗</span></div></a>').join(''):'<div class="empty">'+escapeHtml(items.length?'Bu aramayla eşleşen haber bulunamadı.':feedStatus)+'</div>';
+  root.innerHTML=list.length?list.map(x=>'<a class="card" href="'+escapeHtml(x.url)+'" target="_blank" rel="noopener noreferrer"><div class="art'+(x.image?' has-image':'')+'" aria-hidden="true">'+(x.image?'<img src="'+escapeHtml(x.image)+'" alt="" loading="lazy" decoding="async">':'GS1905')+'</div><div class="copy"><div class="meta">'+escapeHtml(x.date.toLocaleUpperCase('tr'))+' · '+escapeHtml(x.cat.toLocaleUpperCase('tr'))+'</div><h3>'+escapeHtml(x.title)+'</h3><p>'+escapeHtml(x.desc)+'</p><span class="read">RESMÎ KAYNAĞI AÇ ↗</span></div></a>').join(''):'<div class="empty">'+escapeHtml(items.length?'Bu aramayla eşleşen haber bulunamadı.':feedStatus)+'</div>';
 }
 document.getElementById('search').addEventListener('input',render);
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
