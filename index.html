@@ -68,6 +68,74 @@ footer a{color:#f4ecef}footer a:hover{color:#dfc17f}
 @media(max-width:620px){.wrap{width:calc(100% - 28px)}.hero:after{width:190px;height:190px;right:-95px;top:-95px}.back{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
+
+/* GS1905 refinement pass · spacing, responsive rhythm and interaction states */
+:root{--gs-shadow:0 12px 34px rgba(34,18,24,.075)}
+img{max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
+button:disabled{opacity:.55;cursor:not-allowed}
+main{min-width:0}
+section,article,aside{min-width:0}
+p{ text-wrap:pretty }
+h1,h2,h3{ text-wrap:balance }
+.card:focus-within,.news-card:focus-visible{outline:3px solid #c5a15a88;outline-offset:3px}
+@media(max-width:760px){
+  .navlinks{overscroll-behavior-x:contain}
+  .navlinks a{min-height:36px;display:inline-flex;align-items:center}
+}
+@media(max-width:480px){
+  .section-head{align-items:flex-start;flex-direction:column}
+  .section-head .more{margin-top:2px}
+  table{font-variant-numeric:tabular-nums}
+}
+
+/* 1 · Ana sayfa hiyerarşisi */
+.hero{padding-top:42px;padding-bottom:38px}
+.hero-grid{align-items:stretch;gap:20px}
+.hero-main{min-height:490px;border-radius:12px;box-shadow:0 18px 45px #210b171f}
+.hero-slide{background-position:center 42%}
+.hero-slide:after{background:linear-gradient(0deg,rgba(19,5,12,.94) 0%,rgba(19,5,12,.42) 52%,rgba(19,5,12,.08) 100%)}
+.hero-content{padding:clamp(24px,4vw,44px);max-width:720px}
+.hero h1{max-width:620px;font-size:clamp(38px,5.5vw,66px);line-height:.99}
+.hero p{font-size:14px;max-width:540px}
+.hero-side{gap:20px}
+.next-match-panel{border-radius:12px;box-shadow:0 12px 30px #5d18200c}
+.side-card,.match-card,.match-schedule,.branch{box-shadow:0 8px 24px #20111608}
+.section{padding-top:58px;padding-bottom:58px}
+.section-head{margin-bottom:26px}
+.section h2{font-weight:900}
+.banner{border-radius:12px;box-shadow:0 15px 34px #5b10251a}
+@media(max-width:800px){.hero{padding-top:28px}.hero-main{min-height:410px}.next-match-panel{min-height:350px}}
+@media(max-width:480px){.hero{padding-top:20px}.hero-main{min-height:390px}.hero-content{padding:22px}.hero h1{font-size:clamp(34px,10vw,43px)}.section{padding-top:40px;padding-bottom:40px}}
+/* 2 · Mobil menü */
+@media(max-width:800px){
+ header .nav{position:relative}
+ .links{top:100%;z-index:30;max-height:calc(100dvh - 80px);overflow:auto;box-shadow:0 16px 25px #20111612;border-radius:0 0 10px 10px}
+ .links.open{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+ .links a{padding:13px 4px;border-bottom:1px solid var(--line);width:100%}
+ .menu{width:42px;height:42px;border:1px solid var(--line);border-radius:7px;background:#fff;display:grid;place-items:center;font-size:22px}
+ .menu[aria-expanded="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+}
+@media(max-width:480px){.links.open{grid-template-columns:1fr 1fr}.links{padding:12px 20px}}
+/* 3 · Haber kartları */
+.news-grid{gap:20px;align-items:stretch}
+.news-card{display:flex;flex-direction:column;min-height:100%;border-radius:10px;box-shadow:0 8px 24px #20111608}
+.news-art{height:210px;background-color:#eee8e3;background-image:linear-gradient(135deg,#f1ece7,#ddd2c8);background-position:center;background-size:cover}
+.news-art:after{content:"GS1905";position:absolute;right:12px;bottom:9px;color:#ffffffaa;font:900 24px Georgia,serif;letter-spacing:-1px}
+.news-art span{z-index:1;border-radius:3px}
+.news-copy{display:flex;flex:1;flex-direction:column;padding:20px}
+.news-copy h3{font-size:clamp(17px,1.6vw,20px);line-height:1.3}
+.news-copy p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.news-card:focus-visible{outline-offset:4px}
+@media(max-width:800px){.news-art{height:180px}}
+@media(max-width:480px){.news-grid{gap:14px}.news-card:first-child{grid-column:auto}.news-art{height:190px}.news-copy{padding:17px}}
+/* 4 · Kontroller ve hareket tercihleri */
+.hero-control,.hero-dot,.schedule-tab{touch-action:manipulation}
+.hero-dot{width:11px;height:11px}
+.hero-control:hover{background:#ffffff38}
+.schedule-tab:focus-visible{outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.news-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -75,7 +143,7 @@ footer a{color:#f4ecef}footer a:hover{color:#dfc17f}
 <header><div class="wrap nav">
 <a class="brand" href="#"><span class="crest">GS</span><span>GALATASARAY<small>1905 · ASLANIN YUVASI</small></span></a>
 <nav class="links" id="navLinks"><a href="#haberler">HABERLER</a><a href="#mac-merkezi">MAÇ MERKEZİ</a><a href="kadro.html">A TAKIM</a><a href="fikstur.html">FİKSTÜR</a><a href="istatistikler.html">İSTATİSTİKLER</a><a href="#puan-durumu">PUAN DURUMU</a><a href="branslar.html">BRANŞLAR</a><a href="brans-fikstur.html">BRANŞ FİKSTÜRÜ</a><a href="#kulup">KULÜP</a></nav>
-<a class="nav-cta" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">RESMÎ SİTE ↗</a><button class="menu" id="menuBtn" aria-label="Menüyü aç">☰</button>
+<a class="nav-cta" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">RESMÎ SİTE ↗</a><button class="menu" id="menuBtn" aria-label="Menüyü aç" aria-controls="navLinks" aria-expanded="false">☰</button>
 </div></header>
 <main>
 <section class="hero"><div class="wrap hero-grid">
@@ -120,8 +188,11 @@ footer a{color:#f4ecef}footer a:hover{color:#dfc17f}
 <script>
 
 const menu=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
-menu.addEventListener('click',()=>{links.classList.toggle('open');menu.setAttribute('aria-expanded',links.classList.contains('open')?'true':'false')});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+function setMenu(open){links.classList.toggle('open',open);menu.setAttribute('aria-expanded',open?'true':'false');menu.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');menu.textContent=open?'×':'☰'}
+menu.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
+document.addEventListener('click',event=>{if(!event.target.closest('header'))setMenu(false)});
 const heroSlides=[
  {kicker:'ŞAMPİYONLAR LİGİ · 31 EKİM 2026',title:'Stuttgart maçı<br>hazırlıkları başladı.',text:'Galatasaray Futbol Takımı, 3 Kasım\'da oynanacak UEFA Şampiyonlar Ligi karşılaşması için çalışmalarına Kemerburgaz Metin Oktay Tesisleri\'nde başladı.',url:'https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/stuttgart-maci-hazirliklari-basladi/61272'},
  {kicker:'TRENDYOL SÜPER LİG · 30 EKİM 2026',title:'Deplasmanda<br>dört gollü zafer.',text:'Galatasaray, Tümosan Konyaspor karşısında sahadan 4-0 galip ayrıldı. Resmî maç haberi kulübün ana sayfasında.',url:'https://www.galatasaray.org/anasayfa'},
@@ -132,7 +203,17 @@ function showHero(i){heroIndex=(i+heroSlides.length)%heroSlides.length;const d=h
 document.getElementById('heroPrev').addEventListener('click',()=>showHero(heroIndex-1));
 document.getElementById('heroNext').addEventListener('click',()=>showHero(heroIndex+1));
 document.querySelectorAll('.hero-dot').forEach(el=>el.addEventListener('click',()=>showHero(Number(el.dataset.slide))));
-setInterval(()=>showHero(heroIndex+1),6500);
+let heroTimer=null;
+const heroReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function startHero(){if(heroReduced||heroTimer!==null||document.hidden)return;heroTimer=setInterval(()=>showHero(heroIndex+1),7000)}
+function stopHero(){if(heroTimer!==null){clearInterval(heroTimer);heroTimer=null}}
+const heroRegion=document.querySelector('.hero-main');
+heroRegion.addEventListener('mouseenter',stopHero);
+heroRegion.addEventListener('mouseleave',startHero);
+heroRegion.addEventListener('focusin',stopHero);
+heroRegion.addEventListener('focusout',startHero);
+document.addEventListener('visibilitychange',()=>document.hidden?stopHero():startHero());
+startHero();
 
 
 function updateNextMatch(data){
