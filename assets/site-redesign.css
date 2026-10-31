@@ -35,3 +35,27 @@ body:has(main:not(.home-main)) td{border-color:#2b3150!important}
 body:has(main:not(.home-main)) footer{background:#060817!important;color:#aeb4ca!important;border-top:3px solid var(--red)!important}
 body:has(main:not(.home-main)) footer a,body:has(main:not(.home-main)) .source,body:has(main:not(.home-main)) .read{color:var(--gold)!important}
 @media(max-width:760px){body:has(main:not(.home-main)) .navlinks{display:flex;gap:12px;flex-wrap:wrap;font-size:10px}}
+
+/* GS1905 unified dark club-portal theme for every legacy subpage */
+body{background:#080b20!important;color:#f7f7fb!important;font-family:Inter,Arial,sans-serif!important}
+header{background:#090d25!important;border-color:#252b49!important;color:#fff!important}
+header .brand,header .brand small,header .navlinks a,header .links a,header .back{color:#f2f3f8!important}
+header .brand small{color:#9da5bf!important}
+header .navlinks a:hover,header .navlinks a[aria-current=page]{color:#fff!important;border-color:#f3bd28!important}
+body .hero{background:radial-gradient(ellipse at 80% 0%,#21172f,#0a0e26 68%)!important;color:#fff!important}
+body .hero h1,body h1,body h2,body h3{color:#f7f7fb!important}
+body .hero p,body p,body .lead,body .meta,body .note,body .intro{color:#b2b9cf}
+body .eyebrow,body .tag,body .group-title,body .section-title{color:#f3bd28!important}
+body .panel,body .card,body .match,body .fact,body .feature-main,body .pending,body .notice,body .table-wrap,body .standings,body .widget,body .content-card{background:#111630!important;color:#f7f7fb!important;border:1px solid #29304f!important;border-radius:3px!important;box-shadow:none!important}
+body input,body select,body textarea{background:#0b1029!important;color:#fff!important;border:1px solid #343b5c!important}
+body button,body .tab,body .filters button{background:#171d3b!important;color:#c6cce0!important;border:1px solid #303653!important}
+body button.active,body .tab.active,body .filters button.active{background:#a90935!important;color:#fff!important;border-color:#a90935!important}
+body table,body .table{background:#111630!important;color:#f7f7fb!important}
+body th{background:#1b2140!important;color:#f3bd28!important}
+body td{border-color:#2a3150!important}
+body footer{background:#060817!important;color:#aeb4ca!important;border-top:3px solid #a90935!important}
+body footer a,body .source,body .read,body .view{color:#f3bd28!important}
+body .photo,body .portrait{background:linear-gradient(145deg,#252b4b,#10152d)!important}
+body .card:hover,body .match:hover{border-color:#f3bd28!important}
+.ui-icon{width:18px;height:18px;vertical-align:middle;flex:none}
+@media(max-width:760px){header .navlinks{max-width:100%;overflow-x:auto;scrollbar-width:none}header .navlinks::-webkit-scrollbar{display:none}}
