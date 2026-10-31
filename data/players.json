@@ -1,0 +1,166 @@
+{
+  "season": "2026/2027",
+  "source": "https://www.galatasaray.org/pl/futbol-takim-kadrosu/9",
+  "players": [
+    {
+      "number": 1,
+      "name": "Uğurcan Çakır",
+      "position": "Kaleci"
+    },
+    {
+      "number": 19,
+      "name": "Günay Güvenç",
+      "position": "Kaleci"
+    },
+    {
+      "number": 24,
+      "name": "Jankat Yılmaz",
+      "position": "Kaleci"
+    },
+    {
+      "number": 60,
+      "name": "Arda Yılmaz",
+      "position": "Kaleci"
+    },
+    {
+      "number": 70,
+      "name": "Enes Emre Büyük",
+      "position": "Kaleci"
+    },
+    {
+      "number": 3,
+      "name": "El-Chadaille Bitshiabu",
+      "position": "Defans"
+    },
+    {
+      "number": 4,
+      "name": "Ismail Jakobs",
+      "position": "Defans"
+    },
+    {
+      "number": 6,
+      "name": "Davinson Sánchez",
+      "position": "Defans"
+    },
+    {
+      "number": 17,
+      "name": "Eren Elmalı",
+      "position": "Defans"
+    },
+    {
+      "number": 23,
+      "name": "Kaan Ayhan",
+      "position": "Defans"
+    },
+    {
+      "number": 42,
+      "name": "Abdülkerim Bardakcı",
+      "position": "Defans"
+    },
+    {
+      "number": 88,
+      "name": "Kazımcan Karataş",
+      "position": "Defans"
+    },
+    {
+      "number": 90,
+      "name": "Wilfried Stephane Singo",
+      "position": "Defans"
+    },
+    {
+      "number": 91,
+      "name": "Arda Ünyay",
+      "position": "Defans"
+    },
+    {
+      "number": 5,
+      "name": "Eyüp Aydın",
+      "position": "Orta saha"
+    },
+    {
+      "number": 8,
+      "name": "Gabriel Davi Gomes Sara",
+      "position": "Orta saha"
+    },
+    {
+      "number": 18,
+      "name": "Lesley Ugochukwu",
+      "position": "Orta saha"
+    },
+    {
+      "number": 20,
+      "name": "İlkay Gündoğan",
+      "position": "Orta saha"
+    },
+    {
+      "number": 34,
+      "name": "Lucas Torreira",
+      "position": "Orta saha"
+    },
+    {
+      "number": 73,
+      "name": "Berat Luş",
+      "position": "Orta saha"
+    },
+    {
+      "number": 74,
+      "name": "Renato Sam-Na Nhaga",
+      "position": "Orta saha"
+    },
+    {
+      "number": 83,
+      "name": "Aleksey Batrakov",
+      "position": "Orta saha"
+    },
+    {
+      "number": 99,
+      "name": "Mario Rene Junior Lemina",
+      "position": "Orta saha"
+    },
+    {
+      "number": 7,
+      "name": "Roland Sallai",
+      "position": "Forvet"
+    },
+    {
+      "number": 10,
+      "name": "Leroy Aziz Sané",
+      "position": "Forvet"
+    },
+    {
+      "number": 11,
+      "name": "Yunus Akgün",
+      "position": "Forvet"
+    },
+    {
+      "number": 21,
+      "name": "Deniz Gül",
+      "position": "Forvet"
+    },
+    {
+      "number": 27,
+      "name": "Rafael Leão",
+      "position": "Forvet"
+    },
+    {
+      "number": 29,
+      "name": "Can Armando Güner",
+      "position": "Forvet"
+    },
+    {
+      "number": 45,
+      "name": "Victor Osimhen",
+      "position": "Forvet"
+    },
+    {
+      "number": 53,
+      "name": "Barış Alper Yılmaz",
+      "position": "Forvet"
+    },
+    {
+      "number": 62,
+      "name": "Ada Yüzgeç",
+      "position": "Forvet"
+    }
+  ]
+}
