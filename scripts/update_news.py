@@ -48,7 +48,11 @@ def image_for(item):
             if candidate:
                 return candidate
     # Some feeds embed the lead image in the HTML description.
-    description = child_text(item, "description")
+    description = ""
+    for child in item.iter():
+        if child.tag.split("}")[-1] == "description" and child.text:
+            description = child.text
+            break
     match = re.search(r'<img[^>]+src=["\\\']([^"\\\']+)["\\\']', description, re.I)
     return safe_image(unescape(match.group(1))) if match else ""
 
