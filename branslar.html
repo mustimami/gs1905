@@ -35,6 +35,27 @@ footer a{color:#f4ecef}footer a:hover{color:#dfc17f}
 
 
 .navlinks{display:flex;align-items:center;gap:clamp(10px,1.8vw,22px);font-size:10px;font-weight:900;letter-spacing:.45px;white-space:nowrap}.navlinks a{color:#6f676c;padding:10px 0;border-bottom:2px solid transparent}.navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--red);border-color:var(--gold)}@media(max-width:760px){.nav{gap:14px}.navlinks{gap:15px;max-width:72vw;overflow-x:auto;scrollbar-width:none;padding:3px 0}.navlinks::-webkit-scrollbar{display:none}.navlinks a{font-size:9px}.brand{flex:0 0 auto}}@media(max-width:480px){.nav{align-items:flex-start;flex-direction:column;justify-content:center;padding:10px 0;min-height:78px}.navlinks{max-width:100%;width:100%;gap:19px}.navlinks a{padding:5px 0}}
+
+/* GS1905 refinement pass · spacing, responsive rhythm and interaction states */
+:root{--gs-shadow:0 12px 34px rgba(34,18,24,.075)}
+img{max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
+button:disabled{opacity:.55;cursor:not-allowed}
+main{min-width:0}
+section,article,aside{min-width:0}
+p{ text-wrap:pretty }
+h1,h2,h3{ text-wrap:balance }
+.card:focus-within,.news-card:focus-visible{outline:3px solid #c5a15a88;outline-offset:3px}
+@media(max-width:760px){
+  .navlinks{overscroll-behavior-x:contain}
+  .navlinks a{min-height:36px;display:inline-flex;align-items:center}
+}
+@media(max-width:480px){
+  .section-head{align-items:flex-start;flex-direction:column}
+  .section-head .more{margin-top:2px}
+  table{font-variant-numeric:tabular-nums}
+}
+
 </style></head><body><div class="top"></div><header><div class="wrap nav"><a class="brand" href="index.html">GS1905<small>ASLANIN YUVASI</small></a><nav class="navlinks" aria-label="Ana menü"><a href="index.html">ANA SAYFA</a><a href="haberler.html">HABERLER</a><a href="kadro.html">A TAKIM</a><a href="fikstur.html">FİKSTÜR</a><a href="istatistikler.html">İSTATİSTİK</a><a href="branslar.html" aria-current="page">BRANŞLAR</a></nav></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">TEK ARMA · ÇOK HEYECAN</div><h1>Galatasaray branşları</h1><p>Futboldan salon sporlarına ve amatör branşlara uzanan Galatasaray dünyasını keşfet. Takım ve organizasyon bilgileri için kulübün resmî sayfalarına yönlendirme yapılır.</p></div></section>
 <main class="wrap section"><p style="margin:0 0 22px"><a href="brans-fikstur.html" style="display:inline-block;background:#8b1731;color:#fff;padding:12px 16px;border-radius:4px;font-size:11px;font-weight:900">TÜM BRANŞLARIN FİKSTÜRÜ ↗</a></p><div class="grid">
