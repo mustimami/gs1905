@@ -252,6 +252,109 @@ footer{border-top:0}
  .branch h3{font-size:18px}
  .banner{padding:28px}
 }
+
+/* GS1905 · Premium sports platform redesign */
+:root{--red:#8a1732;--red2:#641126;--gold:#b99a58;--ink:#211d20;--muted:#777178;--line:#e9e5e3;--soft:#f7f6f5;--max:1240px}
+body{background:#fff;color:var(--ink);font-family:Inter,"Segoe UI",system-ui,sans-serif;letter-spacing:0}
+.wrap{width:min(var(--max),calc(100% - 56px))}
+header{background:rgba(255,255,255,.96);box-shadow:0 2px 14px rgba(25,15,19,.045);border-bottom:1px solid #eee}
+header .nav{height:72px}
+.brand{gap:10px;font-size:15px;letter-spacing:-.4px}
+.brand .crest{width:42px;height:42px;border:1px solid #d9c69c;box-shadow:none;background:#fff}
+.links{gap:22px;font-size:12px}
+.links a{color:#4c4549}
+.links a:hover{color:var(--red)}
+.nav-cta{border-radius:3px;background:var(--red);padding:11px 15px}
+.edition-bar{background:#f8f6f4;color:#766c70;border-bottom:1px solid #eee8e4}
+.edition-inner{height:34px;font-size:9px;letter-spacing:1.1px}
+.edition-label{color:var(--red)}
+.edition-label i{width:6px;height:6px;box-shadow:none}
+.edition-note{color:#82797d}
+.edition-inner>a{color:var(--red)}
+.hero{padding:28px 0 38px;background:#fff}
+.hero:after{display:none}
+.hero-grid{grid-template-columns:minmax(0,1.7fr) minmax(290px,.78fr);gap:18px}
+.hero-main{min-height:470px;border-radius:3px;box-shadow:none;background:#25151b}
+.hero-slide{background-position:center 38%}
+.hero-slide:after{background:linear-gradient(0deg,rgba(15,7,10,.88),rgba(15,7,10,.16) 72%)}
+.hero-main:before{font-size:210px;right:-8px;top:-58px;color:#fff08}
+.hero-content{padding:clamp(26px,4vw,46px);max-width:690px}
+.hero-content .eyebrow{background:transparent;border-left:2px solid var(--gold);padding:4px 0 4px 10px;color:#e4c987;font-size:9px}
+.hero h1{font-size:clamp(39px,5vw,62px);line-height:1;letter-spacing:-.052em;margin:17px 0 12px}
+.hero-content p{font-size:13px;line-height:1.7;color:#eee5e8;max-width:500px}
+.hero-content .pill{background:#fff;color:var(--red);padding:12px 15px;font-size:9px;letter-spacing:.8px}
+.hero-control{width:36px;height:36px;border-radius:3px}
+.hero-dots{bottom:25px;right:25px}
+.next-match-panel{min-height:470px;border:1px solid var(--line);border-radius:3px;background:#faf9f8;padding:24px;box-shadow:none}
+.next-match-panel:after{display:none}
+.next-match-panel .match-badge{background:transparent;padding:0;color:var(--red);font-size:9px}
+.next-match-panel h2{font-size:26px;line-height:1.08;letter-spacing:-.8px;margin:18px 0}
+.next-match-panel .versus{margin:25px 0}
+.next-match-panel .club-mark{width:66px;height:66px;background:#fff;border:1px solid #eee8e5;padding:11px}
+.next-match-panel .versus strong{font-size:10px;letter-spacing:.4px}
+.next-match-panel .more{background:var(--red);border-radius:2px;padding:12px 14px}
+.countdown-note{background:#fff;border:1px solid #eee8e5;border-left:2px solid var(--gold);font-size:10px}
+.section{padding:56px 0}
+.section.soft{background:#f8f7f6}
+.section-head{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:22px}
+.section-head>div{display:block}
+.section h2{font-size:32px;letter-spacing:-1.2px;font-weight:850;margin:6px 0 0}
+.kicker{font-size:9px;letter-spacing:1.8px}
+.section-head .more{font-size:9px;letter-spacing:.8px}
+.news-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto;gap:16px}
+.news-card,.news-card:first-child{display:flex;flex-direction:column;grid-row:auto;min-height:100%;border:1px solid var(--line);border-radius:3px;box-shadow:none}
+.news-card .news-art,.news-card:first-child .news-art{width:100%;height:205px;min-height:205px;flex:none}
+.news-card .news-copy,.news-card:first-child .news-copy{padding:19px;justify-content:flex-start}
+.news-card .news-copy h3,.news-card:first-child .news-copy h3{font-size:18px;line-height:1.25;letter-spacing:-.45px;margin:10px 0}
+.news-card .news-copy p{font-size:11px;line-height:1.6}
+.news-art:after{font-size:18px;opacity:.7}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(30,17,22,.07);border-color:#d8c9c2}
+.match-wrap{grid-template-columns:.9fr 1.1fr;gap:16px}
+.match-card,.match-schedule{border:1px solid var(--line);border-radius:3px;background:#fff;box-shadow:none}
+.match-card{padding:24px}
+.match-title{border-bottom:1px solid var(--line);padding-bottom:14px}
+.score{font-size:34px}
+.team-mark{border-radius:3px}
+.fixture{border-radius:3px;background:#faf9f8}
+.schedule-tab{border-radius:2px}
+.schedule-tab.active{background:var(--red)}
+.branches{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.branch{border:1px solid var(--line);border-radius:3px;min-height:145px;padding:20px;box-shadow:none;transition:border-color .2s,transform .2s}
+.branch:hover{border-color:#cbb58d;transform:translateY(-2px)}
+.branch h3{font-size:19px;margin:14px 0 5px}
+.branch .num{color:#a78a50}
+.banner{border-radius:3px;padding:38px;background:linear-gradient(105deg,#78132b,#941d3b)}
+.banner:after{opacity:.45}
+footer{background:#211d20;border-top:2px solid var(--gold)}
+.footer-brand{letter-spacing:.2px}
+@media(max-width:900px){
+ .hero-grid{grid-template-columns:1fr}
+ .hero-main{min-height:430px}
+ .next-match-panel{min-height:370px}
+ .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .news-card:first-child{grid-column:auto}
+ .news-card:first-child .news-art{height:190px;min-height:190px}
+ .match-wrap{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ .wrap{width:calc(100% - 30px)}
+ header .nav{height:66px}
+ .edition-inner{height:32px;font-size:8px}
+ .hero{padding:16px 0 28px}
+ .hero-main{min-height:410px}
+ .hero-content{padding:22px}
+ .hero h1{font-size:clamp(36px,10vw,48px)}
+ .next-match-panel{min-height:350px;padding:20px}
+ .section{padding:40px 0}
+ .section h2{font-size:27px}
+ .news-grid{grid-template-columns:1fr;gap:12px}
+ .news-card .news-art,.news-card:first-child .news-art{height:185px;min-height:185px}
+ .branches{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .branch{padding:15px;min-height:130px}
+ .branch h3{font-size:17px}
+ .banner{padding:26px}
+}
+
 </style>
 </head>
 <body>
