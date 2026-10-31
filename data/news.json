@@ -1,5 +1,38 @@
 {
   "source": "https://www.galatasaray.org/xml/gs.rss",
-  "updatedAt": null,
-  "items": []
+  "updatedAt": "2026-10-31T15:17:00+03:00",
+  "items": [
+    {
+      "title": "Stuttgart maçı hazırlıkları başladı",
+      "description": "Galatasaray Futbol Takımı, UEFA Şampiyonlar Ligi'nde VfB Stuttgart ile oynayacağı maçın hazırlıklarına Kemerburgaz Metin Oktay Tesisleri'nde başladı.",
+      "url": "https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/stuttgart-maci-hazirliklari-basladi/61272",
+      "published": "2026-10-31T15:17:00+03:00",
+      "category": "Futbol",
+      "source": "Galatasaray.org"
+    },
+    {
+      "title": "Tümosan Konyaspor 0-4 Galatasaray",
+      "description": "Galatasaray, Trendyol Süper Lig'in 10. haftasında deplasmanda Tümosan Konyaspor'u 4-0 mağlup etti.",
+      "url": "https://www.galatasaray.org/haber/futbol/tumosan-konyaspor-0-4-galatasaray/61266",
+      "published": "2026-10-30T22:03:00+03:00",
+      "category": "Futbol",
+      "source": "Galatasaray.org"
+    },
+    {
+      "title": "El Chadaille Bitshiabu: Galatasaray'da inanılmaz atmosfer var",
+      "description": "El Chadaille Bitshiabu, Konyaspor maçının ardından Galatasaray'daki atmosfer ve ilk resmi maçı hakkında konuştu.",
+      "url": "https://www.galatasaray.org/haber/futbol/el-chadaille-bitshiabu-galatasarayda-inanilmaz-atmosfer-var/61269",
+      "published": "2026-10-30T22:50:00+03:00",
+      "category": "Futbol",
+      "source": "Galatasaray.org"
+    },
+    {
+      "title": "Rafael Leao: Galatasaray gibi büyük bir kulüpte oynamak beni çok mutlu ediyor",
+      "description": "Rafael Leao, Konyaspor galibiyetinin ardından ilk golü ve Galatasaray'daki günleri hakkında değerlendirmelerde bulundu.",
+      "url": "https://www.galatasaray.org/haber/futbol/rafael-leao-galatasaray-gibi-buyuk-bir-kulupte-oynamak-beni-cok-mutlu-ediyor/61267",
+      "published": "2026-10-30T22:30:00+03:00",
+      "category": "Futbol",
+      "source": "Galatasaray.org"
+    }
+  ]
 }
