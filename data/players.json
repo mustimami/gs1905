@@ -22,6 +22,16 @@
           "https://www.tff.org/Default.aspx?kisiId=1136213&pageId=30",
           "https://www.uefa.com/uefachampionsleague/clubs/players/250078452--ugurcan-cakir/"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 7,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -49,6 +59,16 @@
         "sources": [
           "https://www.galatasaray.org/p/19-gunay-guvenc/3133"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -72,6 +92,16 @@
           "https://www.galatasaray.org/p/24-jankat-yilmaz/1024",
           "https://www.tff.org/Default.aspx?kisiId=1790244&pageId=30"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 1,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -93,14 +123,34 @@
       "name": "El-Chadaille Bitshiabu",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P67333.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 4,
       "name": "Ismail Jakobs",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P56962.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 0,
+        "assists": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 6,
@@ -125,6 +175,16 @@
           "https://www.galatasaray.org/p/davinson-sanchez/3151",
           "https://www.tff.org/Default.aspx?kisiId=2556114&pageId=30"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 2,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -132,28 +192,68 @@
       "name": "Eren Elmalı",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P44894.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 23,
       "name": "Kaan Ayhan",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P4157.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 1,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 42,
       "name": "Abdülkerim Bardakcı",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P28419.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 2,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 88,
       "name": "Kazımcan Karataş",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P60983.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 3,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 90,
@@ -176,6 +276,16 @@
         "sources": [
           "https://www.galatasaray.org/p/90-wilfried-stephane-singo/3546"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 2,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -183,84 +293,204 @@
       "name": "Arda Ünyay",
       "position": "Defans",
       "photo": "https://media02.tr.beinsports.com/img/players/P103066.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 5,
       "name": "Eyüp Aydın",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P103855.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 8,
       "name": "Gabriel Davi Gomes Sara",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P72402.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 2,
+        "assists": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 18,
       "name": "Lesley Ugochukwu",
       "position": "Orta saha",
       "photo": null,
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 4,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 1,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 20,
       "name": "İlkay Gündoğan",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P233.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 2,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 34,
       "name": "Lucas Torreira",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P1528.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 7,
+        "goals": 1,
+        "assists": 2,
+        "yellowCards": 0,
+        "redCards": 1,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 73,
       "name": "Berat Luş",
       "position": "Orta saha",
       "photo": null,
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 74,
       "name": "Renato Sam-Na Nhaga",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P133122.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 2,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 83,
       "name": "Aleksey Batrakov",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P118050.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 6,
+        "goals": 0,
+        "assists": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 99,
       "name": "Mario Rene Junior Lemina",
       "position": "Orta saha",
       "photo": "https://media02.tr.beinsports.com/img/players/P1885.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 6,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 7,
       "name": "Roland Sallai",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P4307.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 7,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 2,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 10,
       "name": "Leroy Aziz Sané",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P253.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 11,
@@ -280,6 +510,16 @@
         "sources": [
           "https://www.tff.org/Default.aspx?kisiId=1442892&pageId=30"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -287,28 +527,68 @@
       "name": "Deniz Gül",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P97545.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 5,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 27,
       "name": "Rafael Leão",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P13216.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 5,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 2,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 29,
       "name": "Can Armando Güner",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P144810.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 45,
       "name": "Victor Osimhen",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P16705.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 6,
+        "goals": 6,
+        "assists": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     },
     {
       "number": 53,
@@ -329,6 +609,16 @@
         "sources": [
           "https://www.tff.org/Default.aspx?kisiId=1462850&pageId=30"
         ]
+      },
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 8,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
       }
     },
     {
@@ -336,9 +626,20 @@
       "name": "Ada Yüzgeç",
       "position": "Forvet",
       "photo": "https://media02.tr.beinsports.com/img/players/P126916.png",
-      "photoSource": "beIN SPORTS"
+      "photoSource": "beIN SPORTS",
+      "seasonStats": {
+        "competition": "Trendyol Süper Lig",
+        "matches": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "source": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+        "asOf": "2026-10-31"
+      }
     }
   ],
   "photoNote": "Oyuncu portreleri beIN SPORTS kadro sayfasındaki görsel kayıtlarından alınmıştır.",
-  "profileDataNote": "Yalnızca resmî Galatasaray, TFF ve UEFA kayıtlarında doğrulanabilen bilgiler eklenmiştir. Kaynak bağlantıları oyuncu bazında tutulur; eksik bilgiler tahmin edilmez."
+  "profileDataNote": "Yalnızca resmî Galatasaray, TFF ve UEFA kayıtlarında doğrulanabilen bilgiler eklenmiştir. Kaynak bağlantıları oyuncu bazında tutulur; eksik bilgiler tahmin edilmez.",
+  "statsNote": "2026/27 Süper Lig sezon istatistikleri beIN SPORTS takım kadrosu verisinden 31 Ekim 2026 tarihinde alınmıştır."
 }
