@@ -5,162 +5,227 @@
     {
       "number": 1,
       "name": "Uğurcan Çakır",
-      "position": "Kaleci"
+      "position": "Kaleci",
+      "photo": "https://media02.tr.beinsports.com/img/players/P5654.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 19,
       "name": "Günay Güvenç",
-      "position": "Kaleci"
+      "position": "Kaleci",
+      "photo": "https://media02.tr.beinsports.com/img/players/P28351.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 24,
       "name": "Jankat Yılmaz",
-      "position": "Kaleci"
+      "position": "Kaleci",
+      "photo": "https://media02.tr.beinsports.com/img/players/P83491.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 60,
       "name": "Arda Yılmaz",
-      "position": "Kaleci"
+      "position": "Kaleci",
+      "photo": "https://media02.tr.beinsports.com/img/players/P143204.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 70,
       "name": "Enes Emre Büyük",
-      "position": "Kaleci"
+      "position": "Kaleci",
+      "photo": "https://media02.tr.beinsports.com/img/players/P135476.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 3,
       "name": "El-Chadaille Bitshiabu",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P67333.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 4,
       "name": "Ismail Jakobs",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P56962.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 6,
       "name": "Davinson Sánchez",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P1911.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 17,
       "name": "Eren Elmalı",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P44894.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 23,
       "name": "Kaan Ayhan",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P4157.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 42,
       "name": "Abdülkerim Bardakcı",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P28419.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 88,
       "name": "Kazımcan Karataş",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P60983.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 90,
       "name": "Wilfried Stephane Singo",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P39431.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 91,
       "name": "Arda Ünyay",
-      "position": "Defans"
+      "position": "Defans",
+      "photo": "https://media02.tr.beinsports.com/img/players/P103066.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 5,
       "name": "Eyüp Aydın",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P103855.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 8,
       "name": "Gabriel Davi Gomes Sara",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P72402.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 18,
       "name": "Lesley Ugochukwu",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": null,
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 20,
       "name": "İlkay Gündoğan",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P233.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 34,
       "name": "Lucas Torreira",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P1528.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 73,
       "name": "Berat Luş",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": null,
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 74,
       "name": "Renato Sam-Na Nhaga",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P133122.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 83,
       "name": "Aleksey Batrakov",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P118050.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 99,
       "name": "Mario Rene Junior Lemina",
-      "position": "Orta saha"
+      "position": "Orta saha",
+      "photo": "https://media02.tr.beinsports.com/img/players/P1885.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 7,
       "name": "Roland Sallai",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P4307.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 10,
       "name": "Leroy Aziz Sané",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P253.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 11,
       "name": "Yunus Akgün",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P2738.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 21,
       "name": "Deniz Gül",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P97545.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 27,
       "name": "Rafael Leão",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P13216.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 29,
       "name": "Can Armando Güner",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P144810.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 45,
       "name": "Victor Osimhen",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P16705.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 53,
       "name": "Barış Alper Yılmaz",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P69815.png",
+      "photoSource": "beIN SPORTS"
     },
     {
       "number": 62,
       "name": "Ada Yüzgeç",
-      "position": "Forvet"
+      "position": "Forvet",
+      "photo": "https://media02.tr.beinsports.com/img/players/P126916.png",
+      "photoSource": "beIN SPORTS"
     }
-  ]
+  ],
+  "photoNote": "Oyuncu portreleri beIN SPORTS kadro sayfasındaki görsel kayıtlarından alınmıştır."
 }
