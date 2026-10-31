@@ -2,6 +2,37 @@
 <html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#8b1731"><meta name="description" content="GS1905 branş fikstürü: doğrulanmış Galatasaray voleybol maç programları ve resmî kaynaklar."><title>Branş Fikstürü | GS1905</title>
 <style>
 :root{--red:#8b1731;--gold:#c7a45b;--ink:#171717;--muted:#777;--line:#ece8e5;--soft:#f7f5f3}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff}a{color:inherit;text-decoration:none}.top{height:4px;background:linear-gradient(90deg,var(--red) 50%,var(--gold) 50%)}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}header{border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;color:var(--red)}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px}.back{font-size:11px;font-weight:900;color:var(--red)}.hero{background:linear-gradient(120deg,#34101e,#81162f);color:#fff;padding:42px 0}.eyebrow{font-size:10px;color:#dfc17f;letter-spacing:2px;font-weight:900}.hero h1{font-size:clamp(34px,6vw,54px);margin:10px 0;letter-spacing:-2px}.hero p{font-size:13px;line-height:1.7;color:#eadde0;max-width:690px}.section{padding:32px 0}.section h2{font-size:24px;margin:0 0 8px}.lead{font-size:12px;color:var(--muted);line-height:1.7;margin:0 0 18px}.list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{border:1px solid var(--line);border-radius:7px;padding:17px;background:#fff}.round{font-size:9px;color:var(--red);font-weight:950;letter-spacing:1px}.fixture{font-size:15px;font-weight:850;margin:10px 0}.meta{font-size:11px;color:var(--muted);line-height:1.6}.source{display:inline-block;margin-top:12px;color:var(--red);font-size:10px;font-weight:900}.notice{padding:16px;background:var(--soft);border-left:3px solid var(--gold);font-size:11px;line-height:1.7;color:#655e5a;margin-top:18px}.pending{border:1px dashed #d9d0ca;border-radius:7px;padding:18px;margin-top:12px}.pending h3{font-size:16px;margin:0 0 7px}.pending p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}footer{background:#171416;color:#bcb3b6;padding:22px 0;font-size:10px}@media(max-width:620px){.list{grid-template-columns:1fr}.hero{padding:32px 0}.nav{height:64px}}
+
+/* GS1905 shared visual system */
+:root{--red:#86172f;--red2:#5f1023;--gold:#c5a15a;--ink:#191719;--muted:#777176;--line:#e9e4e1;--soft:#f7f4f2;--paper:#fff;--max:1180px}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{transition:color .18s ease,border-color .18s ease,background .18s ease}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #c5a15a88;outline-offset:3px}
+::selection{background:#86172f;color:#fff}
+.topline,.top{height:4px;background:linear-gradient(90deg,#86172f 0 50%,#c5a15a 50% 100%)}
+header{background:#ffffffed;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 5px 22px #21151a08}
+.brand{color:var(--red);letter-spacing:-.45px}
+.brand small{font-size:9px;letter-spacing:2.1px;color:#898187;font-weight:800}
+.back,.source,.more,.read,.view{color:var(--red)}
+.back:hover,.source:hover,.more:hover,.read:hover,.view:hover{color:var(--red2)}
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-115px;top:-155px;width:310px;height:310px;border:1px solid #c5a15a30;border-radius:50%;box-shadow:0 0 0 24px #c5a15a0a,0 0 0 50px #c5a15a08;pointer-events:none;z-index:-1}
+.hero h1{font-weight:900;letter-spacing:-.045em}
+.eyebrow{font-weight:900;letter-spacing:2.1px}
+.card,.panel,.match,.fact,.feature-main,.news-card,.pending{border-color:var(--line);box-shadow:0 5px 18px #1b101008}
+.card,.panel,.match,.fact,.feature-main,.news-card{border-radius:9px}
+.card,.news-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.card:hover,.news-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #1b101012;border-color:#d7c6a9}
+button,.tab,.filters button,.search,input{font-family:inherit}
+button,.tab,.filters button{transition:background .18s ease,color .18s ease,border-color .18s ease}
+.tab.active,.filters button.active{background:var(--red);border-color:var(--red)}
+.section{scroll-margin-top:90px}
+footer{background:#181518;color:#c7bdc1;border-top:3px solid #c5a15a}
+footer a{color:#f4ecef}footer a:hover{color:#dfc17f}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}.hero:after{width:190px;height:190px;right:-95px;top:-95px}.back{font-size:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
 </style></head><body><div class="top"></div><header><div class="wrap nav"><a class="brand" href="index.html">GS1905<small>ASLANIN YUVASI</small></a><a class="back" href="branslar.html">← BRANŞLARA DÖN</a></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">2026 / 2027 · DOĞRULANMIŞ PROGRAM</div><h1>Branş fikstürü</h1><p>Galatasaray’ın farklı branşlarındaki maç programları. Yalnızca kulüp veya federasyon kaynaklarında doğrulanabilen bilgiler yayımlanır.</p></div></section>
 <main class="wrap">
