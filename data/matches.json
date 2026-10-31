@@ -346,9 +346,9 @@
       "status": "Tarih/saat TFF'de takip edilmeli"
     }
   ],
-  "standingsUpdatedAt": "2026-10-31T16:30:00+03:00",
-  "standingsSource": "https://www.tff.org/Default.aspx?pageID=198",
-  "standingsNote": "TFF'nin 31 Ekim 2026 tarihli puan cetvelinden alınmıştır. Maç sayıları haftalık program nedeniyle takımlar arasında farklı olabilir.",
+  "standingsUpdatedAt": "2026-10-31T18:59:00+03:00",
+  "standingsSource": "https://www.beinsports.com.tr/lig/super-lig/puan-durumu",
+  "standingsNote": "2026/27 10. hafta tablosu; beIN SPORTS puan durumu sayfası, 31 Ekim 2026 tarihinde kontrol edildi. TFF fikstürü resmî maç tarihleri için ayrıca bağlantılandırılmıştır.",
   "standings": [
     {
       "rank": 1,
@@ -566,5 +566,135 @@
       "goalDiff": -21,
       "points": 3
     }
-  ]
+  ],
+  "teamStatsSource": "https://www.beinsports.com.tr/takim/galatasaray/kadro",
+  "playerStatsSource": "https://www.beinsports.com.tr/takim/galatasaray/istatistikler",
+  "playerStatsUpdatedAt": "2026-10-31T20:58:00+03:00",
+  "topScorers": [
+    {
+      "rank": 1,
+      "name": "Victor Osimhen",
+      "goals": 6
+    },
+    {
+      "rank": 2,
+      "name": "Abdülkerim Bardakcı",
+      "goals": 2
+    },
+    {
+      "rank": 3,
+      "name": "Gabriel Sara",
+      "goals": 2
+    },
+    {
+      "rank": 4,
+      "name": "Lucas Torreira",
+      "goals": 1
+    },
+    {
+      "rank": 5,
+      "name": "Mario Lemina",
+      "goals": 1
+    },
+    {
+      "rank": 6,
+      "name": "Davinson Sánchez",
+      "goals": 1
+    },
+    {
+      "rank": 7,
+      "name": "Yunus Akgün",
+      "goals": 1
+    },
+    {
+      "rank": 8,
+      "name": "Roland Sallai",
+      "goals": 1
+    },
+    {
+      "rank": 9,
+      "name": "Barış Alper Yılmaz",
+      "goals": 1
+    }
+  ],
+  "topAssists": [
+    {
+      "rank": 1,
+      "name": "Victor Osimhen",
+      "assists": 3
+    },
+    {
+      "rank": 2,
+      "name": "Lucas Torreira",
+      "assists": 2
+    },
+    {
+      "rank": 3,
+      "name": "Gabriel Sara",
+      "assists": 2
+    },
+    {
+      "rank": 4,
+      "name": "Aleksey Batrakov",
+      "assists": 2
+    },
+    {
+      "rank": 5,
+      "name": "Ismail Jakobs",
+      "assists": 1
+    }
+  ],
+  "playerAppearances": [
+    {
+      "rank": 1,
+      "name": "Leroy Sané",
+      "apps": 8
+    },
+    {
+      "rank": 2,
+      "name": "Davinson Sánchez",
+      "apps": 8
+    },
+    {
+      "rank": 3,
+      "name": "Yunus Akgün",
+      "apps": 8
+    },
+    {
+      "rank": 4,
+      "name": "Abdülkerim Bardakcı",
+      "apps": 8
+    },
+    {
+      "rank": 5,
+      "name": "Eren Elmalı",
+      "apps": 8
+    },
+    {
+      "rank": 6,
+      "name": "Gabriel Sara",
+      "apps": 8
+    },
+    {
+      "rank": 7,
+      "name": "Ismail Jakobs",
+      "apps": 8
+    },
+    {
+      "rank": 8,
+      "name": "Barış Alper Yılmaz",
+      "apps": 8
+    },
+    {
+      "rank": 9,
+      "name": "Lucas Torreira",
+      "apps": 7
+    },
+    {
+      "rank": 10,
+      "name": "Roland Sallai",
+      "apps": 7
+    }
+  ],
+  "playerStatsNote": "Oyuncu istatistikleri beIN SPORTS 2026/27 takım kadrosu ve istatistik sayfalarından 31 Ekim 2026 tarihinde alınmıştır; sezon ilerledikçe değişebilir."
 }
