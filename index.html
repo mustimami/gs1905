@@ -36,13 +36,31 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 @media(max-width:800px){.fixture-list{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.match-schedule{padding:16px}.schedule-head{align-items:flex-start;flex-direction:column}.fixture-list{grid-template-columns:1fr}}
 
+
+.squad-tools{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 20px}
+.squad-search{flex:1;min-width:210px;max-width:340px;border:1px solid var(--line);border-radius:5px;padding:12px 14px;font:inherit;font-size:12px;outline:none}
+.squad-search:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c7a45b20}
+.squad-filters{display:flex;gap:7px;flex-wrap:wrap}
+.squad-filter{border:1px solid var(--line);background:#fff;color:var(--muted);padding:10px 12px;border-radius:4px;font-size:10px;font-weight:850;cursor:pointer}
+.squad-filter.active{background:var(--red);color:#fff;border-color:var(--red)}
+.squad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.player-card{border:1px solid var(--line);border-radius:7px;background:#fff;padding:16px;display:flex;align-items:center;gap:13px;min-width:0;transition:transform .18s,border-color .18s}
+.player-card:hover{transform:translateY(-3px);border-color:#d6c4a1}
+.player-number{width:43px;height:43px;flex:0 0 43px;border-radius:50%;display:grid;place-items:center;background:#f6eeee;color:var(--red);font-family:Georgia,serif;font-size:18px;font-weight:900}
+.player-info{min-width:0}.player-name{font-size:12px;font-weight:900;line-height:1.3}.player-position{font-size:10px;color:var(--muted);margin-top:5px}
+.squad-count{font-size:10px;color:var(--muted);margin-top:16px}
+.squad-empty{grid-column:1/-1;padding:28px;text-align:center;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:12px}
+@media(max-width:900px){.squad-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.squad-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:380px){.squad-grid{grid-template-columns:1fr}.squad-search{max-width:none;width:100%}}
+
 </style>
 </head>
 <body>
 <div class="topline"></div>
 <header><div class="wrap nav">
 <a class="brand" href="#"><span class="crest">GS</span><span>GALATASARAY<small>1905 · ASLANIN YUVASI</small></span></a>
-<nav class="links" id="navLinks"><a href="#haberler">HABERLER</a><a href="#mac-merkezi">MAÇ MERKEZİ</a><a href="#puan-durumu">PUAN DURUMU</a><a href="#branslar">BRANŞLAR</a><a href="#kulup">KULÜP</a></nav>
+<nav class="links" id="navLinks"><a href="#haberler">HABERLER</a><a href="#mac-merkezi">MAÇ MERKEZİ</a><a href="#kadro">KADRO</a><a href="#puan-durumu">PUAN DURUMU</a><a href="#branslar">BRANŞLAR</a><a href="#kulup">KULÜP</a></nav>
 <a class="nav-cta" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">RESMÎ SİTE ↗</a><button class="menu" id="menuBtn" aria-label="Menüyü aç">☰</button>
 </div></header>
 <main>
@@ -81,6 +99,22 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
  <p class="schedule-note" id="scheduleNote">Fikstür bilgileri yayınlanan maç programına göre listelenmiştir. Saat ve stadyum bilgileri resmî duyurularla değişebilir.</p>
 </div>
 </div></section>
+
+<section class="section" id="kadro"><div class="wrap">
+ <div class="section-head"><div><div class="kicker">ASLANLAR SAHADA</div><h2>A takım kadrosu</h2></div><a class="more" href="https://www.galatasaray.org/en/pl/squad/48" target="_blank" rel="noreferrer">RESMÎ KADRO ↗</a></div>
+ <div class="squad-tools">
+  <input class="squad-search" id="playerSearch" type="search" placeholder="Futbolcu ara..." aria-label="Futbolcu ara">
+  <div class="squad-filters" role="group" aria-label="Mevkiye göre filtrele">
+   <button class="squad-filter active" type="button" data-role="all" aria-pressed="true">TÜMÜ</button>
+   <button class="squad-filter" type="button" data-role="Kaleci" aria-pressed="false">KALECİ</button>
+   <button class="squad-filter" type="button" data-role="Defans" aria-pressed="false">DEFANS</button>
+   <button class="squad-filter" type="button" data-role="Orta saha" aria-pressed="false">ORTA SAHA</button>
+   <button class="squad-filter" type="button" data-role="Forvet" aria-pressed="false">FORVET</button>
+  </div>
+ </div>
+ <div class="squad-grid" id="squadGrid" aria-live="polite"></div>
+ <div class="squad-count" id="squadCount">Resmî A takım kadrosu · Oyuncu bilgileri kulübün kadro sayfasından alınmıştır.</div>
+</div></section>
 <section class="section" id="branslar"><div class="wrap"><div class="section-head"><div><div class="kicker">TEK ARMA, ÇOK HEYECAN</div><h2>Branşlarımız</h2></div></div><div class="branches">
 <a class="branch" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer"><span class="num">01 / SAHA</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2v4l-3 2-3-2V9zM12 7V3m3 6 4-2m-4 9 2 4m-8-4-2 4M9 9 5 7"/></svg></span><h3>Futbol</h3><p>Aslanın mücadelesi.</p></div></a>
 <a class="branch" href="https://www.galatasaray.org/" target="_blank" rel="noreferrer"><span class="num">02 / PARKELER</span><div><span class="branch-icon"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM5 8h14M5 16h14M12 8v8"/></svg></span><h3>Basketbol</h3><p>Potada sarı kırmızı.</p></div></a>
@@ -91,6 +125,25 @@ footer{background:#171416;color:#fff;padding:38px 0 22px}.footer-top{display:fle
 </main>
 <footer><div class="wrap"><div class="footer-top"><div class="footer-brand">GALATASARAY<small>1905 · ASLANIN YUVASI</small></div><div class="footer-links"><a href="#haberler">Haberler</a><a href="#mac-merkezi">Maç merkezi</a><a href="#branslar">Branşlar</a><a href="https://www.galatasaray.org/" target="_blank" rel="noreferrer">Resmî web sitesi ↗</a></div></div><div class="copyright"><span>© 2026 · GS1905 FAN CONCEPT</span><span>Saygı, tutku ve 1905 ruhuyla.</span></div><p class="disclaimer">Bu site bağımsız bir taraftar konsept tasarımıdır; Galatasaray Spor Kulübü'nün resmî sitesi değildir. Haberler Galatasaray.org kaynaklıdır. Puan durumu 31 Ekim 2026 tarihli demo verisidir; tablo görünümü Mackolik bağlantısıyla desteklenmiştir. Görsel alanlarda kullanılan fotoğraflar temsili stok görsellerdir, kulübün resmî fotoğrafları değildir. Güncel bilgi ve resmî fotoğraflar için haber bağlantılarını kullanın.</p></div></footer>
 <script>
+
+const squadPlayers=[
+ {n:1,name:'Uğurcan Çakır',role:'Kaleci'},{n:19,name:'Günay Güvenç',role:'Kaleci'},{n:24,name:'Jankat Yılmaz',role:'Kaleci'},{n:60,name:'Arda Yılmaz',role:'Kaleci'},{n:70,name:'Enes Emre Büyük',role:'Kaleci'},
+ {n:3,name:'El-Chadaille Bitshiabu',role:'Defans'},{n:4,name:'Ismail Jakobs',role:'Defans'},{n:6,name:'Davinson Sánchez',role:'Defans'},{n:17,name:'Eren Elmalı',role:'Defans'},{n:23,name:'Kaan Ayhan',role:'Defans'},{n:42,name:'Abdülkerim Bardakcı',role:'Defans'},{n:88,name:'Kazımcan Karataş',role:'Defans'},{n:90,name:'Wilfried Singo',role:'Defans'},{n:91,name:'Arda Ünyay',role:'Defans'},
+ {n:5,name:'Eyüp Aydın',role:'Orta saha'},{n:8,name:'Gabriel Sara',role:'Orta saha'},{n:18,name:'Lesley Ugochukwu',role:'Orta saha'},{n:20,name:'İlkay Gündoğan',role:'Orta saha'},{n:34,name:'Lucas Torreira',role:'Orta saha'},{n:74,name:'Renato Nhaga',role:'Orta saha'},{n:83,name:'Aleksey Batrakov',role:'Orta saha'},{n:99,name:'Mario Lemina',role:'Orta saha'},
+ {n:7,name:'Roland Sallai',role:'Forvet'},{n:10,name:'Leroy Sané',role:'Forvet'},{n:11,name:'Yunus Akgün',role:'Forvet'},{n:27,name:'Rafael Leão',role:'Forvet'},{n:29,name:'Can Armando Güner',role:'Forvet'},{n:45,name:'Victor Osimhen',role:'Forvet'},{n:53,name:'Barış Alper Yılmaz',role:'Forvet'},{n:62,name:'Ada Yüzgeç',role:'Forvet'},{n:73,name:'Berat Luş',role:'Forvet'}
+];
+let selectedRole='all';
+function renderSquad(){
+ const q=document.getElementById('playerSearch').value.trim().toLocaleLowerCase('tr');
+ const filtered=squadPlayers.filter(p=>(selectedRole==='all'||p.role===selectedRole)&&p.name.toLocaleLowerCase('tr').includes(q));
+ const grid=document.getElementById('squadGrid');
+ grid.innerHTML=filtered.length?filtered.map(p=>'<article class="player-card"><div class="player-number">'+p.n+'</div><div class="player-info"><div class="player-name">'+p.name+'</div><div class="player-position">'+p.role+'</div></div></article>').join(''):'<div class="squad-empty">Aradığın futbolcu bulunamadı.</div>';
+ document.getElementById('squadCount').textContent=filtered.length+' futbolcu gösteriliyor · Kadro bilgileri kulübün resmî sayfasına göre listelenmiştir.';
+}
+document.getElementById('playerSearch').addEventListener('input',renderSquad);
+document.querySelectorAll('.squad-filter').forEach(b=>b.addEventListener('click',()=>{selectedRole=b.dataset.role;document.querySelectorAll('.squad-filter').forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active?'true':'false')});renderSquad()}));
+renderSquad();
+
 const menu=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
 menu.addEventListener('click',()=>{links.classList.toggle('open');menu.setAttribute('aria-expanded',links.classList.contains('open')?'true':'false')});
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
