@@ -128,7 +128,7 @@ function safeNewsUrl(value){
   }catch{return '';}
 }
 function safeNewsImage(value){
-  try{const url=new URL(value);return url.protocol==='https:'&&(url.hostname==='galatasaray.org'||url.hostname.endsWith('.galatasaray.org'))?url.href:'';}catch{return '';}
+  try{const url=new URL(value);return url.protocol==='https:'&&(url.hostname==='galatasaray.org'||url.hostname.endsWith('.galatasaray.org')||url.hostname==='hlkiurt3.rocketcdn.com')?url.href:'';}catch{return '';}
 }
 function render(){
   const q=document.getElementById('search').value.trim().toLocaleLowerCase('tr');
