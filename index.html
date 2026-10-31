@@ -107,7 +107,7 @@ function renderFixtures(type,data){
  const rows=Array.isArray(data[type])?data[type]:[];
  list.innerHTML=rows.map(m=>'<article class="fixture"><div class="fixture-date">'+homeEscape(m.date)+'</div><div class="fixture-teams"><span>'+homeEscape(m.home)+'</span><span class="fixture-score">'+homeEscape(m.score)+'</span><span>'+homeEscape(m.away)+'</span></div><div class="fixture-meta">'+homeEscape(m.meta)+'</div><span class="fixture-status">'+homeEscape(m.status)+'</span></article>').join('');
  document.querySelectorAll('.schedule-tab').forEach(b=>{const active=b.dataset.fixture===type;b.classList.toggle('active',active);b.setAttribute('aria-selected',active?'true':'false')});
- document.getElementById('scheduleNote').textContent=type==='recent'?'Sonuçlar UEFA’nın yayımladığı resmî 2026/27 maç listesine göre gösterilir.':'Fikstür UEFA’nın yayımladığı 2026/27 maç listesine göre gösterilir. Saat bilgileri Türkiye saatine göre sunulmuştur.';
+ document.getElementById('scheduleNote').textContent=type==='recent'?'Oynanan maçların skorları UEFA’nın 30 Ekim 2026 tarihli resmî sonuç listesinden alınmıştır.':'Fikstür tarih ve saatleri Galatasaray’ın resmî duyurusuna dayanmaktadır. Saatler Türkiye saatiyledir.';
 }
 let matchData=null;
 function selectFixture(type){if(matchData)renderFixtures(type,matchData);}
