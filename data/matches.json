@@ -1,6 +1,6 @@
 {
   "source": "https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836",
-  "updatedAt": "2026-10-31T00:00:00Z",
+  "updatedAt": "2026-10-31T13:30:00+03:00",
   "note": "Fikstür tarih ve saatleri Galatasaray'ın resmî duyurusundan; oynanan maçların skorları UEFA'nın 30 Ekim 2026 tarihli sonuç listesinden alınmıştır. Saatler Türkiye saatiyledir.",
   "upcoming": [
     {
@@ -9,7 +9,8 @@
       "score": "VS",
       "away": "VfB Stuttgart",
       "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
-      "status": "YAKLAŞAN MAÇ"
+      "status": "YAKLAŞAN MAÇ",
+      "kickoff": "2026-11-03T20:45:00+03:00"
     },
     {
       "date": "24 KASIM 2026 · 20.45",
@@ -17,7 +18,8 @@
       "score": "VS",
       "away": "Aston Villa",
       "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
-      "status": "YAKLAŞAN MAÇ"
+      "status": "YAKLAŞAN MAÇ",
+      "kickoff": "2026-11-24T20:45:00+03:00"
     },
     {
       "date": "08 ARALIK 2026 · 23.00",
@@ -25,7 +27,8 @@
       "score": "VS",
       "away": "Galatasaray",
       "meta": "UEFA Şampiyonlar Ligi · Deplasman",
-      "status": "YAKLAŞAN MAÇ"
+      "status": "YAKLAŞAN MAÇ",
+      "kickoff": "2026-12-08T23:00:00+03:00"
     },
     {
       "date": "19 OCAK 2027 · 20.45",
@@ -33,7 +36,8 @@
       "score": "VS",
       "away": "Feyenoord",
       "meta": "UEFA Şampiyonlar Ligi · RAMS Park",
-      "status": "YAKLAŞAN MAÇ"
+      "status": "YAKLAŞAN MAÇ",
+      "kickoff": "2027-01-19T20:45:00+03:00"
     },
     {
       "date": "27 OCAK 2027 · 23.00",
@@ -41,7 +45,8 @@
       "score": "VS",
       "away": "Galatasaray",
       "meta": "UEFA Şampiyonlar Ligi · Deplasman",
-      "status": "YAKLAŞAN MAÇ"
+      "status": "YAKLAŞAN MAÇ",
+      "kickoff": "2027-01-27T23:00:00+03:00"
     }
   ],
   "recent": [
