@@ -56,11 +56,32 @@ h1,h2,h3{ text-wrap:balance }
   table{font-variant-numeric:tabular-nums}
 }
 
+
+/* GS1905 editorial refresh */
+:root{--shadow:0 18px 50px rgba(35,15,22,.08);--radius:16px}
+.ui-icon{width:19px;height:19px;flex:0 0 19px;vertical-align:middle}
+.eyebrow,.kicker{display:inline-flex;align-items:center;gap:9px}
+.eyebrow:before,.kicker:before{content:"";width:22px;height:2px;background:var(--gold);display:inline-block}
+.hero{position:relative;overflow:hidden}
+.hero h1{letter-spacing:-.055em;line-height:.98}
+.hero p{max-width:650px;line-height:1.8}
+.card,.panel,.news-card,.match-card,.branch,.fact{border-radius:var(--radius)!important;box-shadow:0 8px 28px rgba(35,15,22,.035)}
+.card:hover,.panel:hover,.branch:hover{box-shadow:var(--shadow);transform:translateY(-3px);transition:transform .22s ease,box-shadow .22s ease}
+.news-card,.branch,.fact,.panel{border-color:#eee7e4}
+footer{border-top:3px solid var(--gold)}
+/* icon-led information blocks */
+.fact{position:relative;padding:18px 16px 16px 48px!important;background:linear-gradient(145deg,#fff,#fbf9f7)}
+.fact .ui-icon{position:absolute;left:16px;top:18px;color:var(--red);width:21px;height:21px}
+.card [data-icon],.panel h2[data-icon],.section h2[data-icon]{display:flex;align-items:center;gap:10px}
+.card [data-icon]>.ui-icon,.panel h2>.ui-icon,.section h2>.ui-icon{color:var(--red)}
+/* shared section rhythm */
+.section,.section-title{scroll-margin-top:90px}
+@media(max-width:700px){.hero{padding-top:28px}.hero h1{font-size:clamp(34px,10vw,48px)}.fact{padding-left:44px!important}}
 </style></head><body><div class="topline"></div><header><div class="wrap nav"><a class="brand" href="index.html">GS1905<small>ASLANIN YUVASI</small></a><nav class="navlinks" aria-label="Ana menü"><a href="index.html">ANA SAYFA</a><a href="haberler.html" aria-current="page">HABERLER</a><a href="kadro.html">A TAKIM</a><a href="fikstur.html">FİKSTÜR</a><a href="istatistikler.html">İSTATİSTİK</a><a href="branslar.html">BRANŞLAR</a></nav></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">GS1905 · HABER MERKEZİ</div><h1>Gündemden<br>haberdar ol.</h1><p>Galatasaray'ın futbol, basketbol, voleybol ve kulüp gündeminden seçilmiş duyurular. Haberler kulübün resmî RSS akışından alınır ve yaklaşık iki saatte bir yenilenir.</p></div></section>
 <main class="wrap"><div class="tools"><input id="search" class="search" type="search" placeholder="Haber başlığı ara..." aria-label="Haber ara"><div class="filters" role="group" aria-label="Haber kategorileri"><button class="active" data-filter="Tümü">TÜMÜ</button><button data-filter="Futbol">FUTBOL</button><button data-filter="Basketbol">BASKETBOL</button><button data-filter="Voleybol">VOLEYBOL</button><button data-filter="Kulüp">KULÜP</button><button data-filter="Diğer">DİĞER</button></div></div>
 
-<div class="section-title">HABER AKIŞI <span id="count" style="color:#888;font-weight:700;letter-spacing:0"></span></div><div class="grid" id="news"></div>
+<div class="section-title" data-icon="newspaper">HABER AKIŞI <span id="count" style="color:#888;font-weight:700;letter-spacing:0"></span></div><div class="grid" id="news"></div>
 <section class="source"><strong>Kaynak ve güncellik notu</strong><p>Bu sayfa GS1905 tarafından hazırlanmış bağımsız bir haber vitrini olup kulübün resmî sitesi değildir. Haber başlıkları, kısa özetler, tarihler ve bağlantılar Galatasaray.org RSS akışından otomatik alınır. Tam içerik için resmî haber bağlantısını açabilirsiniz. Güncelleme sıklığı yaklaşık iki saattir.</p><a href="https://www.galatasaray.org/haberler" target="_blank" rel="noreferrer">GALATASARAY.ORG · TÜM HABERLER ↗</a></section>
 </main><footer><div class="wrap foot"><span>GS1905 · Bağımsız taraftar konsepti</span><span>© 2026 · Resmî kulüp sitesi değildir.</span></div></footer>
 <script>
@@ -116,4 +137,7 @@ fetch('data/news.json?ts='+Date.now(),{cache:'no-store'})
     feedStatus='Resmî RSS akışı şu anda yüklenemedi. Otomatik güncelleme yeniden denenecek.';
     render();
   });
+</script>
+<script>
+(()=>{const paths={trophy:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',users:'<path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',chart:'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-5 5"/>',newspaper:'<path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/>',volleyball:'<circle cx="12" cy="12" r="9"/><path d="M12 3c1 5-1 8-6 10m15-1c-5-2-8-1-11 3m5 7c-1-5-3-7-8-8"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',map:'<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15m6-12v15"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',arrow:'<path d="M5 12h14m-6-6 6 6-6 6"/>'};const svg=(n)=>'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(paths[n]||paths.trophy)+'</svg>';document.querySelectorAll('[data-icon]').forEach(el=>{if(!el.querySelector('.ui-icon'))el.insertAdjacentHTML('afterbegin',svg(el.dataset.icon))});document.querySelectorAll('.facts .fact').forEach((el)=>{const t=(el.querySelector('small')?.textContent||'').toLocaleLowerCase('tr');let n=/yaş|doğum/.test(t)?'calendar':/boy|kilo|mevki|pozisyon/.test(t)?'user':/maç|gol|asist/.test(t)?'chart':/numara/.test(t)?'trophy':'user';el.insertAdjacentHTML('afterbegin',svg(n))});})();
 </script></body></html>
