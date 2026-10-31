@@ -21,14 +21,17 @@
 <main>
 <section class="hero">
 <div class="wrap hero-grid">
-<article class="lead-story">
-<div class="lead-photo" id="leadPhoto" role="img" aria-label="Galatasaray haber fotoğrafı"></div>
-<div class="lead-shade"></div>
-<div class="lead-copy"><div class="lead-meta"><span class="live-dot"></span> <span id="leadCategory">KULÜPTEN HABERLER</span><i></i><span>GS1905 HABER MERKEZİ</span></div>
-<div class="lead-kicker">ASLANIN GÜNDEMİ</div><h1 id="leadTitle">Galatasaray'da gündem yoğun, hedef yine zirve</h1><p id="leadDesc">Sarı kırmızılı takımın en güncel haberleri, maç önü gelişmeleri ve kulüpten son dakika notları.</p>
-<a class="lead-link" id="leadLink" href="haberler.html">HABERİN TAMAMI <b>↗</b></a></div>
-<div class="lead-index"><span>01</span><i></i><span>03</span></div>
-</article>
+<section class="headline-slider" id="headlineSlider" aria-label="Manşet haberleri" aria-roledescription="carousel">
+ <div class="headline-track" id="headlineTrack" aria-live="off">
+  <div class="headline-loading"><span class="headline-spinner"></span><b>MANŞETLER YÜKLENİYOR</b></div>
+ </div>
+ <div class="headline-controls">
+  <div class="headline-count"><b id="headlineCurrent">01</b><span>/</span><span id="headlineTotal">05</span></div>
+  <div class="headline-dots" id="headlineDots" aria-label="Manşet seçimi"></div>
+  <div class="headline-arrows"><button type="button" id="headlinePrev" aria-label="Önceki haber">‹</button><button type="button" id="headlineNext" aria-label="Sonraki haber">›</button></div>
+ </div>
+ <div class="headline-progress"><span id="headlineProgress"></span></div>
+</section>
 <aside class="live-rail">
 <div class="rail-head"><div><span class="overline">SAHADAN SON DURUM</span><h2>MAÇ GÜNDEMİ</h2></div><span class="rail-live"><i></i> TAKVİM</span></div>
 <div class="rail-feature"><div class="rail-label">SIRADAKİ MAÇ · ŞAMPİYONLAR LİGİ</div><div class="rail-teams"><div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray_Sports_Club_Logo.svg" alt=""><b>GAL</b></div><strong>VS</strong><div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/VfB_Stuttgart_Logo.svg" alt=""><b>STU</b></div></div><div class="rail-date"><b>03 KASIM 2026</b><span>20:45 · RAMS PARK</span></div><div class="rail-count" id="countdown">MAÇ TAKVİMİ</div><a href="fikstur.html" class="rail-more">TÜM FİKSTÜR <b>→</b></a></div>
@@ -50,13 +53,40 @@
 <script>
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const menu=document.getElementById('menuToggle'),nav=document.getElementById('siteNav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});
+const slider=document.getElementById('headlineSlider'),track=document.getElementById('headlineTrack'),dots=document.getElementById('headlineDots');
+let headlineItems=[],headlineIndex=0,headlineTimer=null,headlinePaused=false,headlineTouchX=0;
+const headlineEsc=esc;
+function renderHeadline(){
+ const x=headlineItems[headlineIndex]; if(!x)return;
+ track.innerHTML='<article class="headline-slide is-active"><a class="headline-image-link" href="'+headlineEsc(x.url)+'" target="_blank" rel="noopener" aria-label="'+headlineEsc(x.title)+' haberini oku"><img class="headline-image" src="'+headlineEsc(x.image||'')+'" alt="'+headlineEsc(x.title)+'" '+(headlineIndex===0?'fetchpriority="high"':'loading="lazy"')+'><span class="headline-image-vignette"></span></a><div class="headline-copy"><div class="headline-meta"><span class="headline-live"><i></i> MANŞET</span><span>'+headlineEsc((x.category||'GALATASARAY').toLocaleUpperCase('tr'))+'</span><span>'+headlineEsc(new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long'}).format(new Date(x.published)))+'</span></div><span class="headline-kicker">ASLANIN GÜNDEMİ</span><h1>'+headlineEsc(x.title)+'</h1><p>'+headlineEsc(x.description||'Galatasaray’dan en güncel gelişmeler.')+'</p><span class="headline-read">HABERİN TAMAMI <b>↗</b></span></div></article>';
+ document.getElementById('headlineCurrent').textContent=String(headlineIndex+1).padStart(2,'0');
+ document.getElementById('headlineTotal').textContent=String(headlineItems.length).padStart(2,'0');
+ [...dots.children].forEach((d,i)=>{d.classList.toggle('active',i===headlineIndex);d.setAttribute('aria-current',i===headlineIndex?'true':'false');});
+ const bar=document.getElementById('headlineProgress');bar.style.transition='none';bar.style.width='0%';requestAnimationFrame(()=>{bar.style.transition='width 6s linear';bar.style.width='100%';});
+}
+function goHeadline(n){if(!headlineItems.length)return;headlineIndex=(n+headlineItems.length)%headlineItems.length;renderHeadline();restartHeadline();}
+function stopHeadline(){if(headlineTimer){clearInterval(headlineTimer);headlineTimer=null;}}
+function restartHeadline(){stopHeadline();if(!headlinePaused&&headlineItems.length>1)headlineTimer=setInterval(()=>{headlineIndex=(headlineIndex+1)%headlineItems.length;renderHeadline();},6000);}
+function pauseHeadline(){headlinePaused=true;stopHeadline();document.getElementById('headlineProgress').style.animationPlayState='paused';}
+function resumeHeadline(){headlinePaused=false;restartHeadline();}
+document.getElementById('headlinePrev').addEventListener('click',()=>goHeadline(headlineIndex-1));
+document.getElementById('headlineNext').addEventListener('click',()=>goHeadline(headlineIndex+1));
+slider.addEventListener('mouseenter',pauseHeadline);slider.addEventListener('mouseleave',resumeHeadline);
+slider.addEventListener('focusin',pauseHeadline);slider.addEventListener('focusout',e=>{if(!slider.contains(e.relatedTarget))resumeHeadline();});
+slider.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')goHeadline(headlineIndex-1);if(e.key==='ArrowRight')goHeadline(headlineIndex+1);});
+slider.addEventListener('touchstart',e=>{headlineTouchX=e.changedTouches[0].clientX;},{passive:true});
+slider.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-headlineTouchX;if(Math.abs(dx)>45)goHeadline(headlineIndex+(dx<0?1:-1));},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopHeadline();else restartHeadline();});
 fetch('data/news.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(data=>{
- const items=(data.items||[]).filter(x=>x.url&&x.url.startsWith('https://www.galatasaray.org/')).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published));
- if(!items.length)return;
- const lead=items[0];document.getElementById('leadTitle').textContent=lead.title;document.getElementById('leadDesc').textContent=lead.description;document.getElementById('leadCategory').textContent=(lead.category||'HABER').toLocaleUpperCase('tr');document.getElementById('leadLink').href=lead.url;
- if(lead.image)document.getElementById('leadPhoto').style.backgroundImage='url("'+lead.image.replace(/["\\]/g,'')+'")';
- document.getElementById('homeNews').innerHTML=items.slice(1,4).map((x,i)=>'<a class="news-card" href="'+esc(x.url)+'" target="_blank" rel="noopener"><div class="news-art">'+(x.image?'<img src="'+esc(x.image)+'" alt="" loading="lazy">':'<span class="news-fallback">GS1905</span>')+'<label>'+esc(x.category||'GALATASARAY')+'</label></div><div class="news-copy"><small>'+esc(new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long'}).format(new Date(x.published)))+'</small><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p><b>DEVAMINI OKU ↗</b></div></a>').join('');
- }).catch(()=>{});
+ const items=(data.items||[]).filter(x=>x.url&&x.url.startsWith('https://www.galatasaray.org/')&&x.image).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published)).slice(0,5);
+ if(!items.length){track.innerHTML='<div class="headline-loading">Manşet haberleri şu anda yüklenemiyor.</div>';return;}
+ headlineItems=items;
+ dots.innerHTML=items.map((x,i)=>'<button type="button" aria-label="'+(i+1)+'. habere git" aria-current="'+(i===0?'true':'false')+'" class="'+(i===0?'active':'')+'"><span></span></button>').join('');
+ [...dots.children].forEach((d,i)=>d.addEventListener('click',()=>goHeadline(i)));
+ renderHeadline();restartHeadline();
+ document.getElementById('homeNews').innerHTML=items.slice(1,4).map((x,i)=>'<a class="news-card" href="'+headlineEsc(x.url)+'" target="_blank" rel="noopener"><div class="news-art"><img src="'+headlineEsc(x.image)+'" alt="" loading="lazy"><label>'+headlineEsc(x.category||'GALATASARAY')+'</label></div><div class="news-copy"><small>'+headlineEsc(new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long'}).format(new Date(x.published)))+'</small><h3>'+headlineEsc(x.title)+'</h3><p>'+headlineEsc(x.description)+'</p><b>DEVAMINI OKU ↗</b></div></a>').join('');
+}).catch(()=>{track.innerHTML='<div class="headline-loading">Manşet haberleri yüklenemedi.</div>';});
+
 fetch('data/matches.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(data=>{
  const up=(data.upcoming||[]).slice(0,3);
  document.getElementById('upcomingList').innerHTML=up.map(x=>'<div class="upcoming-row"><time>'+esc((x.date||'').split('·')[0].trim())+'</time><b>'+esc(x.home)+' – '+esc(x.away)+'</b><span>'+esc((x.date||'').split('·')[1]||'')+'</span></div>').join('');
