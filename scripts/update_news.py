@@ -15,7 +15,7 @@ OUT = Path("data/news.json")
 MAX_ITEMS = 60
 
 def clean(value):
-    return re.sub(r"\\s+", " ", unescape(re.sub(r"<[^>]+>", " ", value or ""))).strip()
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", value or ""))).strip()
 
 def child_text(node, local_name):
     for child in node.iter():
