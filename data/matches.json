@@ -1,7 +1,7 @@
 {
-  "source": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/",
-  "updatedAt": "2026-10-30T00:00:00Z",
-  "note": "UEFA'nın 30 Ekim 2026 tarihli Galatasaray fikstür ve sonuç listesi.",
+  "source": "https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/sampiyonlar-ligi-fiksturumuz-belli-oldu/60836",
+  "updatedAt": "2026-10-31T00:00:00Z",
+  "note": "Fikstür tarih ve saatleri Galatasaray'ın resmî duyurusundan; oynanan maçların skorları UEFA'nın 30 Ekim 2026 tarihli sonuç listesinden alınmıştır. Saatler Türkiye saatiyledir.",
   "upcoming": [
     {
       "date": "03 KASIM 2026 · 20.45",
@@ -20,7 +20,7 @@
       "status": "YAKLAŞAN MAÇ"
     },
     {
-      "date": "08 ARALIK 2026",
+      "date": "08 ARALIK 2026 · 23.00",
       "home": "AEK Atina",
       "score": "VS",
       "away": "Galatasaray",
@@ -36,7 +36,7 @@
       "status": "YAKLAŞAN MAÇ"
     },
     {
-      "date": "27 OCAK 2027",
+      "date": "27 OCAK 2027 · 23.00",
       "home": "Paris Saint-Germain",
       "score": "VS",
       "away": "Galatasaray",
@@ -69,5 +69,6 @@
       "meta": "UEFA Şampiyonlar Ligi · Deplasman",
       "status": "MAÇ SONU"
     }
-  ]
+  ],
+  "resultsSource": "https://www.uefa.com/uefachampionsleague/news/02a8-2176fa83582b-d99f0b27f405-1000--champions-league-league-phase-fixtures-by-team/"
 }
